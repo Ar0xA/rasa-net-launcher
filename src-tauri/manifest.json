@@ -2557,16 +2557,6 @@
                       "sha256":  "72877fb0af03745e2a78414ddaa05f1871703ad4c0d16d43d4ae62971ff52f0b"
                   },
                   {
-                      "path":  "f1.fot",
-                      "size":  1409,
-                      "sha256":  "40413b3c45a180bb7742e301f91352e1c2a973b7b0ebac4123916c5817ca590b"
-                  },
-                  {
-                      "path":  "f2.fot",
-                      "size":  1409,
-                      "sha256":  "173a4e4ea648a3bb0fb76892453e6ee87b6e6ba96a0383c5a55a98d4f116a5e2"
-                  },
-                  {
                       "path":  "FindLauncher.exe",
                       "size":  235008,
                       "sha256":  "6be2055e076be792503803a898b2e1f9c47c44d3c54e7dc6d68b54ab10283678"
@@ -2995,11 +2985,6 @@
                       "path":  "version.ini",
                       "size":  34,
                       "sha256":  "59604ffcfd6994e2aac42e416e3e65bae3dc37e6af4c0d93f1dce9c8d093c6b7"
-                  },
-                  {
-                      "path":  "Wormhole.exe",
-                      "size":  2043904,
-                      "sha256":  "fa91d69a65c7bec357b20fa79fd960a9310fc27fc49804a970275057488ca326"
                   }
               ]
 }

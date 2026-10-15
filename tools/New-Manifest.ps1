@@ -6,7 +6,7 @@ param(
     [string] $Version = '1.16.5.0',
     # Per-user / runtime-generated files: never verified.
     [string[]] $Exclude = @(
-        'ScreenShots/*', '*.log', 'imgui.ini', 'crashreport.xml',
+        'ScreenShots/*', '*.log', '*.fot', 'imgui.ini', 'crashreport.xml',
         'client.cfg', 'tabula_rasa.cfg', 'login.cfg', 'LauncherID.ini'
     )
 )
