@@ -53,7 +53,7 @@
   },
   "plugins": {
     "updater": {
-      "pubkey": "REPLACE_WITH_UPDATER_PUBLIC_KEY",
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDY4MUFBMDhEQjg1QzlCOTUKUldTVm0xeTRqYUFhYU1md2Yya3Q3T0phcjlFVVEwelNla0lBenk3dVlZQWFIaDRxY2plb0p0MGYK",
       "endpoints": [
         "https://github.com/InfiniteRasa/rasa-net-launcher/releases/latest/download/latest.json"
       ],
