@@ -1,0 +1,57 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      # The tag (v1.2.3) is the source of truth for the version.
+      - name: Set version from tag
+        shell: pwsh
+        run: |
+          $version = "${{ github.ref_name }}".TrimStart('v')
+          "VERSION=$version" >> $env:GITHUB_ENV
+          $conf = Get-Content src-tauri/tauri.conf.json -Raw | ConvertFrom-Json
+          $conf.version = $version
+          $conf | ConvertTo-Json -Depth 20 | Set-Content src-tauri/tauri.conf.json -Encoding utf8NoBOM
+
+      - run: npm ci
+
+      - run: npm run tauri build
+
+      - name: Collect installer and checksum
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory release | Out-Null
+          $name = "InfiniteRasaLauncher-$env:VERSION-setup.exe"
+          Get-ChildItem src-tauri/target/release/bundle/nsis/*-setup.exe |
+            Select-Object -First 1 | Copy-Item -Destination "release/$name"
+          $hash = (Get-FileHash "release/$name" -Algorithm SHA256).Hash.ToLower()
+          "$hash  $name" | Set-Content release/SHA256SUMS.txt -Encoding ascii
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          name: Infinite Rasa Launcher ${{ env.VERSION }}
+          generate_release_notes: true
+          files: |
+            release/*.exe
+            release/SHA256SUMS.txt

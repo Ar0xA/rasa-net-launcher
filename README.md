@@ -21,10 +21,21 @@ npm run tauri dev     # run with live reload
 npm run tauri build   # produce the installer in src-tauri/target/release/bundle/nsis
 ```
 
+## Releasing
+
+Push a version tag and GitHub Actions builds the installer and publishes a GitHub Release with the setup `.exe` and `SHA256SUMS.txt`:
+
+```powershell
+git tag v1.0.1
+git push origin v1.0.1
+```
+
+The version comes from the tag, so there is no need to edit the version fields first.
+
 ## Configuration
 
 - **Auth server** — `AUTH_SERVER` at the top of [`src-tauri/src/lib.rs`](src-tauri/src/lib.rs).
-- **Version** — `version` in `src-tauri/tauri.conf.json`, `src-tauri/Cargo.toml` and `package.json`.
+- **Version** — set from the release tag in CI; for local builds, `version` in `src-tauri/tauri.conf.json`.
 
 ## File manifest
 
