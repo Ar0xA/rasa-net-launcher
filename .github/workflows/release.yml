@@ -36,17 +36,38 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run tauri build
+      # Signed updater artifacts (setup.exe.sig) are only produced in CI,
+      # so local builds don't need the private key.
+      - name: Build
+        shell: pwsh
+        env:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        run: npm run tauri build -- --config src-tauri/tauri.release.conf.json
 
-      - name: Collect installer and checksum
+      - name: Collect installer, checksum and update manifest
         shell: pwsh
         run: |
           New-Item -ItemType Directory release | Out-Null
           $name = "InfiniteRasaLauncher-$env:VERSION-setup.exe"
-          Get-ChildItem src-tauri/target/release/bundle/nsis/*-setup.exe |
-            Select-Object -First 1 | Copy-Item -Destination "release/$name"
+          $setup = Get-ChildItem src-tauri/target/release/bundle/nsis/*-setup.exe | Select-Object -First 1
+          Copy-Item $setup.FullName "release/$name"
+
           $hash = (Get-FileHash "release/$name" -Algorithm SHA256).Hash.ToLower()
           "$hash  $name" | Set-Content release/SHA256SUMS.txt -Encoding ascii
+
+          # Read by the launcher's updater from releases/latest/download/latest.json
+          [ordered]@{
+            version   = $env:VERSION
+            notes     = "Infinite Rasa Launcher $env:VERSION"
+            pub_date  = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+            platforms = @{
+              "windows-x86_64" = @{
+                signature = (Get-Content "$($setup.FullName).sig" -Raw).Trim()
+                url       = "https://github.com/${{ github.repository }}/releases/download/${{ github.ref_name }}/$name"
+              }
+            }
+          } | ConvertTo-Json -Depth 5 | Set-Content release/latest.json -Encoding utf8NoBOM
 
       - uses: softprops/action-gh-release@v2
         with:
@@ -55,3 +76,4 @@ jobs:
           files: |
             release/*.exe
             release/SHA256SUMS.txt
+            release/latest.json

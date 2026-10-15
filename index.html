@@ -3,27 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/src/styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Infinite Rasa</title>
+    <title>Infinite Rasa Launcher</title>
     <script type="module" src="/src/main.ts" defer></script>
   </head>
 
   <body>
-    <main>
-      <img src="/src/logo.png" class="logo" alt="Infinite Rasa" />
+    <div class="frame">
+      <header class="titlebar" data-tauri-drag-region>
+        <span class="title" data-tauri-drag-region>Infinite Rasa Launcher</span>
+        <button id="minimize" class="winbtn" title="Minimize">&#x2013;</button>
+        <button id="close" class="winbtn close" title="Close">&#x2715;</button>
+      </header>
 
-      <p id="status">Checking install…</p>
-      <progress id="progress" hidden></progress>
-      <ul id="problems" hidden></ul>
-
-      <button id="play" class="play" disabled>Play</button>
-      <label class="option"><input type="checkbox" id="skip-intro" /> Skip intro movie</label>
-
-      <div class="actions">
-        <button id="browse">Game folder…</button>
-        <button id="verify" disabled>Full verify</button>
+      <div class="banner" data-tauri-drag-region>
+        <img src="/src/logo.png" alt="Infinite Rasa" data-tauri-drag-region />
       </div>
-      <p id="path" class="path"></p>
-    </main>
+
+      <div class="body">
+        <section class="panel news">
+          <div class="tabs">
+            <button class="tab active" data-tab="news">Community News</button>
+            <button class="tab" data-tab="patch" hidden>Patch Notes</button>
+          </div>
+          <ul id="news" class="inset"><li class="muted">Loading news…</li></ul>
+        </section>
+
+        <aside class="side">
+          <section class="panel">
+            <h2>Server</h2>
+            <select id="server"></select>
+            <p id="account" class="account"></p>
+          </section>
+
+          <section class="panel links">
+            <button data-url="https://infiniterasa.org">Website</button>
+            <button data-url="https://infiniterasa.org/forum">Forums</button>
+            <button id="open-settings">Settings</button>
+          </section>
+        </aside>
+      </div>
+
+      <footer class="bottom">
+        <div class="statusbox">
+          <p id="status">Starting…</p>
+          <div class="bar"><div id="bar-fill"></div></div>
+          <ul id="problems" class="inset" hidden></ul>
+        </div>
+        <button id="play" class="play" disabled>Play</button>
+      </footer>
+
+      <span id="version" class="version"></span>
+
+      <div id="settings" class="overlay" hidden>
+        <div class="dialog panel">
+          <h2>Settings</h2>
+
+          <fieldset>
+            <legend>Game</legend>
+            <div class="row">
+              <input id="game-dir" readonly placeholder="Tabula Rasa folder not set" />
+              <button id="browse">Browse…</button>
+              <button id="verify">Full verify</button>
+            </div>
+            <label><input type="checkbox" id="skip-intro" /> Skip intro movie</label>
+            <label><input type="checkbox" id="close-on-launch" /> Close launcher when the game starts</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Servers</legend>
+            <div class="server-head">
+              <span>Name</span><span>Auth server (host:port)</span><span>Username</span><span>Password</span><span></span>
+            </div>
+            <div id="server-list" class="server-list"></div>
+            <button id="add-server">Add server</button>
+            <p class="hint">Saved passwords are stored in Windows Credential Manager.</p>
+          </fieldset>
+
+          <div class="dialog-actions">
+            <button id="settings-cancel">Cancel</button>
+            <button id="settings-save" class="primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

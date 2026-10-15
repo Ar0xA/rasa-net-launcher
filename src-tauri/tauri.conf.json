@@ -13,10 +13,12 @@
     "windows": [
       {
         "title": "Infinite Rasa",
-        "width": 560,
-        "height": 540,
+        "width": 800,
+        "height": 600,
         "resizable": false,
         "maximizable": false,
+        "decorations": false,
+        "shadow": true,
         "center": true
       }
     ],
@@ -47,6 +49,15 @@
         "installerIcon": "icons/icon.ico",
         "startMenuFolder": "Infinite Rasa"
       }
+    }
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "REPLACE_WITH_UPDATER_PUBLIC_KEY",
+      "endpoints": [
+        "https://github.com/InfiniteRasa/rasa-net-launcher/releases/latest/download/latest.json"
+      ],
+      "windows": { "installMode": "passive" }
     }
   }
 }
