@@ -52,7 +52,31 @@
         <button id="play" class="play" disabled>Play</button>
       </footer>
 
+      <p class="notice-line">
+        Infinite Rasa is a non-commercial, community-run fan project.
+        <button id="open-notice" class="linkbtn">Legal notice</button>
+      </p>
       <span id="version" class="version"></span>
+
+      <div id="notice" class="overlay" hidden>
+        <div class="dialog panel notice-dialog">
+          <h2>Legal Notice</h2>
+          <p>
+            Richard Garriott’s Tabula Rasa and its derivatives are Copyright of NC Interactive, LLC.
+            Tabula Rasa and all associated logos or designs are trademarks or registered trademarks of
+            NC Corporation. All rights reserved.
+          </p>
+          <p>
+            Infinite Rasa is a non-commercial, community-run fan project. It is not affiliated with,
+            endorsed by, or operated under license from NC Corporation, NC Interactive, LLC or
+            Destination Games.
+          </p>
+          <p class="hint">The launcher source code is released under the MIT License. No game files are included.</p>
+          <div class="dialog-actions">
+            <button id="notice-close" class="primary">Close</button>
+          </div>
+        </div>
+      </div>
 
       <div id="settings" class="overlay" hidden>
         <div class="dialog panel">

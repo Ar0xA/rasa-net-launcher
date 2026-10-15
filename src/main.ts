@@ -16,6 +16,7 @@ interface Server {
 
 interface Settings {
   game_dir: string | null;
+  verified_dir: string | null;
   servers: Server[];
   selected_server: string;
   close_on_launch: boolean;
@@ -63,8 +64,12 @@ function setProgress(fraction: number | null) {
   barFill.style.width = fraction === null ? "0%" : `${Math.round(fraction * 100)}%`;
 }
 
+/** With no game folder the big button becomes "Select Game". */
 function refreshPlay() {
-  playBtn.disabled = busy || !filesOk || !currentServer();
+  const selecting = !settings?.game_dir;
+  playBtn.textContent = selecting ? "Select Game" : "Play";
+  playBtn.classList.toggle("select", selecting);
+  playBtn.disabled = busy || (!selecting && (!filesOk || !currentServer()));
 }
 
 // ---------- servers / account ----------
@@ -112,23 +117,36 @@ function showProblems(r: VerifyResult) {
   problemsEl.hidden = lines.length === 0;
 }
 
+/** Quick check for a folder that already passed a full verify; full verify otherwise. */
+function checkGame() {
+  return verify(!settings.game_dir || settings.game_dir !== settings.verified_dir);
+}
+
 async function verify(full: boolean) {
   const dir = settings.game_dir;
   filesOk = false;
   problemsEl.hidden = true;
+  setProgress(0);
   if (!dir) {
-    setStatus("Tabula Rasa 1.16.5.0 not found. Open Settings and choose your game folder.", "bad");
+    setStatus("Tabula Rasa 1.16.5.0 is required. Click Select Game and choose the folder where it is installed.");
     refreshPlay();
     return;
   }
 
   busy = true;
   refreshPlay();
-  setStatus(full ? "Verifying all game files (this can take several minutes)…" : "Checking game files…");
+  const firstTime = dir !== settings.verified_dir;
+  setStatus(
+    full
+      ? `${firstTime ? "First-time check: verifying" : "Verifying"} all game files (this can take several minutes)…`
+      : "Checking game files…",
+  );
   try {
     const r = await invoke<VerifyResult>("verify_files", { dir, full });
     const bad = r.missing.length + r.corrupt.length;
     filesOk = bad === 0;
+    if (full && filesOk) settings.verified_dir = dir;
+    if (!filesOk && settings.verified_dir === dir) settings.verified_dir = null;
     if (filesOk) {
       setStatus(`Tabula Rasa ${r.version} — ${r.checked} files OK. Ready to play.`, "ok");
     } else {
@@ -147,7 +165,26 @@ listen<{ done: number; total: number }>("verify-progress", ({ payload }) => {
   setProgress(payload.total ? payload.done / payload.total : 0);
 });
 
+/** Folder picker; returns the chosen folder only if it contains the client. */
+async function pickGameDir(): Promise<string | null> {
+  const dir = await open({ directory: true, title: "Select your Tabula Rasa folder" });
+  if (typeof dir !== "string") return null;
+  if (!(await invoke<boolean>("is_game_dir", { dir }))) {
+    alert("tabula_rasa.exe was not found in that folder.");
+    return null;
+  }
+  return dir;
+}
+
 playBtn.addEventListener("click", async () => {
+  if (!settings.game_dir) {
+    const dir = await pickGameDir();
+    if (!dir) return;
+    settings.game_dir = dir;
+    await invoke("save_settings", { settings });
+    await checkGame();
+    return;
+  }
   try {
     await invoke("launch_game");
     setStatus("Launching Tabula Rasa…", "ok");
@@ -214,6 +251,9 @@ function renderNews() {
 const appWindow = getCurrentWindow();
 $("minimize").addEventListener("click", () => appWindow.minimize());
 $("close").addEventListener("click", () => appWindow.close());
+
+$("open-notice").addEventListener("click", () => ($("notice").hidden = false));
+$("notice-close").addEventListener("click", () => ($("notice").hidden = true));
 
 document.querySelectorAll<HTMLButtonElement>("[data-url]").forEach((b) =>
   b.addEventListener("click", () => openUrl(b.dataset.url!)),
@@ -291,12 +331,8 @@ $("open-settings").addEventListener("click", openSettings);
 $("settings-cancel").addEventListener("click", () => (settingsEl.hidden = true));
 
 $("browse").addEventListener("click", async () => {
-  const dir = await open({ directory: true, title: "Select your Tabula Rasa folder" });
-  if (typeof dir !== "string") return;
-  if (!(await invoke<boolean>("is_game_dir", { dir }))) {
-    alert("tabula_rasa.exe was not found in that folder.");
-    return;
-  }
+  const dir = await pickGameDir();
+  if (!dir) return;
   draftDir = dir;
   gameDirEl.value = dir;
   skipIntroEl.checked = await invoke<boolean>("get_skip_intro", { dir });
@@ -338,6 +374,7 @@ $("settings-save").addEventListener("click", async () => {
     const dirChanged = draftDir !== settings.game_dir;
     settings = {
       game_dir: draftDir,
+      verified_dir: settings.verified_dir,
       servers: draftRows.map(({ id, name, host, username }) => ({ id, name, host, username })),
       selected_server: draftRows.some((r) => r.id === settings.selected_server) ? settings.selected_server : draftRows[0].id,
       close_on_launch: closeOnLaunchEl.checked,
@@ -347,7 +384,7 @@ $("settings-save").addEventListener("click", async () => {
 
     settingsEl.hidden = true;
     await renderServers();
-    if (dirChanged) await verify(false);
+    if (dirChanged) await checkGame();
   } catch (e) {
     alert(String(e));
   }
@@ -389,5 +426,5 @@ async function selfUpdate(): Promise<boolean> {
 
   settings = await invoke<Settings>("get_settings");
   await renderServers();
-  await verify(false);
+  await checkGame();
 })();

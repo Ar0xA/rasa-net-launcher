@@ -28,7 +28,9 @@ fn get_settings(app: AppHandle) -> Settings {
 }
 
 #[tauri::command]
-fn save_settings(app: AppHandle, settings: Settings) -> Result<(), String> {
+fn save_settings(app: AppHandle, mut settings: Settings) -> Result<(), String> {
+    // Only verify_files decides what has been verified.
+    settings.verified_dir = settings::load(&app).verified_dir;
     settings::save(&app, &settings)
 }
 
@@ -47,15 +49,29 @@ fn set_password(server_id: String, password: Option<String>) -> Result<(), Strin
     settings::set_password(&server_id, password.as_deref())
 }
 
+/// Checks the install. A clean full verify is remembered so later starts only need the quick check.
 #[tauri::command]
 async fn verify_files(app: AppHandle, dir: PathBuf, full: bool) -> Result<game::VerifyResult, String> {
-    tauri::async_runtime::spawn_blocking(move || {
-        game::verify(&dir, full, |done, total| {
-            let _ = app.emit("verify-progress", Progress { done, total });
-        })
+    let result = tauri::async_runtime::spawn_blocking({
+        let (app, dir) = (app.clone(), dir.clone());
+        move || {
+            game::verify(&dir, full, |done, total| {
+                let _ = app.emit("verify-progress", Progress { done, total });
+            })
+        }
     })
     .await
-    .map_err(|e| e.to_string())?
+    .map_err(|e| e.to_string())??;
+
+    let clean = result.missing.is_empty() && result.corrupt.is_empty();
+    let mut s = settings::load(&app);
+    if full && clean {
+        s.verified_dir = Some(dir);
+    } else if !clean && s.verified_dir.as_ref() == Some(&dir) {
+        s.verified_dir = None;
+    }
+    settings::save(&app, &s)?;
+    Ok(result)
 }
 
 #[tauri::command]

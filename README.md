@@ -58,4 +58,10 @@ Updates are signed so launchers only install releases you published. The public 
 
 The launcher source code is released under the [MIT License](LICENSE).
 
-The Infinite Rasa name and logo are not covered by that license. Tabula Rasa is a trademark of its respective owner; this project is not affiliated with or endorsed by NCsoft. No game files are included.
+The Infinite Rasa name and logo are not covered by that license. No game files are included.
+
+## Legal notice
+
+Richard Garriott’s Tabula Rasa and its derivatives are Copyright of NC Interactive, LLC. Tabula Rasa and all associated logos or designs are trademarks or registered trademarks of NC Corporation. All rights reserved.
+
+Infinite Rasa is a non-commercial, community-run fan project. It is not affiliated with, endorsed by, or operated under license from NC Corporation, NC Interactive, LLC or Destination Games.

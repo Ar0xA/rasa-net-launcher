@@ -267,7 +267,7 @@ button.primary {
   display: flex;
   align-items: flex-end;
   gap: 14px;
-  padding: 10px 14px 14px;
+  padding: 10px 14px 32px;
 }
 
 .statusbox {
@@ -339,10 +339,48 @@ button.primary {
 
 .version {
   position: absolute;
-  right: 6px;
-  bottom: 1px;
+  right: 8px;
+  bottom: 6px;
   font-size: 10px;
   color: #56647a;
+}
+
+.notice-line {
+  position: absolute;
+  left: 14px;
+  bottom: 6px;
+  margin: 0;
+  font-size: 10px;
+  color: #56647a;
+}
+
+.linkbtn {
+  padding: 0;
+  font-size: inherit;
+  color: #7f95b3;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+.linkbtn:hover:not(:disabled) {
+  color: var(--blue);
+  background: none;
+  box-shadow: none;
+}
+
+.notice-dialog {
+  width: 520px;
+}
+.notice-dialog p {
+  line-height: 1.5;
+  color: #c3d0e0;
+}
+
+.play.select {
+  font-size: 18px;
+  letter-spacing: 2px;
 }
 
 /* ---------- settings dialog ---------- */

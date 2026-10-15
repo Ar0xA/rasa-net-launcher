@@ -20,6 +20,8 @@ pub struct Server {
 #[serde(default)]
 pub struct Settings {
     pub game_dir: Option<PathBuf>,
+    /// Folder that last passed a full (hashed) verify; a different folder needs one first.
+    pub verified_dir: Option<PathBuf>,
     pub servers: Vec<Server>,
     pub selected_server: String,
     pub close_on_launch: bool,
@@ -29,6 +31,7 @@ impl Default for Settings {
     fn default() -> Self {
         Self {
             game_dir: None,
+            verified_dir: None,
             servers: vec![Server {
                 id: "infinite-rasa".into(),
                 name: "Infinite Rasa".into(),
