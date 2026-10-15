@@ -1,0 +1,3005 @@
+﻿{
+    "version":  "1.16.5.0",
+    "files":  [
+                  {
+                      "path":  "binkw32.dll",
+                      "size":  166912,
+                      "sha256":  "d776b5b874a80add5b3307de732ca41b2b6982142ab41b44f940f86da002ce62"
+                  },
+                  {
+                      "path":  "coldet.dll",
+                      "size":  78336,
+                      "sha256":  "421a392c93836ea913fb4600504c618cd5d407209438a939112c4677b512a181"
+                  },
+                  {
+                      "path":  "Components/LocalizationComponents.ini",
+                      "size":  144,
+                      "sha256":  "8eb3c562e5204aba5e181cddc7221482e7869b6b5f8045ca87ee94065d2dba5b"
+                  },
+                  {
+                      "path":  "data/anim01.glm",
+                      "size":  92219007,
+                      "sha256":  "c774f6f971b3dfaa6ca3d96a36e519e846ad8624bfa863b423a9ea6af16709c7"
+                  },
+                  {
+                      "path":  "data/anim02.glm",
+                      "size":  100895924,
+                      "sha256":  "5f2b43388e3a49f2adab0ea20ea0570954383434c5f4f6e403138f19e80723ac"
+                  },
+                  {
+                      "path":  "data/audio01.glm",
+                      "size":  123907438,
+                      "sha256":  "c26a7add05c1263a50ac24beb0c093c8311a79514c344fbfbb241774bb6bc3ee"
+                  },
+                  {
+                      "path":  "data/audio02.glm",
+                      "size":  147614816,
+                      "sha256":  "e857b780c34064501fd16302c420ea27a89a0d8e8626dcffec6349d9429d90fa"
+                  },
+                  {
+                      "path":  "data/audio03.glm",
+                      "size":  127617228,
+                      "sha256":  "19c382f7a9e0a4a54eaafe50a0bb8a2ceeed048a3534e05bd96a25ffd63194b7"
+                  },
+                  {
+                      "path":  "data/audio04.glm",
+                      "size":  123155867,
+                      "sha256":  "f6503148389968a2ed3656c004f8a181538e60a1dec3263f475515a9de49eefb"
+                  },
+                  {
+                      "path":  "data/audio05.glm",
+                      "size":  103596194,
+                      "sha256":  "bc2d84b20b928f9d2d83c06568cd8a31bcad6fb70cd63b4115b107613c577d26"
+                  },
+                  {
+                      "path":  "data/catalogs.glm",
+                      "size":  21748654,
+                      "sha256":  "270033c67db4ec3fa8af18e9f6d73530708922a7213f656c9b90aa13d448f748"
+                  },
+                  {
+                      "path":  "data/effects.glm",
+                      "size":  12298908,
+                      "sha256":  "8c741da148fc0183723ce8327a243f99b487d4d8ea34f846ab59071d8a03f8bf"
+                  },
+                  {
+                      "path":  "data/game.zip",
+                      "size":  37860642,
+                      "sha256":  "e78b53640e75954b6b36e88eccfb780fcc79ec7b7ee51edbd213073e26406ca6"
+                  },
+                  {
+                      "path":  "data/image01.glm",
+                      "size":  151329929,
+                      "sha256":  "5f96da5a60214b2d17614da24bfcb3c118972f3b46f87b759267b0c9cbee2251"
+                  },
+                  {
+                      "path":  "data/image02.glm",
+                      "size":  106634337,
+                      "sha256":  "c3f20dd4b00708f8e7b20eaf3f5b63141d04cae6b56e653a09273c239c4770ac"
+                  },
+                  {
+                      "path":  "data/image03.glm",
+                      "size":  135046955,
+                      "sha256":  "d91232387f3f5773ae0a28bb3b94148f05e289c0978a8eda5766c49c1667ecbf"
+                  },
+                  {
+                      "path":  "data/image04.glm",
+                      "size":  116764929,
+                      "sha256":  "1253f3e422bd48e06c1fe5b2c3c9d3972f4b6e1d6751c0756e96682ec33dfef1"
+                  },
+                  {
+                      "path":  "data/lights.glm",
+                      "size":  497466,
+                      "sha256":  "619566df83f029af2837a6d64f3c975df4b151340f8a43aeab0353894ade8c5e"
+                  },
+                  {
+                      "path":  "data/lqimage01.glm",
+                      "size":  10740927,
+                      "sha256":  "81d66da458376bf3b816d3955a30551b5a8a5abc6f4a560b51d9ea5fd602f4bf"
+                  },
+                  {
+                      "path":  "data/lqimage02.glm",
+                      "size":  9516652,
+                      "sha256":  "f4873b5caca4725656fea539563d69dae181da1da76c3039c6318eb1b63832eb"
+                  },
+                  {
+                      "path":  "data/lqimage03.glm",
+                      "size":  16206445,
+                      "sha256":  "17170f9e1394d7797a716d0c50062337bd2a64a47e9312e79e2b799affd6e8dc"
+                  },
+                  {
+                      "path":  "data/lqimage04.glm",
+                      "size":  12213196,
+                      "sha256":  "3736d8fa30d23ceb9f59ca0afe7a70ac9ed92eead120e7f7df2da46ecd00d452"
+                  },
+                  {
+                      "path":  "data/maps/adv_afs_arena/adv_afs_arena.map",
+                      "size":  48684,
+                      "sha256":  "87ab61d5e5a8211cb14b0bf9eed25f106a94c815b50cec2cad641847aa42c425"
+                  },
+                  {
+                      "path":  "data/maps/adv_afs_arena/adv_afs_arena.vis",
+                      "size":  109276,
+                      "sha256":  "bdc4b0a8fc6bac887ab0e51fe56babe3580c733cbff8a2232bef816704cae661"
+                  },
+                  {
+                      "path":  "data/maps/adv_afs_arena/audioemitters.xml",
+                      "size":  12497,
+                      "sha256":  "ae09f647b4884d0656a962b320edd0faa44ef2ed5372b9c9de346be4eb64a5f8"
+                  },
+                  {
+                      "path":  "data/maps/adv_afs_arena/lights.xml",
+                      "size":  73693,
+                      "sha256":  "d9f14a9f5b8f32e913500fd53e4ef22cc2c503987d8f04ea0ea086e189e11e77"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert/adv_arieki_ligo_ashendesert.map",
+                      "size":  309210,
+                      "sha256":  "b40a2785e327fe0b3536736fd5a34bae48d2c90204fc29697d5003e59695804f"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert/adv_arieki_ligo_ashendesert.vis",
+                      "size":  4313668,
+                      "sha256":  "c97b23793b585542afb51a89cde2919a75013ac4ba3ac1925f714a8a74ad44c3"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert/lights.xml",
+                      "size":  269924,
+                      "sha256":  "bdc307583f6a9a286f8409b350b51188ad4c712119f414cadea5778f1c50c9c3"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert/t000006c6_terrain.glm",
+                      "size":  10596655,
+                      "sha256":  "c8abc89a73afe0af301820dffd30347ee8723255eccb1b75af09e3721832de4c"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert_avernusoutpost/adv_arieki_ligo_ashendesert_avernusoutpost.map",
+                      "size":  117808,
+                      "sha256":  "bdc8f05fe4917339f34a9931ca6531831ba728c322d58d372d9576fb956a209c"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert_avernusoutpost/adv_arieki_ligo_ashendesert_avernusoutpost.vis",
+                      "size":  152849,
+                      "sha256":  "91e397afceeba02462c66cc7b23a682b5c07d50edc5d67980bf24d2a2ee8b221"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert_avernusoutpost/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert_avernusoutpost/lights.xml",
+                      "size":  349763,
+                      "sha256":  "2da57f9b7e1ad29dae2908301f23b1eb94ddc1c8021e7954d80a7b38510be853"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert_avernusoutpost/t0000083e_terrain.glm",
+                      "size":  3083977,
+                      "sha256":  "61e2d3f5f3564a407ab3cb8290af93aba8503b2081a1b27238fdfaf948329b09"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert_baneconscriptfacility/adv_arieki_ligo_ashendesert_baneconscriptfacility.map",
+                      "size":  234142,
+                      "sha256":  "57ee49bb54dcca4574656755cafc06206548150edf57fe7cdf629dacfb062380"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert_baneconscriptfacility/adv_arieki_ligo_ashendesert_baneconscriptfacility.vis",
+                      "size":  3146520,
+                      "sha256":  "5bfe09ca13d66c6bed5bc2b0a573373107976ea67679a64b17b4720009acf11b"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert_baneconscriptfacility/audioemitters.xml",
+                      "size":  2188,
+                      "sha256":  "28a7e447d9850047e95d51dc6d8052c426971fa94b91ecaa78d0b99268e8af8e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert_baneconscriptfacility/lights.xml",
+                      "size":  72431,
+                      "sha256":  "9f8ba557d8883af530564f1da342efc5411b7960ecc1b500eb0b369772500ce7"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert_baneconscriptfacility/t000007c4_terrain.glm",
+                      "size":  5430012,
+                      "sha256":  "8a0cc047cccf4e349cb282996e305d70ba583aa1661fa490b5c4966f80c61b3a"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert_indracaverns/adv_arieki_ligo_ashendesert_indracaverns.map",
+                      "size":  145808,
+                      "sha256":  "61a4f82b72629317e6549d8e442611e4d8161d4709e844ffafa67c1b3bf5a6fa"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert_indracaverns/adv_arieki_ligo_ashendesert_indracaverns.vis",
+                      "size":  4849970,
+                      "sha256":  "0ee4482632bab7f73c5997157cbb1dc4e51dddc5aac42c030be2449ca8a5303f"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert_indracaverns/audioemitters.xml",
+                      "size":  105,
+                      "sha256":  "48053d5b7e640f2f8eacd545a6301bfac202e019db9e24757f222fffcb81b7e9"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert_indracaverns/lights.xml",
+                      "size":  51774,
+                      "sha256":  "bf6adc1ec9be05dcd2e3f0d44d84c6b86de5f50cfbe0e9e5bbdcc3d3cec264e5"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_ashendesert_indracaverns/t00000807_terrain.glm",
+                      "size":  1626457,
+                      "sha256":  "85577f1a62a150b3ce1945067d06c36b9f1fc4b16b9812f8afbd1b2a87c26cd3"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_burningsteps/adv_arieki_ligo_burningsteps.map",
+                      "size":  352341,
+                      "sha256":  "886803dc62c919bc3892aa51e76214d817427dcf8e36ca0e9c3228e31db7f17d"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_burningsteps/adv_arieki_ligo_burningsteps.vis",
+                      "size":  2624459,
+                      "sha256":  "2bae0a31272a4078c2f29cab3d577985c3cd4d4175fbb91dffa541d0a6eecf4e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_burningsteps/audioemitters.xml",
+                      "size":  2195,
+                      "sha256":  "79ff31e4b39f2c2546444a079d661a081f023d8c154df351d484de0b266f042f"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_burningsteps/lights.xml",
+                      "size":  415816,
+                      "sha256":  "514a9a30e657948c7003b0a6baed8e036e4c3a34fd6032549bb27fbdb8bdb807"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_burningsteps/t000007c9_terrain.glm",
+                      "size":  8425487,
+                      "sha256":  "15186d0c9d308f0fcdb64c0c9d6369e5820afda6c080a1aa14c10da2c3d08938"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_burningsteps_magmacaverns/adv_arieki_ligo_burningsteps_magmacaverns.map",
+                      "size":  88980,
+                      "sha256":  "0cd7b500c75f9cd2498295cdb0b1305c0ae03debf2dd6e2b82b92aa7ac1b1573"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_burningsteps_magmacaverns/adv_arieki_ligo_burningsteps_magmacaverns.vis",
+                      "size":  644187,
+                      "sha256":  "d381202240d4ed60a0dce40db0cb591ff1e8be4c56a7e1bfb27dc43269c4b0e4"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_burningsteps_magmacaverns/audioemitters.xml",
+                      "size":  3234,
+                      "sha256":  "59a267ade73daebdcdecf10e334d9dd5a9cb59ff69c132566d18f77416ec34d8"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_burningsteps_magmacaverns/lights.xml",
+                      "size":  143288,
+                      "sha256":  "35a00fcd9a34a50e14b6bdea70191afcd6fc5fb133ed918f3151c396d67fa4e8"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_burningsteps_magmacaverns/t000007b9_terrain.glm",
+                      "size":  1485727,
+                      "sha256":  "6754cb3f49cb3f46f67f0984c222649b848efc1c910c073f0ffd9666d604bd90"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_crucible_incurablesward/adv_arieki_ligo_crucible_incurablesward.map",
+                      "size":  155717,
+                      "sha256":  "1cd2b5955a206035dcf50950e6eddeb13874ead41deadb13cd62c51eec91caa7"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_crucible_incurablesward/adv_arieki_ligo_crucible_incurablesward.vis",
+                      "size":  4505678,
+                      "sha256":  "50075489c096be1e6e3fda4225f98c26c84f1536ecb4170d545766fe2c7a947e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_crucible_incurablesward/audioemitters.xml",
+                      "size":  3222,
+                      "sha256":  "0352bbfd2e592a0b9da5f8e24c8a160870e3da63b5a5ab3d8f9692ac28ff4bd9"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_crucible_incurablesward/lights.xml",
+                      "size":  1047292,
+                      "sha256":  "4a110baeac2b94d28bc1b08acf2a109381083a87f3518e1a81961274aac9191a"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_crucible_wbfacility/adv_arieki_ligo_crucible_wbfacility.map",
+                      "size":  46149,
+                      "sha256":  "f95e76dc00e0bfeec7e16f5aa7ba6ef05bd6aa89735308264f0e01e16c54e4df"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_crucible_wbfacility/adv_arieki_ligo_crucible_wbfacility.vis",
+                      "size":  831484,
+                      "sha256":  "1a2be5d29acdf70f5d9c3cffd1860a52a6a57e52a9a10fcc562902351f0f1a36"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_crucible_wbfacility/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_crucible_wbfacility/lights.xml",
+                      "size":  63076,
+                      "sha256":  "f74dad5113d7fc20ebb7a6e20f915510b56c55a98b5bf9b7323155f246ffc0c9"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_staaljunkyard/adv_arieki_ligo_staaljunkyard.map",
+                      "size":  146645,
+                      "sha256":  "209f8fc8b26da300fb58c66d34d5498e48d2c3ec97ac9731ac0627c0d2bb4731"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_staaljunkyard/adv_arieki_ligo_staaljunkyard.vis",
+                      "size":  10044222,
+                      "sha256":  "1fc30afcd4faf1547cfb4d78cc8242cc2e7c0f56c59d9e7f3ee631e92252e392"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_staaljunkyard/audioemitters.xml",
+                      "size":  38441,
+                      "sha256":  "61dc0443e3835f3942f359d1eafa0bacb6250bdbdaf8a3ab2c1ca5b63d1b9a0d"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_staaljunkyard/lights.xml",
+                      "size":  93250,
+                      "sha256":  "14a130550dd0469442da068fc7a207f0b28e09cb8bc43a822d1b79c560525214"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_staaljunkyard/t0000085a_terrain.glm",
+                      "size":  3208584,
+                      "sha256":  "830557ef41467e9c6a98a8ad746de71d7bb4532305a8d41bda882303827b80b4"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead/adv_arieki_ligo_thunderhead.map",
+                      "size":  237731,
+                      "sha256":  "ec0f6d40a5a504cea070a3bb0f5ab0ed32eb0db917657bc838c7daabeb6c7118"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead/adv_arieki_ligo_thunderhead.vis",
+                      "size":  845342,
+                      "sha256":  "5f4e379c7955d9234c8a8dbbc84fc8c1f395cad8ad4351e099e3a23633d27160"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead/audioemitters.xml",
+                      "size":  4264,
+                      "sha256":  "0bd6baaea49d1bbdeea2198992341cfc72a6d807d281029d4649c91376d3b9c6"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead/lights.xml",
+                      "size":  280198,
+                      "sha256":  "c4d7c844219f44964ecd13b033632f0592c16931d6ea5051de8f996f9e5a581e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead/t00000777_terrain.glm",
+                      "size":  15574609,
+                      "sha256":  "7097e4dedf612600a277c96011bf2120c93dbd1f3a7ba745da264107a6602f9a"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead_faultlever/adv_arieki_ligo_thunderhead_faultlever.map",
+                      "size":  213077,
+                      "sha256":  "ebe285d644965b7e9fc0db4dd94f7aab2a36504ed61a1cda857fd0fb457fdc46"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead_faultlever/adv_arieki_ligo_thunderhead_faultlever.vis",
+                      "size":  797534,
+                      "sha256":  "f5e52ffd35ba43ed8adb592c4af3f8d3893c3c8ce8109ac1a758ebdcd8b61f3e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead_faultlever/audioemitters.xml",
+                      "size":  42568,
+                      "sha256":  "20ef1d93f298bf454ed9257de70a412a29a116321d471b473b5233baa382d014"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead_faultlever/lights.xml",
+                      "size":  222523,
+                      "sha256":  "7d2e376384f5ba4cd67669c4cb46a24ece5720b1d7686c5191dca8578faebad6"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead_faultlever/t00000837_terrain.glm",
+                      "size":  11811362,
+                      "sha256":  "fef6d159655e5c5b0bf09b19d8c2f7ddb6387972ab443a3cf0b60b8f3a11a00d"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead_quassostation/adv_arieki_ligo_thunderhead_quassostation.map",
+                      "size":  220572,
+                      "sha256":  "8b2708affd9dffc5fbb07104b7af26934225527457df79a01ed1d4557976cba3"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead_quassostation/adv_arieki_ligo_thunderhead_quassostation.vis",
+                      "size":  1756916,
+                      "sha256":  "9bb1936cf3fbe3e55614e2de30f2040da6f15fd90a6ace633d43582b00ba567c"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead_quassostation/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead_quassostation/lights.xml",
+                      "size":  604443,
+                      "sha256":  "268b34550127487eac522d3c4eee21b6d04b57b66d492c0e4daf097002fa2f3a"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead_quassostation/t00000839_terrain.glm",
+                      "size":  2618713,
+                      "sha256":  "afd987ef9d6b9d05dee94b2290de62921705508631aee9551cae7bf6b51c74f6"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead_rivasaattacolony/adv_arieki_ligo_thunderhead_rivasaattacolony.map",
+                      "size":  63924,
+                      "sha256":  "caf3eb41edfc438ae5f1d4cc8be5bc625006c7dddfc4b9ddf207570f68b4a3d2"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead_rivasaattacolony/adv_arieki_ligo_thunderhead_rivasaattacolony.vis",
+                      "size":  334155,
+                      "sha256":  "56fe2fc86c556d1124e3bd18d8f00b0e780b513f0745f4e95c0deb355849f281"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead_rivasaattacolony/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead_rivasaattacolony/lights.xml",
+                      "size":  335861,
+                      "sha256":  "74b4fed98a9c495110c4ec689cbba0caad869e71bf5de60539666b3113d0731e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_ligo_thunderhead_rivasaattacolony/t00000840_terrain.glm",
+                      "size":  1669512,
+                      "sha256":  "c4ae200d2cb83795d30b11169e1d35df1eb007c824cb573a29e2d5b059aa05d8"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss/adv_arieki_torden_abyss.map",
+                      "size":  462939,
+                      "sha256":  "7f4043d30b1a7d2889b1a2424101e6e789e4cb5d1d875acd60ef928d698170f4"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss/adv_arieki_torden_abyss.vis",
+                      "size":  6359597,
+                      "sha256":  "0dd25b705c4d532a54bb9b117aac50278af13dfa23932260894248a14c8260dd"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss/audioemitters.xml",
+                      "size":  3224,
+                      "sha256":  "27109095ec6079466a9bca09cd8df6d47b6cbf8f89529c745d804221fc84db5f"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss/lights.xml",
+                      "size":  560953,
+                      "sha256":  "79579e60822d704e0af6afba38d117e072cb5e5adf0fb2abc159eba03eeee122"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss/t000007ec_terrain.glm",
+                      "size":  4592015,
+                      "sha256":  "4a4ce4c0baaf0f32af4c9eae3d60765878058acc494da2b11b1d3976ca497a22"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss_dybukkar/adv_arieki_torden_abyss_dybukkar.map",
+                      "size":  133880,
+                      "sha256":  "a56080897364ab53b68e0000864252bff4a4914b91053e7adbd7c00bc4d3bf3e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss_dybukkar/adv_arieki_torden_abyss_dybukkar.vis",
+                      "size":  861211,
+                      "sha256":  "6107e03a0d7394d8c87eaac441ddd8ed1ca5740721387a54a0cf29f2e9cd0173"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss_dybukkar/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss_dybukkar/lights.xml",
+                      "size":  138342,
+                      "sha256":  "3339870610534ff7d5259f3bcf037bf09d853315a7f67cb0913078c3f1e29d36"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss_dybukkar/t0000088e_terrain.glm",
+                      "size":  1178969,
+                      "sha256":  "90298901913df0a0f4b2aadd7951376f65620dfacf8440063231f9bd5fc9d22e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss_omegalabs/adv_arieki_torden_abyss_omegalabs.map",
+                      "size":  166588,
+                      "sha256":  "e580479357bc269106ec223f9a7c607d3787194d34d3e10b0824340689fb7029"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss_omegalabs/adv_arieki_torden_abyss_omegalabs.vis",
+                      "size":  299145,
+                      "sha256":  "46cf3d208d5620b7f7708b48d886ff9929d59225b0e237a026feb87c549cf8cf"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss_omegalabs/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss_omegalabs/lights.xml",
+                      "size":  96433,
+                      "sha256":  "c2507f2ac8b64498fcd4000c3e81b450f4b7046e42155c3fb6b575a0c753af15"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss_omegalabs/t0000089b_terrain.glm",
+                      "size":  246881,
+                      "sha256":  "8f8d3199362c49e24fe5cf270bb1e78f7f23ec82ca97c5826ea6ccd6abe713aa"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss_tampei/adv_arieki_torden_abyss_tampei.map",
+                      "size":  54780,
+                      "sha256":  "9a2c6f2ccb310834e7348f2b3aaa69fdbda4a8c5c0dfc7666868e2e699424e61"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss_tampei/adv_arieki_torden_abyss_tampei.vis",
+                      "size":  229731,
+                      "sha256":  "fdea321e39ffc164a1302dd0a94c04265b3508b07b9b63d8744ab2019bf49bf9"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss_tampei/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss_tampei/lights.xml",
+                      "size":  184200,
+                      "sha256":  "62bc92bbfda4ef7a1e1768af903c06109ef1104825dc2770f26f3db064d09d6a"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_abyss_tampei/t0000086b_terrain.glm",
+                      "size":  464993,
+                      "sha256":  "0b280c79f2ebd361c5d4dc75c861e889a3f6b185d8e45fa489b9039807962eb6"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline/adv_arieki_torden_incline.map",
+                      "size":  296905,
+                      "sha256":  "adbd0942fdf2fdffad9de823425876973adcf29b088f9611428e0440f9fc8392"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline/adv_arieki_torden_incline.vis",
+                      "size":  3102900,
+                      "sha256":  "97c076a1cf70f624cb0ea2cb625c7172e92cc70dddb6614d038bce511b9f322b"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline/audioemitters.xml",
+                      "size":  46652,
+                      "sha256":  "53a56c2f1db48efa3fbee0f8ee51f61a5821d461295d03cd467c1dfaafec9509"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline/lights.xml",
+                      "size":  178368,
+                      "sha256":  "2256c556175fb048cff25d3d5a90d20bdf6d6ae80f8bdbb05e333f26cf62ddd6"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline/t000006e1_terrain.glm",
+                      "size":  13829855,
+                      "sha256":  "b66509a76c9f67d0741962e779c35bff9b5832b8963959671c92c27f92fc19c1"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline_commtower/adv_arieki_torden_incline_commtower.map",
+                      "size":  92168,
+                      "sha256":  "6e279cec68dee0b36dea4d43bcbfe281fff0615b38348a54d228faf860966c72"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline_commtower/adv_arieki_torden_incline_commtower.vis",
+                      "size":  3408882,
+                      "sha256":  "4b1b9a9e1dd6e0a253fb8cd3923034380d156dd0cf12225934542db910b57413"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline_commtower/audioemitters.xml",
+                      "size":  36281,
+                      "sha256":  "6102a5e5ced1406995b508bdbc16d9c09c9434c88794e2515eb413680e45fe40"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline_commtower/lights.xml",
+                      "size":  535848,
+                      "sha256":  "ab883abc0d2e2e28a0f194fa3b05008480257411f0f0887f7b13f2e2e3be2d4f"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline_commtower/t00000825_terrain.glm",
+                      "size":  2504025,
+                      "sha256":  "8e5fa03521cba5a947153e1e9633be1e01525d1ed743dba498f33ccde981a335"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline_ojasaattahive/adv_arieki_torden_incline_ojasaattahive.map",
+                      "size":  105709,
+                      "sha256":  "c122632a075ededdcd54f0fad7e1ab94f4f49c47c16bea420e1f1c6d8628d78f"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline_ojasaattahive/adv_arieki_torden_incline_ojasaattahive.vis",
+                      "size":  1212785,
+                      "sha256":  "98b3884f169e8c2f8c79eacab6093d31f500267e13e80d8358a14888fb3d4113"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline_ojasaattahive/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline_ojasaattahive/lights.xml",
+                      "size":  380154,
+                      "sha256":  "d8d26fe6eb7d4b03a3e58dfc018315821259cef6f7eb5429e063528516ce4c78"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline_ojasaattahive/t00000749_terrain.glm",
+                      "size":  3179865,
+                      "sha256":  "0a2b1ccf8996dd3709b667034c936bd5b6260c3dea1860f5070ccd03aa675b29"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline_wardenbotfactory/adv_arieki_torden_incline_wardenbotfactory.map",
+                      "size":  75701,
+                      "sha256":  "56255cdf203f1ab79725c792462226821b1efd69259ca7ad865c4ee6b997abbd"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline_wardenbotfactory/adv_arieki_torden_incline_wardenbotfactory.vis",
+                      "size":  474182,
+                      "sha256":  "1bab3dff7bedf4389e8a36c3f4b66170e05cd792c8ed8a8cf43ca5e401cbb54c"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline_wardenbotfactory/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline_wardenbotfactory/lights.xml",
+                      "size":  15869,
+                      "sha256":  "cd7b834d8cfbc24637eb6930afa98ed6566cf0f6e1822218c30d33ef3795545a"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_incline_wardenbotfactory/t0000083f_terrain.glm",
+                      "size":  249953,
+                      "sha256":  "c9533a3a28899bf442970c563784169facdb5ea94d4e8ae5c074dff33c666298"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires/adv_arieki_torden_mires.map",
+                      "size":  450893,
+                      "sha256":  "f056887ad8cf7ba368c06704740910ac01da4ba1e97bf5bb2f34112829d9ffd0"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires/adv_arieki_torden_mires.vis",
+                      "size":  5585781,
+                      "sha256":  "e097793c05eff2c095109b76c338a5cebefdc68b81bd93660b558d79a54614f8"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires/lights.xml",
+                      "size":  203101,
+                      "sha256":  "55a296d1bb10bf2759534ec0d2eb5a207ea90c4c825e7d9ad2c15bc15c333d5b"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires/t000006df_terrain.glm",
+                      "size":  30032989,
+                      "sha256":  "20252ca785e6251f50faa69be4fdb94d1f18f32f11e088bb446e5fe607be3774"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires_banefluxitemines/adv_arieki_torden_mires_banefluxitemines.map",
+                      "size":  163024,
+                      "sha256":  "d835f6c4a598087b15e68efa6b4a491192db614749e072bdeeee034f06f7c62f"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires_banefluxitemines/adv_arieki_torden_mires_banefluxitemines.vis",
+                      "size":  5083419,
+                      "sha256":  "2d1feb1524509a893e82305b4a98a9759bf0c1050e3caed083e1949151b7f177"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires_banefluxitemines/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires_banefluxitemines/lights.xml",
+                      "size":  52807,
+                      "sha256":  "2a3322553edc77985b0f23f30d612703ec7e8da3d2d0cea8ac23635bb2e3ff93"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires_banefluxitemines/t00000843_terrain.glm",
+                      "size":  1825529,
+                      "sha256":  "6f507173ca34b8aab9353c397a5b6820fefd1eed9eae297cd90c104802d06164"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires_energyweaponcenter/adv_arieki_torden_mires_energyweaponcenter.map",
+                      "size":  21288,
+                      "sha256":  "bf5c65df05ec9355561e19dfee49a8f8f1cae9603b68bf5e87691be72a09f192"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires_energyweaponcenter/adv_arieki_torden_mires_energyweaponcenter.vis",
+                      "size":  24937,
+                      "sha256":  "e5a5f1be75085c896af5fab68b7bd19f28076c3ee8ed0d9bd870a3aa8571a2ad"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires_energyweaponcenter/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires_energyweaponcenter/lights.xml",
+                      "size":  15314,
+                      "sha256":  "2b871a75115a97b4ee8c9bf393d608501b973611379f73cdb2d6ec4fea709662"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires_energyweaponcenter/t0000083b_terrain.glm",
+                      "size":  632889,
+                      "sha256":  "64bef257b42fff61fc5c384a480153055e4f98869a4972c76cca866d1932d8cf"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires_tahrendrabase/adv_arieki_torden_mires_tahrendrabase.map",
+                      "size":  120660,
+                      "sha256":  "42f5e6799bd121af16f0141567199e05fafe78620cbaf60c8aeadbbade8cd2ec"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires_tahrendrabase/adv_arieki_torden_mires_tahrendrabase.vis",
+                      "size":  47937,
+                      "sha256":  "fac3c1031da6abae2cb29536510baad069931d50f046f93328d04a21d510e47e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires_tahrendrabase/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires_tahrendrabase/lights.xml",
+                      "size":  320417,
+                      "sha256":  "723324342a9c84ff6785b00eb6217fce214c21dfd1e7a2ee79420b751cd7a9c1"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_mires_tahrendrabase/t0000084d_terrain.glm",
+                      "size":  108641,
+                      "sha256":  "d7c566cc025feee909a6909ffde8ac1e61d67cf8afeed6ee21dc77d1a5f2b9ce"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains/adv_arieki_torden_plains.map",
+                      "size":  271679,
+                      "sha256":  "7fbbf7029840a266738713685433bf2eb5788d6fb18864872e1ec9f331d79ac7"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains/adv_arieki_torden_plains.vis",
+                      "size":  846452,
+                      "sha256":  "c1a8d1953ea38c7aa6843c11672a0e74e32fd8f7d4605340928e9ba739e0b710"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains/audioemitters.xml",
+                      "size":  24101,
+                      "sha256":  "daf3b9468b6e7dc3115ec4605e971375f79c3be5ca3303314da322d267917cb5"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains/lights.xml",
+                      "size":  339687,
+                      "sha256":  "836101396912b5780c0be88f1936a422cebf841435b25dd7fb26a00eafe58382"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains/t000006e4_terrain.glm",
+                      "size":  14940295,
+                      "sha256":  "547af56cc7b92f7db23e44b3ffb300c071335b571733bdf15b4bab7bcd5586d2"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains_attacolony/adv_arieki_torden_plains_attacolony.map",
+                      "size":  133348,
+                      "sha256":  "1808444098497627d6e6789cb261e2e8cb71a954380aef2056c38ba7e93023ff"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains_attacolony/adv_arieki_torden_plains_attacolony.vis",
+                      "size":  524932,
+                      "sha256":  "813c704e5fdf4319c15b632ebf947752e4c56bd6094ff4a612f0937012bddc64"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains_attacolony/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains_attacolony/lights.xml",
+                      "size":  1014324,
+                      "sha256":  "ed9c2c29239531d7683a66e5f6785d8c6e48558229b51e4abcf2ab26b8ba46d2"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains_attacolony/t000006ed_terrain.glm",
+                      "size":  3176840,
+                      "sha256":  "e2e50146196dfea8aafd2c3f50a3596187c3b88be7bec376785f0cdfc74ae53f"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains_brannwaterrefinery/adv_arieki_torden_plains_brannwaterrefinery.map",
+                      "size":  257362,
+                      "sha256":  "a61837071bad9cd2b810cbc5b232dff82bd4ba25781103878bd301cbefd0ba23"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains_brannwaterrefinery/adv_arieki_torden_plains_brannwaterrefinery.vis",
+                      "size":  2729183,
+                      "sha256":  "85e51df5a033645ce3eaf676eb5a15ddb96fcd220849457918fd2024612e7cfd"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains_brannwaterrefinery/audioemitters.xml",
+                      "size":  22879,
+                      "sha256":  "c423bab2023e4ba729c875cfebd0b9ac098ef5d7d3d7e1dad1542e661b28b2c8"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains_brannwaterrefinery/lights.xml",
+                      "size":  295164,
+                      "sha256":  "be61ed1e1c34e079fabc07b463b823cfe0948f1e20aca321b8cbe7adf8295ac4"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains_brannwaterrefinery/t0000082d_terrain.glm",
+                      "size":  3546778,
+                      "sha256":  "721cc69e353e5e78f56f2a2de7e013ff922a260f5e2e30efe3b76785a235b694"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains_penalresearch/adv_arieki_torden_plains_penalresearch.map",
+                      "size":  125720,
+                      "sha256":  "8e336037ba242ad497e6dc7b10909200075dd7d854bc90816df96af471584ba0"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains_penalresearch/adv_arieki_torden_plains_penalresearch.vis",
+                      "size":  887042,
+                      "sha256":  "316ddb2e519854a0a2c9bee53eb0470242549273ce8986e8e2dde21e632f6446"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains_penalresearch/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_arieki_torden_plains_penalresearch/lights.xml",
+                      "size":  126887,
+                      "sha256":  "9a6cf038ae73a3bc24d5ed75f8b60792d6805a309814b09932b1e63bf78c7fdf"
+                  },
+                  {
+                      "path":  "data/maps/adv_bootcamp/adv_bootcamp.map",
+                      "size":  127212,
+                      "sha256":  "2876982ba3473dcb57d5cc4a1b88d75710349a71948d85fafb499b2a8f5106f3"
+                  },
+                  {
+                      "path":  "data/maps/adv_bootcamp/adv_bootcamp.vis",
+                      "size":  1095444,
+                      "sha256":  "77acad444f71d1764164f303a9416c1d12328841d4e0d073d60e653ec94c7cc1"
+                  },
+                  {
+                      "path":  "data/maps/adv_bootcamp/audioemitters.xml",
+                      "size":  8399,
+                      "sha256":  "d8c8d097d7319ae90a4464a943b71e9d6ac6cb66874cd3f2c264b86dea333bcf"
+                  },
+                  {
+                      "path":  "data/maps/adv_bootcamp/lights.xml",
+                      "size":  134739,
+                      "sha256":  "ac34d1cd4a02e985220b47e61994b8d85503e6a2d138853517daeb73b1eeea83"
+                  },
+                  {
+                      "path":  "data/maps/adv_bootcamp/t000007c1_terrain.glm",
+                      "size":  1724808,
+                      "sha256":  "d8ebe59b5eaf214413977a972e3ea98aa56694231050e5d6eb093a02b9939e01"
+                  },
+                  {
+                      "path":  "data/maps/adv_earth_unitedstates_manhattan_01/adv_earth_unitedstates_manhattan_01.map",
+                      "size":  154318,
+                      "sha256":  "c5452ed14b2aaa751756707962bcd2942b8bc3cec1bd822c4476f71432210da5"
+                  },
+                  {
+                      "path":  "data/maps/adv_earth_unitedstates_manhattan_01/adv_earth_unitedstates_manhattan_01.vis",
+                      "size":  421988,
+                      "sha256":  "afa12a2c0421e2696ee99feb554a577febac74061c013c1374dae4d68101e447"
+                  },
+                  {
+                      "path":  "data/maps/adv_earth_unitedstates_manhattan_01/audioemitters.xml",
+                      "size":  9432,
+                      "sha256":  "c6eb8b910e2fe50f5ffe453faf57221a7220685300817e4b1ae50b6e9b43c74b"
+                  },
+                  {
+                      "path":  "data/maps/adv_earth_unitedstates_manhattan_01/lights.xml",
+                      "size":  77689,
+                      "sha256":  "20e803668691d616f2f92317050a5749a933555478ceed6c33fbc11d6ddf4478"
+                  },
+                  {
+                      "path":  "data/maps/adv_earth_unitedstates_manhattan_01/t0000091b_terrain.glm",
+                      "size":  2007187,
+                      "sha256":  "06d750cbac6975825dcca504da79df6d6cd7a0da559f738286d14e8808efa005"
+                  },
+                  {
+                      "path":  "data/maps/adv_earth_unitedstates_manhattan_01_shared/adv_earth_unitedstates_manhattan_01_shared.map",
+                      "size":  153790,
+                      "sha256":  "944852ba7b708668bfc51029a1bcc282d375f7f60f8abc3c5a197d9ed6509010"
+                  },
+                  {
+                      "path":  "data/maps/adv_earth_unitedstates_manhattan_01_shared/adv_earth_unitedstates_manhattan_01_shared.vis",
+                      "size":  421988,
+                      "sha256":  "afa12a2c0421e2696ee99feb554a577febac74061c013c1374dae4d68101e447"
+                  },
+                  {
+                      "path":  "data/maps/adv_earth_unitedstates_manhattan_01_shared/audioemitters.xml",
+                      "size":  9432,
+                      "sha256":  "c7342d1bc8166ab2b7761969eb7e93c77ac437cf6502ce42981d7e27a7098b55"
+                  },
+                  {
+                      "path":  "data/maps/adv_earth_unitedstates_manhattan_01_shared/lights.xml",
+                      "size":  77689,
+                      "sha256":  "7fb258a4477cd6ca5d0ac28f657051f3db7d225e67eaaba289d6e196c3c6d3a7"
+                  },
+                  {
+                      "path":  "data/maps/adv_earth_unitedstates_manhattan_01_shared/t0000094a_terrain.glm",
+                      "size":  2007195,
+                      "sha256":  "ddb59802e3b85f89e6222d0d42d0e514b002e17492d1ce3d34e3605d7f180d0e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide/adv_foreas_concordia_divide.map",
+                      "size":  673409,
+                      "sha256":  "f73142fc0b30630ec777f833d659337e5a89aff693e0ebdfd3318617a3b73171"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide/adv_foreas_concordia_divide.vis",
+                      "size":  3249658,
+                      "sha256":  "b5baefcf1de4de93b543c0faa2d3a01a150ebf2edc381d40af720d2070f2fb0a"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide/audioemitters.xml",
+                      "size":  160125,
+                      "sha256":  "59ba0c3221fb6df845e300fff3b9c124438ed419e1f5c15ef090c7818fe9cc04"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide/lights.xml",
+                      "size":  249027,
+                      "sha256":  "f2cc350e592c48ff9a32cf078e1243dd919edda8d8800890ac707b4301badffc"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide/t0000051a_terrain.glm",
+                      "size":  23160758,
+                      "sha256":  "facd77f6d8e37189895df411b829e1e20578c1132084e19b3fccbc34ff196231"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_minoscaverns/adv_foreas_concordia_divide_minoscaverns.map",
+                      "size":  33008,
+                      "sha256":  "49962533434cb7bae7cc990d4d95d8340121f9d4ee974ca3f1aeef1ccac063e7"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_minoscaverns/adv_foreas_concordia_divide_minoscaverns.vis",
+                      "size":  2103762,
+                      "sha256":  "e3f177c62591b5665304395eb35cd507884e1d9aef43febaacb37a21a0ddd895"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_minoscaverns/audioemitters.xml",
+                      "size":  31071,
+                      "sha256":  "5046c22f96c38c40bc444c0b43ebc03b624cea34180d496ed5c021106ba96037"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_minoscaverns/lights.xml",
+                      "size":  206514,
+                      "sha256":  "491bca51cf4add51a83c10601e70d93a25a5d6e7ec7ded2fab14a7ec3fa73228"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_purgasstation2/adv_foreas_concordia_divide_purgasstation2.map",
+                      "size":  136620,
+                      "sha256":  "6628f875a0c97e5566164c6504a064038162289bb58cb5c5504cbf1f660bfc23"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_purgasstation2/adv_foreas_concordia_divide_purgasstation2.vis",
+                      "size":  1490740,
+                      "sha256":  "cd48cf23b56adc421dc2eb05cd89be39b297d65db8082c3989ba1b9d91426a0e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_purgasstation2/audioemitters.xml",
+                      "size":  8375,
+                      "sha256":  "811d6a8c989f5630c1286b047fdc234cc47e69251fe552a4ee8d618d5c7ff7ff"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_purgasstation2/lights.xml",
+                      "size":  77224,
+                      "sha256":  "b915164d9f70bf1ec3c0b63aedc3da9488a25c0c55ab050686cd9228c1827f1c"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_timoramines/adv_foreas_concordia_divide_timoramines.map",
+                      "size":  81753,
+                      "sha256":  "4cbd2812914c653ea8286851fcb811ef70fd1a77b54ce4528ca58531f16d5601"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_timoramines/adv_foreas_concordia_divide_timoramines.vis",
+                      "size":  2267625,
+                      "sha256":  "58cd92d21a4b52f67f4d6a0550e5aea790f3eebea102e3d58d58863e4ba28553"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_timoramines/audioemitters.xml",
+                      "size":  1153,
+                      "sha256":  "e8453739343adf4bec2c0e65df26fcdfc208deb79c05a0afc91303ef9858f843"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_timoramines/lights.xml",
+                      "size":  35431,
+                      "sha256":  "285da054f1c4fa2fe79e2b6bc980f96139de548565e1c1d7cebc88a9eb11aa36"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_timoramines/t000005e1_terrain.glm",
+                      "size":  2442632,
+                      "sha256":  "0bf8c96fe9611ee8f3581c30faaa483754edeb5111f6e699aa873e9539c67a90"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_torcastraprison/adv_foreas_concordia_divide_torcastraprison.map",
+                      "size":  77652,
+                      "sha256":  "9f300ba5b0eeca08dc256844b3cb41a1acc9d27d867bac54d48f5fe6e7cefe47"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_torcastraprison/adv_foreas_concordia_divide_torcastraprison.vis",
+                      "size":  7096851,
+                      "sha256":  "c9ea959827e4cc2b08ad7d5179b2ff69d6eacb46e29b78796a426cdcbec6a3ad"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_torcastraprison/audioemitters.xml",
+                      "size":  40642,
+                      "sha256":  "56b9e56e0a31e0794d36ecd292462060d1b2f4221609485642b9b3750deeaeca"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_torcastraprison/lights.xml",
+                      "size":  1609,
+                      "sha256":  "38b9838e9e2655f038743762ef37e5c86eb32ed9378fc8336e2ca8a51635a056"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_divide_torcastraprison/t000005e2_terrain.glm",
+                      "size":  1791368,
+                      "sha256":  "b169309ad7e7ce349c21386da1bc5f5389359fb32a1f6cb00849647b1e09fbd2"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_elohcommtower2/adv_foreas_concordia_elohcommtower2.map",
+                      "size":  130288,
+                      "sha256":  "94b8512bafb4cfeea98fbd4b729a03cd31bd61f6c7c596ab77343441e3b2e19b"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_elohcommtower2/adv_foreas_concordia_elohcommtower2.vis",
+                      "size":  1228478,
+                      "sha256":  "234d3a2d8f8c008feeabf41d47a7a30af681421f23ef2f3e0d99328980f69b20"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_elohcommtower2/audioemitters.xml",
+                      "size":  5296,
+                      "sha256":  "bb986cfe137f3860259cfac015c5718b294f1b79b94ff8782397bb6a3f4055f6"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_elohcommtower2/lights.xml",
+                      "size":  70020,
+                      "sha256":  "a011288377e189c327507155b065b1e943aeb4a86a30d1f46424c5ee9a10cecd"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_elohcommtower2/t00000824_terrain.glm",
+                      "size":  2338804,
+                      "sha256":  "e155ca74b4c0cd9c26b7eb5393eef458a9fe65f28c8b7e51db035c3e9200ad74"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades/adv_foreas_concordia_palisades.map",
+                      "size":  434262,
+                      "sha256":  "899180a7a717fb686b33d042de437c87edc1b6af328c6b80f59c14b4d915a917"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades/adv_foreas_concordia_palisades.vis",
+                      "size":  624595,
+                      "sha256":  "87a4282b3ef4c8f1755c40aea92cf3eb22d0feca4a377070c4737b4b155446a1"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades/audioemitters.xml",
+                      "size":  189403,
+                      "sha256":  "70656a5992cb019e5472adfb9bf99d15a1aee9c8ff426061e5a7b8e7ccedf4f5"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades/lights.xml",
+                      "size":  109291,
+                      "sha256":  "57a181f14832622fdae0fad1638d66e86609c336629b973bf84127ab7be4de66"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades/t0000057a_terrain.glm",
+                      "size":  15624284,
+                      "sha256":  "f4e2cac934decb1774111e5d5421f68cf9411df3037535a938fcb5aa04e3a710"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_devilsden/adv_foreas_concordia_palisades_devilsden.map",
+                      "size":  55108,
+                      "sha256":  "85ee7126b91653dd834269f8a6ff6575a985a00d2ad814164d8bcba57eb671f2"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_devilsden/adv_foreas_concordia_palisades_devilsden.vis",
+                      "size":  1220952,
+                      "sha256":  "3610aacf740f85194667f8e1105b6624c8f314bd56dcc1075f21b554f8bc692d"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_devilsden/audioemitters.xml",
+                      "size":  9425,
+                      "sha256":  "9a9d9e247ac555719294b22e08ccbd544ff5b1b750d82620f8ab27ac72ffbe7c"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_devilsden/lights.xml",
+                      "size":  180462,
+                      "sha256":  "2cf161c118f26a4c3964a656f78d4730e4cfa564c3adbb4ecd4c43befebbb0c9"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_devilsden/t0000060f_terrain.glm",
+                      "size":  1548191,
+                      "sha256":  "5db197a41048f9111ceafa68d3f52c97de8cdcb561bb675c669a0e3d99761486"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_elohtemples/adv_foreas_concordia_palisades_elohtemples.map",
+                      "size":  34124,
+                      "sha256":  "86ccbf64eda5df7e21b18b76a2859640747d73eb80b145a9d1d20f54cd883582"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_elohtemples/adv_foreas_concordia_palisades_elohtemples.vis",
+                      "size":  971780,
+                      "sha256":  "6cc783e928fc11ae0b0bf62dd1a692a6fe69440e90ee56862261a39795d22a1a"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_elohtemples/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_elohtemples/lights.xml",
+                      "size":  47030,
+                      "sha256":  "6aaa1f8fdd832bc71c6f70f2eb451a327308fdbc7a5e9dfc6ce4db538e4711a9"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_elohtemples/t0000070b_terrain.glm",
+                      "size":  33889,
+                      "sha256":  "b244e5158d83a9efda35d8ed5de5be67b33114e34eba181f055a977165b8b433"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_treebackcamp/adv_foreas_concordia_palisades_treebackcamp.map",
+                      "size":  53436,
+                      "sha256":  "cd84b96a83ca6fdbcfcd9ea8e8569200a875eba323d407f9c780976b2d3a9571"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_treebackcamp/adv_foreas_concordia_palisades_treebackcamp.vis",
+                      "size":  1230816,
+                      "sha256":  "c837dc3090f6459fcfbc8315e45fd1c16df88ed2a37783e9b4a1bbaa5f08ecbb"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_treebackcamp/audioemitters.xml",
+                      "size":  105,
+                      "sha256":  "48053d5b7e640f2f8eacd545a6301bfac202e019db9e24757f222fffcb81b7e9"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_treebackcamp/lights.xml",
+                      "size":  4427,
+                      "sha256":  "d02b324ed72e87fd526049a4c89b35574c2809a5b58dc3051f5d43ceab9e5120"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_treebackcamp/t00000612_terrain.glm",
+                      "size":  6623135,
+                      "sha256":  "71bcef319066089b7ff5d730bc1931313d116e66351362202b6652f735434e3e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_warnetcaverns/adv_foreas_concordia_palisades_warnetcaverns.map",
+                      "size":  92730,
+                      "sha256":  "e9ef2dcfcad63cdffd0d2d1319c78ffed17be0326a395a627b60db50a1a72f3b"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_warnetcaverns/adv_foreas_concordia_palisades_warnetcaverns.vis",
+                      "size":  5361904,
+                      "sha256":  "dce764e29f5fbb3609a2875da824947a2e2661a3bc7fcb086470e71caa6673ee"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_warnetcaverns/audioemitters.xml",
+                      "size":  46614,
+                      "sha256":  "84c6f1556f745ee7143fb86950465d8bf068deefef7f378453a5913f8b44a625"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_warnetcaverns/lights.xml",
+                      "size":  269326,
+                      "sha256":  "18144c3df53ca1f8ef340ee769a8459a1171c19a9434b6ab1e1a936e90d2d680"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_palisades_warnetcaverns/t00000605_terrain.glm",
+                      "size":  956319,
+                      "sha256":  "3c3b5c305a2d5b247c79a80f6c821c8fa4e2dfe194491fed93ce357a1cccbdfc"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness/adv_foreas_concordia_wilderness.map",
+                      "size":  509133,
+                      "sha256":  "86a6c190377b66ece30a99fb36a038db6d3ccfcce195081186112488cbe07a5e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness/adv_foreas_concordia_wilderness.vis",
+                      "size":  950431,
+                      "sha256":  "d2c4fdfb77fa1d8e27cc8d49ccbe17b1ac828d08158663ae0f699d4172daa419"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness/audioemitters.xml",
+                      "size":  61452,
+                      "sha256":  "1d0b4ad40b2586f5ea73e85432276cc3e3a6df20a378886c73860889eff41468"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness/lights.xml",
+                      "size":  592732,
+                      "sha256":  "998f2150beeb51b1fb5f89317b5e58e1f086d7b719fc9cbcf36c0679070a4ad9"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness/t00000562_terrain.glm",
+                      "size":  14797561,
+                      "sha256":  "575f1f0ea43c17189d1b43ed7e3c0ca7c909fe420d020c0d2afcfb78a184c6ed"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_cavesofdonn_epic/adv_foreas_concordia_wilderness_cavesofdonn_epic.map",
+                      "size":  75668,
+                      "sha256":  "17662f7062c820ff6ad34bb071b3eebd96047286aa342cb58e0553894b6faa61"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_cavesofdonn_epic/adv_foreas_concordia_wilderness_cavesofdonn_epic.vis",
+                      "size":  514254,
+                      "sha256":  "a2c4234f7a80852a23c33d9123a2499be6117d3974635ba78b34c7f8fd012c42"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_cavesofdonn_epic/audioemitters.xml",
+                      "size":  44644,
+                      "sha256":  "bd261241c4a8332b08b7d273ce28df378287cfb6a383abcc2be5e428f94fc3b5"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_cavesofdonn_epic/lights.xml",
+                      "size":  61742,
+                      "sha256":  "90bff7cf0a887ef7f7e6b20b6f840bd5ea8b2387d9c4edfd00bd76a69476280d"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_cavesofdonn_epic/t00000943_terrain.glm",
+                      "size":  618904,
+                      "sha256":  "5e031c71a6f5fe6f428bff20bdd47d594805298086795fde51d275f035e4a713"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_cavesofdonn02/adv_foreas_concordia_wilderness_cavesofdonn02.map",
+                      "size":  77420,
+                      "sha256":  "9e5016bd402f0a7f33ed4dc7cb6bbb111cb63cd21732bb98238e3062904ee6a3"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_cavesofdonn02/adv_foreas_concordia_wilderness_cavesofdonn02.vis",
+                      "size":  514254,
+                      "sha256":  "a2c4234f7a80852a23c33d9123a2499be6117d3974635ba78b34c7f8fd012c42"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_cavesofdonn02/audioemitters.xml",
+                      "size":  44644,
+                      "sha256":  "bd261241c4a8332b08b7d273ce28df378287cfb6a383abcc2be5e428f94fc3b5"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_cavesofdonn02/lights.xml",
+                      "size":  95325,
+                      "sha256":  "038b53bf507e4283986b2dc3666a5c8e08a0aa614f8ea3a5eaabfd19b7b7ab65"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_cavesofdonn02/t0000067f_terrain.glm",
+                      "size":  618888,
+                      "sha256":  "88286770551be0216657b07fc1978f1fe3d182667ff1aac3af010e22aeb96e30"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_clrf/adv_foreas_concordia_wilderness_clrf.map",
+                      "size":  47503,
+                      "sha256":  "4479226debe5c3f478d1987c33d5e2c3effc3be171c6380072216c23c13a1a67"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_clrf/adv_foreas_concordia_wilderness_clrf.vis",
+                      "size":  1315208,
+                      "sha256":  "3a7e600ef549e23265a4590530a3c5ccda1dd891903f7205cbe8b55ba029bf32"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_clrf/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_clrf/lights.xml",
+                      "size":  21457,
+                      "sha256":  "088f159f8e940734d0fe9a7780cc92d4651f768a095544a0f200dc7d2320f432"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_clrf/t000006b9_terrain.glm",
+                      "size":  1674632,
+                      "sha256":  "e81e743ebf0a51ae5fbc276910b6244883b5599e851ef945c5579039ffad1bbd"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_guardianprom/adv_foreas_concordia_wilderness_guardianprom.map",
+                      "size":  60023,
+                      "sha256":  "5f79e93a2411a5d0f95552ce58a03b68b299600395a0b843ec3f61be5278e1d4"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_guardianprom/adv_foreas_concordia_wilderness_guardianprom.vis",
+                      "size":  882010,
+                      "sha256":  "8e5309c393c94b6734b6732c2f9b5acba8da601c14759db6319d4d40683ba392"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_guardianprom/audioemitters.xml",
+                      "size":  5299,
+                      "sha256":  "e3a1dcf8bcf9595d00a178aa0c4f621cf02357bbbe3e51a5b285bf96fd080429"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_guardianprom/lights.xml",
+                      "size":  110275,
+                      "sha256":  "e62080bf9f48f3aa2587c9829914cc526a62fe64c8ab2ffaad4ce36d500cd6ed"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_guardianprom/t00000625_terrain.glm",
+                      "size":  2452134,
+                      "sha256":  "9f3ac4e108e599a05c8776e2954da12ba6c959159c5e5784f459e32c97862284"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_pravusresearch/adv_foreas_concordia_wilderness_pravusresearch.map",
+                      "size":  164405,
+                      "sha256":  "ccb6d875ed649cfe2c8a6e48c3224b37b829f0c53a461c016bb5731696ab55c5"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_pravusresearch/adv_foreas_concordia_wilderness_pravusresearch.vis",
+                      "size":  1119063,
+                      "sha256":  "1ac315c00f928b4bd1515971a325f535dded19b2be83174f061ae6605e001437"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_pravusresearch/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_pravusresearch/lights.xml",
+                      "size":  41341,
+                      "sha256":  "428664282ca4df16c5ad0f9f4f616ab0a8bdc348151aac4e31c7f269102fd5dc"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_concordia_wilderness_pravusresearch/t00000633_terrain.glm",
+                      "size":  9553870,
+                      "sha256":  "d647cd5387f7e2ff9bf8b7ecb3785c97851cd566429d84447ae3a986f138c0ef"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_howlingmaw_cuthahbase/adv_foreas_howlingmaw_cuthahbase.map",
+                      "size":  123024,
+                      "sha256":  "20c2a0b6320b707dd7cd130a151d1c649b9bcb5f9d5501f8ff103a7f626063a5"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_howlingmaw_cuthahbase/adv_foreas_howlingmaw_cuthahbase.vis",
+                      "size":  2102037,
+                      "sha256":  "32616302f7e8713e442d73aa505d88947c2e0c9a06647a471ba3321b6b0060b2"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_howlingmaw_cuthahbase/audioemitters.xml",
+                      "size":  11512,
+                      "sha256":  "4e18a20f579342e86a06ad9044ad87593fd58361b8277ca49acc48a69a147a08"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_howlingmaw_cuthahbase/lights.xml",
+                      "size":  78218,
+                      "sha256":  "230ea1a11049417ad6f58b7969b0025dedf13250ddeb3594ddfb0ea19f4ef6e9"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_howlingmaw_cuthahbase/t00000872_terrain.glm",
+                      "size":  1822704,
+                      "sha256":  "04f3e828d9e929eff4fa75197de035c280cfadc01f2039f222ecb007cb9a1572"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_howlingmaw_deathburrow/adv_foreas_howlingmaw_deathburrow.map",
+                      "size":  160843,
+                      "sha256":  "b7daad1c57a3914e70fbf8f6078fc36f0d4496bb5a30ce01826a9fb67ba4f69e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_howlingmaw_deathburrow/adv_foreas_howlingmaw_deathburrow.vis",
+                      "size":  469282,
+                      "sha256":  "86f4b74b9c4347c94e041fbb9c83cab3bd624335c303b7e6ab7110b2f6c61655"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_howlingmaw_deathburrow/audioemitters.xml",
+                      "size":  26000,
+                      "sha256":  "038f2537b8ef281f6294eeb08d12d4dc81a5416570e8ebc5942ea3af5afd6b1f"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_howlingmaw_deathburrow/lights.xml",
+                      "size":  906597,
+                      "sha256":  "8517c8ba9375d300dc1274d7ce5970bb1d0f8e91295f419fc253cf33de4a3582"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_howlingmaw_deathburrow/t00000858_terrain.glm",
+                      "size":  2475722,
+                      "sha256":  "1416dc0194d9f310ce63d90c29a4c8342a1d19394e047dfc3a3f8fbc3a87c784"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_howlingmaw1/adv_foreas_howlingmaw1.map",
+                      "size":  595187,
+                      "sha256":  "09da30dc371441d6b1201993eaca5bcba47b05a6cd1ba2da2d26ba78067d8241"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_howlingmaw1/adv_foreas_howlingmaw1.vis",
+                      "size":  1234907,
+                      "sha256":  "026d76ebed9436bed6b3b64630aede4ad8e40cb5fdf9a480e47d6c46b6e46c30"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_howlingmaw1/audioemitters.xml",
+                      "size":  105,
+                      "sha256":  "48053d5b7e640f2f8eacd545a6301bfac202e019db9e24757f222fffcb81b7e9"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_howlingmaw1/lights.xml",
+                      "size":  229802,
+                      "sha256":  "01c905a218cc936e1a6dde400002f6ee916a4a5d532e27c89bf61b6400a585e7"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_howlingmaw1/t00000803_terrain.glm",
+                      "size":  30807399,
+                      "sha256":  "cedbbed2ce59aebaebb8a061e0f725491e427c1ce34dbab85fa5484631324921"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_descent/adv_foreas_valverde_descent.map",
+                      "size":  230251,
+                      "sha256":  "2a60b6739837c921bf733007470b204a4386d0b310745f93fc5b321adbcae49d"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_descent/adv_foreas_valverde_descent.vis",
+                      "size":  4660957,
+                      "sha256":  "0d59d6fe0dd0e62a3846c5acd58e17ba5e5df5437d19e5eac1e9a7e85b5c60cf"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_descent/audioemitters.xml",
+                      "size":  3229,
+                      "sha256":  "fa8f0e59cc8c3835e1e7ffedfb96ed6e4a722d2f575240d99c883c6ec432baa8"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_descent/lights.xml",
+                      "size":  313241,
+                      "sha256":  "77de67082e8fe75810b33cc1e368066e489338a9f28a1e1690baa166cc40a86a"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_descent/t000007ff_terrain.glm",
+                      "size":  12553929,
+                      "sha256":  "3dd99fb4d253f79bd3dd8a8a7ba464cada62d75f7eaef2bf9601dc6b33444ce8"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_descent_inferno_outpost/adv_foreas_valverde_descent_inferno_outpost.map",
+                      "size":  216575,
+                      "sha256":  "31f6b2b96abe1b2ee6ce323ee639dc67975cdecf5a9867856b95b537557ea480"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_descent_inferno_outpost/adv_foreas_valverde_descent_inferno_outpost.vis",
+                      "size":  955519,
+                      "sha256":  "cd06d926a01bb2d5d8219d90dd40accb643b707a0aad432086bdb3b3c95897a4"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_descent_inferno_outpost/audioemitters.xml",
+                      "size":  44626,
+                      "sha256":  "2a1f465aea0d1ca2c6e22f701372b7f2b62c7c170ca195e7078d5726729eff1a"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_descent_inferno_outpost/lights.xml",
+                      "size":  126685,
+                      "sha256":  "25bec12ed66de87375819f1b524ce087b332ad5f0680476524006d52a73c1ce6"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_descent_inferno_outpost/t00000873_terrain.glm",
+                      "size":  390858,
+                      "sha256":  "97ea0c757b28971a2bf7c5edb6675d7d0742d507267c8f94245cec07d5219b9a"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_descent_therefuge/adv_foreas_valverde_descent_therefuge.map",
+                      "size":  35588,
+                      "sha256":  "255f3fcd4d82f6c6755435722a2d668370ed0980990db8720e7a3fc3fcfddb23"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_descent_therefuge/adv_foreas_valverde_descent_therefuge.vis",
+                      "size":  938855,
+                      "sha256":  "e1b396fb82123fcdeac54a56f5835e6d17a8d7f09545b03e915a56fd591b794f"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_descent_therefuge/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_descent_therefuge/lights.xml",
+                      "size":  116727,
+                      "sha256":  "c0c436a17ece6cf25ceff65dcc24cc554c547025deb67b2dcd71aece1cedb484"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_descent_therefuge/t0000086c_terrain.glm",
+                      "size":  342160,
+                      "sha256":  "9f4e7cd47c695894b9a9ea775c1fee6a1947fab87a65bf815729b878cacccea2"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes/adv_foreas_valverde_marshes.map",
+                      "size":  613714,
+                      "sha256":  "37f87f77e8b57e557b5acc3bfd8cfb713c1be4028c69a7b316754add4ad4cfe3"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes/adv_foreas_valverde_marshes.vis",
+                      "size":  1234364,
+                      "sha256":  "e823cc97f12e61bd8794d3d4954b9d1156c4eb32e4f496aee1720e5bc05dfa5a"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes/audioemitters.xml",
+                      "size":  1151,
+                      "sha256":  "54c90264b94bf2a042c3a664dda99d97db4c7242dd0dffd5a0690ca51761ed2e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes/lights.xml",
+                      "size":  243916,
+                      "sha256":  "33954905c3ad8fdd5f54508a3854cd08ab86672038f77b19106d7f0b4a9199f7"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes/t0000064b_terrain.glm",
+                      "size":  7985865,
+                      "sha256":  "d89f663dbdf0a1cd591ae9155e98537bb27ad025f23fcb6a73e0845dbf8ce42c"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_banesupplydepot/adv_foreas_valverde_marshes_banesupplydepot.map",
+                      "size":  84541,
+                      "sha256":  "0315e64282921d26038a22b1c01bf0b88f737d5b503791f0571c278433340743"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_banesupplydepot/adv_foreas_valverde_marshes_banesupplydepot.vis",
+                      "size":  4054010,
+                      "sha256":  "1520a4d439b283397fa6b317d185331f26669ef8e3ac05ef46093f34d75f76e7"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_banesupplydepot/audioemitters.xml",
+                      "size":  9441,
+                      "sha256":  "749b6fc85c881bf5aaea9e291d7e4af3753367b4eff1b8a9234134c00e6b65c0"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_banesupplydepot/lights.xml",
+                      "size":  165715,
+                      "sha256":  "44c8adac394a672caac82fc921dc4fda9a2ffe12cd1e5f597f0af4a3594ee9a1"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_banesupplydepot/t00000648_terrain.glm",
+                      "size":  2688927,
+                      "sha256":  "698890e3215a4ab2cc722729514659ccdd3c699dc5a217d0d180776c81ee6632"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_logosresearchfacility/adv_foreas_valverde_marshes_logosresearchfacility.map",
+                      "size":  143872,
+                      "sha256":  "30b38298ea0773361602b26fa03c8012fd312d910003c3dc04993fbdc755d328"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_logosresearchfacility/adv_foreas_valverde_marshes_logosresearchfacility.vis",
+                      "size":  1117809,
+                      "sha256":  "9ad753b6923ddbc1133965558a98c6aeb8df9223590ec33de2cb528921a9b372"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_logosresearchfacility/audioemitters.xml",
+                      "size":  1154,
+                      "sha256":  "83e1c718e280205d2c0b075852f516ac5492ceb6a7e872077c0b11422d9839d8"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_logosresearchfacility/lights.xml",
+                      "size":  226653,
+                      "sha256":  "fd668644a5e886f37f2573e10e95bead4231938e6824417545ac17d3e0c8f070"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_villageruins/adv_foreas_valverde_marshes_villageruins.map",
+                      "size":  156579,
+                      "sha256":  "c3748413c7b61cb364b02ac0bef715ba22585c3543a9bc7ff9c2b4c7e025ee55"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_villageruins/adv_foreas_valverde_marshes_villageruins.vis",
+                      "size":  4321313,
+                      "sha256":  "f83f1345983697f50702777ba41c431dabf9621695eb51ce20fd05f34c924f54"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_villageruins/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_villageruins/lights.xml",
+                      "size":  341244,
+                      "sha256":  "c4af9999b8e38f7f259fb129cdd78942cbcf5110e104dae0df4b2aaf93766fa5"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_villageruins/t000006cf_terrain.glm",
+                      "size":  1050728,
+                      "sha256":  "6244cf08acddbd9ea56639d8c22bf6a67cd022ebee19424128583b0260c51502"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_wetlandrefinery/adv_foreas_valverde_marshes_wetlandrefinery.map",
+                      "size":  84204,
+                      "sha256":  "f701e8d85b3660fb9946d3923b5edd07a48f197a283ff438a88b8b35d2d40886"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_wetlandrefinery/adv_foreas_valverde_marshes_wetlandrefinery.vis",
+                      "size":  8750224,
+                      "sha256":  "98185de1ece2a2949c2eb5f3b32049b9cb6303565fd05f720d1eacac4469efd3"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_wetlandrefinery/audioemitters.xml",
+                      "size":  2198,
+                      "sha256":  "67c2100986fc41f176f9f591e1e2f244798c6c074ecdecaa38e0071d4a4c860b"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_wetlandrefinery/lights.xml",
+                      "size":  88451,
+                      "sha256":  "c528f34d77052f606d8f24d633313e97adbb34ad6d74a5f50b69ce59e3770737"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_marshes_wetlandrefinery/t00000632_terrain.glm",
+                      "size":  212360,
+                      "sha256":  "98827aeb26ae14fd9a25011bc05036d4cf16ea09ca4dfcb90281738b5e65fd6c"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau/adv_foreas_valverde_plateau.map",
+                      "size":  361118,
+                      "sha256":  "006554def5b24f57921e52a88eca2def0b924cad6ad03071f199ce94e6804a24"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau/adv_foreas_valverde_plateau.vis",
+                      "size":  1171988,
+                      "sha256":  "fed6384d104c1db6a33037855783ecd9f4063967ec81023a44dff247d4fbbfac"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau/audioemitters.xml",
+                      "size":  78085,
+                      "sha256":  "1a271db3bfbf839bb5c6be0eb17952e64b55ff5c49dd7614800fc7bc9b75d161"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau/lights.xml",
+                      "size":  299845,
+                      "sha256":  "f98f8738f809075707e2e80c2eb219a2cd0a5f482e0bcb0f418dcaae37f31627"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau/t00000676_terrain.glm",
+                      "size":  19418921,
+                      "sha256":  "4d630292aead7882be994d262b2c22ff8456f7288dac654947f773851e3c5d21"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_maligobasev3/adv_foreas_valverde_plateau_maligobasev3.map",
+                      "size":  136158,
+                      "sha256":  "5644257e3a2da4d4723be5a9e1b41d514d977da015652c794b0288ee5eb5b904"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_maligobasev3/adv_foreas_valverde_plateau_maligobasev3.vis",
+                      "size":  529894,
+                      "sha256":  "e9420c903eed0883ae730e7f2bd4234a1a85fb310802416ea00ec90ad5e8c023"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_maligobasev3/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_maligobasev3/lights.xml",
+                      "size":  81173,
+                      "sha256":  "ca43328a0e80b118e28ce76ab595ab81799b59117794c75a87b0f64d3b8c3fb8"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_maligobasev3/t00000726_terrain.glm",
+                      "size":  458856,
+                      "sha256":  "253fb8734711b7ab9382bafa2167aec22b24c2872ad51fa0edbb68fe4816d215"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_sanctusgrotto/adv_foreas_valverde_plateau_sanctusgrotto.map",
+                      "size":  85608,
+                      "sha256":  "53e03892431885006ec2128ad39c9bb4588f56f778a744337887a6eaf357014e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_sanctusgrotto/adv_foreas_valverde_plateau_sanctusgrotto.vis",
+                      "size":  3436020,
+                      "sha256":  "d873d030b5e276b8efb03edf3ac5f71c5cb2c2ac25169e6e82cbf85d11cb78bc"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_sanctusgrotto/audioemitters.xml",
+                      "size":  105,
+                      "sha256":  "48053d5b7e640f2f8eacd545a6301bfac202e019db9e24757f222fffcb81b7e9"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_sanctusgrotto/lights.xml",
+                      "size":  319805,
+                      "sha256":  "a039321c4f870698926f3964b2f586475f227059c40f62991d46632f12cf2b38"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_sanctusgrotto/t0000071f_terrain.glm",
+                      "size":  1197448,
+                      "sha256":  "6b4c393e8dc32a05ec03ddcc08784d62343dc89a978a0e90b1f904c575aa5a9c"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_temporalchamber/adv_foreas_valverde_plateau_temporalchamber.map",
+                      "size":  61741,
+                      "sha256":  "2cca34ef34d40fcb51f0ab74d3976e5539b09aa5e5b03ff3e546afcf68286d8f"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_temporalchamber/adv_foreas_valverde_plateau_temporalchamber.vis",
+                      "size":  6217,
+                      "sha256":  "dc9cf532e91db5117e110b0a9ab71f011868b4c1c2ef2cec1c84f1c6c3e481d3"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_temporalchamber/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_temporalchamber/lights.xml",
+                      "size":  50842,
+                      "sha256":  "5bd11c018400b0ceed699ea4ae414dcd66ae16b8c343b658e1b7034d902b6729"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_temporalchamber/t000007ed_terrain.glm",
+                      "size":  3063183,
+                      "sha256":  "b403e10010dcaada407bf717b3a12a3d11c6d487cc3906c8107775aecd6afe55"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_ustoryard/adv_foreas_valverde_plateau_ustoryard.map",
+                      "size":  69846,
+                      "sha256":  "34e49979a38da23d20a1e31ba1c503c78ba3a23bce071b0413c8817ab3a2016e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_ustoryard/adv_foreas_valverde_plateau_ustoryard.vis",
+                      "size":  183838,
+                      "sha256":  "5ef79d78c30d9cc95290ad03a852312cfb051de658d1b2d4864f6a2c6f141d1d"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_ustoryard/audioemitters.xml",
+                      "size":  105,
+                      "sha256":  "48053d5b7e640f2f8eacd545a6301bfac202e019db9e24757f222fffcb81b7e9"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_ustoryard/lights.xml",
+                      "size":  57599,
+                      "sha256":  "69d0af39894cb1b73c2d5e6bfecf9dafd41f6bd063a413abceff2b406c2484ed"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_plateau_ustoryard/t0000067b_terrain.glm",
+                      "size":  1222803,
+                      "sha256":  "314e8c245af66d7bb06eedc51713c02b3067595890102fe2ed7865b2c1e51f59"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools/adv_foreas_valverde_pools.map",
+                      "size":  400184,
+                      "sha256":  "13027c3cb26f8435d025621abb04d47d01d4c2982d172f6fc49507a1d62e072d"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools/adv_foreas_valverde_pools.vis",
+                      "size":  432354,
+                      "sha256":  "469f589b93f8a9c6dcd6248231da288c7d4f4c995e3816b50ce5b7b4b9dd9321"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools/audioemitters.xml",
+                      "size":  105,
+                      "sha256":  "48053d5b7e640f2f8eacd545a6301bfac202e019db9e24757f222fffcb81b7e9"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools/lights.xml",
+                      "size":  65548,
+                      "sha256":  "8a02de9c72933e0be301ab526067ed22cddd4e8d543bcea3387aeecd37040953"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools/t000005b5_terrain.glm",
+                      "size":  16489993,
+                      "sha256":  "a4f68381526a41a5490c4914483a59b33d33f52b0257c3233391657f7c47acb5"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools_livetargetpensv2/adv_foreas_valverde_pools_livetargetpensv2.map",
+                      "size":  151932,
+                      "sha256":  "53528826888f5dd084346a8c453120772083cbd60991ecdac5df7448d2262a3a"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools_livetargetpensv2/adv_foreas_valverde_pools_livetargetpensv2.vis",
+                      "size":  1913718,
+                      "sha256":  "d495325e683fa7ddfba977e24beeab8ddde3b63be598c69f31f7e985eb909250"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools_livetargetpensv2/audioemitters.xml",
+                      "size":  1152,
+                      "sha256":  "18136baaf6d03073a263f031c00fa941e40af1a364b051b97f8571c6d7dfb66e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools_livetargetpensv2/lights.xml",
+                      "size":  152537,
+                      "sha256":  "c7aa98af68ea450d8d3bdd320fdcfd87745addb417ef22179e6b74221675c419"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools_retread_caves/adv_foreas_valverde_pools_retread_caves.map",
+                      "size":  72332,
+                      "sha256":  "541c308918a7fcb7febd1bb1855f22756854a544f093b47c0d1feedeef3ebe4e"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools_retread_caves/adv_foreas_valverde_pools_retread_caves.vis",
+                      "size":  851857,
+                      "sha256":  "6c12c63919241fa58eba82c7fcd7855eb41608589318c0dfbf15dd2597001a94"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools_retread_caves/audioemitters.xml",
+                      "size":  20814,
+                      "sha256":  "1986495e84fd47f45881d0895cc49f75475dadf9e764258bc6d42aab2c448bb7"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools_retread_caves/lights.xml",
+                      "size":  244909,
+                      "sha256":  "346baf722e1b866af6fa6e0304784e883516eaf7afefb1cfe902445996a5757d"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools_retread_caves/t0000069e_terrain.glm",
+                      "size":  888200,
+                      "sha256":  "5466161b7af052fe54f6be84c47f66ceb4316e59cc69b2fb79718c91b725549f"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools_test_weapons_center/adv_foreas_valverde_pools_test_weapons_center.map",
+                      "size":  42520,
+                      "sha256":  "3ba9efd388e06b3f9fce3459b6269269cd041d7f1894f1de1d85c64e71210ee6"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools_test_weapons_center/adv_foreas_valverde_pools_test_weapons_center.vis",
+                      "size":  536199,
+                      "sha256":  "fb0c986eb6dc6cff0c6c45668216fa2c5aaaaac94688b5394c5e83b55d52a337"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools_test_weapons_center/audioemitters.xml",
+                      "size":  105,
+                      "sha256":  "48053d5b7e640f2f8eacd545a6301bfac202e019db9e24757f222fffcb81b7e9"
+                  },
+                  {
+                      "path":  "data/maps/adv_foreas_valverde_pools_test_weapons_center/lights.xml",
+                      "size":  84629,
+                      "sha256":  "4d6982e1ed797b3160ec5dffa4d972a22c0dac5a1d88f7d8600f25948d26a15a"
+                  },
+                  {
+                      "path":  "data/maps/adv_wargame_edmundrange2/adv_wargame_edmundrange2.map",
+                      "size":  133956,
+                      "sha256":  "8b0c00059447737009badea888d8b2bb3953685e39dcd3d7844913cf675049f7"
+                  },
+                  {
+                      "path":  "data/maps/adv_wargame_edmundrange2/adv_wargame_edmundrange2.vis",
+                      "size":  221857,
+                      "sha256":  "40ac5aae7ef054bbb3ab4d14c4d7aca53516d72d388fb27bd839fd2b1a3edad3"
+                  },
+                  {
+                      "path":  "data/maps/adv_wargame_edmundrange2/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_wargame_edmundrange2/lights.xml",
+                      "size":  52993,
+                      "sha256":  "2aac2a9222c03603c9fbf59b8e56149bde4427223bf6f9a09f853c29a1d699c7"
+                  },
+                  {
+                      "path":  "data/maps/adv_wargame_edmundrange2/t00000949_terrain.glm",
+                      "size":  1766792,
+                      "sha256":  "5786d7ffe2ff284bbaad448a49f66af04b32a19a150bc465370edd00a8c08fd2"
+                  },
+                  {
+                      "path":  "data/maps/adv_wargame_indoorarena/adv_wargame_indoorarena.map",
+                      "size":  24236,
+                      "sha256":  "54f330394a1e900735ce4bc27e303167857b0ecc6fe05bf2c163450cc79094b9"
+                  },
+                  {
+                      "path":  "data/maps/adv_wargame_indoorarena/adv_wargame_indoorarena.vis",
+                      "size":  97,
+                      "sha256":  "b263a3176389e5e92192b69e7234a3f8fbebf2626e9cf3cbd7647469a72fe263"
+                  },
+                  {
+                      "path":  "data/maps/adv_wargame_indoorarena/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_wargame_indoorarena/lights.xml",
+                      "size":  93,
+                      "sha256":  "adf6affd8db8e45ca7b8f8c6559710bc7acb9f7f6154dfeaede4cc26160a4d76"
+                  },
+                  {
+                      "path":  "data/maps/adv_wargame_indoorarena/t000008d7_terrain.glm",
+                      "size":  27379,
+                      "sha256":  "33d27cdb3f8e7a81618d7c8a40ddda3a70d3e6a499dfd3abd45e83ca9781e9c0"
+                  },
+                  {
+                      "path":  "data/maps/adv_wargame_provinggroundsv002/adv_wargame_provinggroundsv002.map",
+                      "size":  108700,
+                      "sha256":  "b9edff7ee3017f6ca1f503b1703835d80229aadb6689120233b385678e6f68e0"
+                  },
+                  {
+                      "path":  "data/maps/adv_wargame_provinggroundsv002/adv_wargame_provinggroundsv002.vis",
+                      "size":  325268,
+                      "sha256":  "3b1b50c931eeb5c2c7d6b296f418052504abcb76a0a229b59e58275f4f64a062"
+                  },
+                  {
+                      "path":  "data/maps/adv_wargame_provinggroundsv002/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_wargame_provinggroundsv002/lights.xml",
+                      "size":  46957,
+                      "sha256":  "c19dd36cd5eaabdb52e3028ec4277538abcc2b68ae83dcd09c4629dd74e30fb1"
+                  },
+                  {
+                      "path":  "data/maps/adv_wargame_provinggroundsv002/t0000093d_terrain.glm",
+                      "size":  1115528,
+                      "sha256":  "5d3f1f0e1f148a1a11c0320989d73901c47a60ad737a509d92afe7c460737ca6"
+                  },
+                  {
+                      "path":  "data/maps/adv_zepic_pve_arena/adv_zepic_pve_arena.map",
+                      "size":  47728,
+                      "sha256":  "82503a0e7fe0a05b59f27ea74606682fd64ab36eae7634d22ea81365363e26b0"
+                  },
+                  {
+                      "path":  "data/maps/adv_zepic_pve_arena/adv_zepic_pve_arena.vis",
+                      "size":  97,
+                      "sha256":  "db1985b6a09d1d9a7589b4aafe0e4ad2b213c62d74a901a4ba63b9b283eadc28"
+                  },
+                  {
+                      "path":  "data/maps/adv_zepic_pve_arena/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/adv_zepic_pve_arena/lights.xml",
+                      "size":  13355,
+                      "sha256":  "cff99b18cbd8b67a63989c11a6c5e819cd888aa7742b24580fcebb7d1aada797"
+                  },
+                  {
+                      "path":  "data/maps/characterselection/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/characterselection/characterselection.map",
+                      "size":  176,
+                      "sha256":  "cd65d543d6a45bfa205b6e952c12ac727dae4ee302815cfb6865ae7184e579cd"
+                  },
+                  {
+                      "path":  "data/maps/characterselection/characterselection.vis",
+                      "size":  59781,
+                      "sha256":  "48ca36bb5d573d703b5a8e385eeb75c01805e0488c242bd44bf162acf137790f"
+                  },
+                  {
+                      "path":  "data/maps/characterselection/lights.xml",
+                      "size":  1886,
+                      "sha256":  "2630a2a6ec9997d88390aaf5f7962d8dbe7d32ecb0ac4e1718825bec66a12741"
+                  },
+                  {
+                      "path":  "data/maps/test_nexus2/audioemitters.xml",
+                      "size":  105,
+                      "sha256":  "48053d5b7e640f2f8eacd545a6301bfac202e019db9e24757f222fffcb81b7e9"
+                  },
+                  {
+                      "path":  "data/maps/test_nexus2/lights.xml",
+                      "size":  68940,
+                      "sha256":  "b53f38bd12c9c793e9fe2ddafe22bd4b70cdd0c3eb7c8efa05c9a8c992204f90"
+                  },
+                  {
+                      "path":  "data/maps/test_nexus2/t000006c9_terrain.glm",
+                      "size":  197776,
+                      "sha256":  "0ee3781750dcff9ec546bab5be243509011d7a803d961227784d82ac32d82ee5"
+                  },
+                  {
+                      "path":  "data/maps/test_nexus2/test_nexus2.map",
+                      "size":  31780,
+                      "sha256":  "4bda99cb41c8319c0befae078d83d28f9017c35edb28bce79005d4e36ccb780e"
+                  },
+                  {
+                      "path":  "data/maps/test_nexus2/test_nexus2.vis",
+                      "size":  85704,
+                      "sha256":  "35052ce644cbeee4734e74f73e56e48b950a8bcf728658fb845658d311a624c2"
+                  },
+                  {
+                      "path":  "data/maps/test_pvpcontrolpoint01/audioemitters.xml",
+                      "size":  101,
+                      "sha256":  "2392ea340c6473f6efc9157f05c3dcbbd11fffd991a6280a8bfb55b1df467f7e"
+                  },
+                  {
+                      "path":  "data/maps/test_pvpcontrolpoint01/lights.xml",
+                      "size":  102123,
+                      "sha256":  "cb2d859e68d4f224eae58ab2c22eee048979397b969394fec9bd9b9b550917cc"
+                  },
+                  {
+                      "path":  "data/maps/test_pvpcontrolpoint01/t000008be_terrain.glm",
+                      "size":  867472,
+                      "sha256":  "2c6cd024434dd5d2473a42b267266f69dfee97fe7aafba053a70fdc4431d845a"
+                  },
+                  {
+                      "path":  "data/maps/test_pvpcontrolpoint01/test_pvpcontrolpoint01.map",
+                      "size":  177996,
+                      "sha256":  "f7f26e391af82bf5d39f2feb85fb8784f2106c2a43cef479df1128792d5cea2d"
+                  },
+                  {
+                      "path":  "data/maps/test_pvpcontrolpoint01/test_pvpcontrolpoint01.vis",
+                      "size":  87181,
+                      "sha256":  "e918da4a30e1d464bb1573fe433b4c988deeb5124f9f1e824e0c2e047d0579f4"
+                  },
+                  {
+                      "path":  "data/mesh01.glm",
+                      "size":  104594118,
+                      "sha256":  "c5579cc37dad95ad5e2f9aeefda27ff20016381fb3f1c057e15c0beb2c6d655e"
+                  },
+                  {
+                      "path":  "data/mesh02.glm",
+                      "size":  271121961,
+                      "sha256":  "b5db25ed999b8d8c3e86fd6a00fdd8475fef4d13f1ca95553015173022e95cbd"
+                  },
+                  {
+                      "path":  "data/mesh03.glm",
+                      "size":  117091019,
+                      "sha256":  "5382e97d8c16a917f095f0fb0889f4cc07a7f55b67e9b4563e614a3343093f02"
+                  },
+                  {
+                      "path":  "data/mesh04.glm",
+                      "size":  125551588,
+                      "sha256":  "8c630abe1def2b900388d1cea5bc1d0b7b20c0d6819e5c795b586a5e64378bfb"
+                  },
+                  {
+                      "path":  "data/mesh05.glm",
+                      "size":  128554968,
+                      "sha256":  "2870566672cc0049c473a98436e2e329b25048e656877ac24a1add84252eb435"
+                  },
+                  {
+                      "path":  "data/mesh06.glm",
+                      "size":  145262444,
+                      "sha256":  "bd5d20ea31f97e11fd41319f3d6d2ae52f20f1b3896663e7772a4057b04d71be"
+                  },
+                  {
+                      "path":  "data/mesh07.glm",
+                      "size":  118001216,
+                      "sha256":  "636f3f35a81f39c4221503063e01537fe1d9ee73ec2acd43a67bd450b253b555"
+                  },
+                  {
+                      "path":  "data/mesh08.glm",
+                      "size":  149789468,
+                      "sha256":  "11edc1e9e62a98295e2942d28ade6e212df8a1f2fd84ace1c9035c8228cc14c4"
+                  },
+                  {
+                      "path":  "data/mesh09.glm",
+                      "size":  161687372,
+                      "sha256":  "fe59e8199a776d15dbc24777706e9c61e4abeee8f57a41bc6951615ebe539722"
+                  },
+                  {
+                      "path":  "data/mesh10.glm",
+                      "size":  119687419,
+                      "sha256":  "42525327b9e37cd87c5abcc7d26f2f59281594862edfa1264696c90a731bbd12"
+                  },
+                  {
+                      "path":  "data/misc/f1.lff",
+                      "size":  88528,
+                      "sha256":  "90d96a188fa3827ceeca1b583e3769ff385c15443c0ecc548ebb8e71ee8be9fd"
+                  },
+                  {
+                      "path":  "data/misc/f2.lff",
+                      "size":  50308,
+                      "sha256":  "2ed98d23c67f9ac728b7dcec9bf04bfab71ac789512da3cde981ba8cefc88c6e"
+                  },
+                  {
+                      "path":  "data/misc02.glm",
+                      "size":  5198,
+                      "sha256":  "8b9695bcc7861bbeb3b59260ab13a4a917eb30b021df53a2df3144cb5712f86d"
+                  },
+                  {
+                      "path":  "data/movies/adv_arieki_torden_mires_tahrendrabase.bik",
+                      "size":  19992004,
+                      "sha256":  "bbe3270d14b4d28e706fda842a8b587941d2102ca5f68f0bfbef7c3733da209a"
+                  },
+                  {
+                      "path":  "data/movies/adv_earth_unitedstates_manhattan_01.bik",
+                      "size":  23816276,
+                      "sha256":  "4fd840839c25972a05f00f5363ec5e346418673ad9665b40fb440acd31079cd9"
+                  },
+                  {
+                      "path":  "data/movies/adv_foreas_concordia_divide_torcastraprison.bik",
+                      "size":  40867376,
+                      "sha256":  "7e1473edc28461fb67241e04f7b7c68b7b7f750d5c38a54c047ad1cf97d263a2"
+                  },
+                  {
+                      "path":  "data/movies/adv_foreas_concordia_elohcommtower2.bik",
+                      "size":  37661520,
+                      "sha256":  "c8dd6671953f3244ccde5827ece423a011d74e39183a15569f9aa7d6551bd3ed"
+                  },
+                  {
+                      "path":  "data/movies/adv_foreas_concordia_wilderness_cavesofdonn02.bik",
+                      "size":  31632616,
+                      "sha256":  "270aa0de9eba4472665231493537eeff9f7fb011d3a5d32de267c9688df2af46"
+                  },
+                  {
+                      "path":  "data/movies/adv_foreas_concordia_wilderness_clrf.bik",
+                      "size":  33529588,
+                      "sha256":  "2810093c1371d18263941dc47eb9f2eaba734e77bb6fafc6b95f4d641a68b32b"
+                  },
+                  {
+                      "path":  "data/movies/adv_foreas_concordia_wilderness_guardianprom.bik",
+                      "size":  22274856,
+                      "sha256":  "546321194d8a062156a5d3ab9a08ee9601565e3a9a3472fdf6ad5c0f03d35889"
+                  },
+                  {
+                      "path":  "data/movies/adv_foreas_concordia_wilderness_pravusresearch.bik",
+                      "size":  38598756,
+                      "sha256":  "5c883155bf0660d01e8980fcf293c4ad84b11d28c6c993f603b42bf8d9a15861"
+                  },
+                  {
+                      "path":  "data/movies/adv_foreas_howlingmaw_cuthahbase.bik",
+                      "size":  15631708,
+                      "sha256":  "9988e7b22dc34ae10a960824fa86e7759b33cf50e2b7a2d48101fd0d613fb8c7"
+                  },
+                  {
+                      "path":  "data/movies/adv_foreas_valverde_plateau_maligobasev3.bik",
+                      "size":  34626244,
+                      "sha256":  "d18cabe4d685fcf9388a802f21420cd257318f52b99393676fe9ea26b417ae83"
+                  },
+                  {
+                      "path":  "data/movies/dglogo.bik",
+                      "size":  6714560,
+                      "sha256":  "0d5576d4d07bb29b73dcb68e929b1b361b6d2a1009c82eb4ffe364c396de4272"
+                  },
+                  {
+                      "path":  "data/movies/intro.bik",
+                      "size":  72968800,
+                      "sha256":  "c6ec710b8d0989435d5b4305d1bc4bf67b4c99b3637436107095ca9a1965941a"
+                  },
+                  {
+                      "path":  "data/movies/ncsoft.bik",
+                      "size":  2008104,
+                      "sha256":  "3d141c6f3ac263c12052326fd629ed74522f0df5b7462a9fd6dccbf446060645"
+                  },
+                  {
+                      "path":  "data/music01.glm",
+                      "size":  119449126,
+                      "sha256":  "74fdd4eecb9fa8a967d0637d67b1311166da382d9a2eae59932514216281a63d"
+                  },
+                  {
+                      "path":  "data/music02.glm",
+                      "size":  118904055,
+                      "sha256":  "c15bfb403dddbf6d85806446c91297be73ad2155002f0231123e2bc30a20c857"
+                  },
+                  {
+                      "path":  "data/music03.glm",
+                      "size":  99527965,
+                      "sha256":  "0c73192e7bf97c6bdb6787eaf02b2d1e650472b24253c824d1a8a51330a0ccfc"
+                  },
+                  {
+                      "path":  "data/particles.glm",
+                      "size":  4833346,
+                      "sha256":  "d391e604183e38352a96e737c0dbccc3a7f05f7e0feeb8561e356274a873eb6f"
+                  },
+                  {
+                      "path":  "data/sky.glm",
+                      "size":  8761442,
+                      "sha256":  "46e15db570b486f5a0df7eadade27f9b29ce87ca8516fb6cff28902e888e6dde"
+                  },
+                  {
+                      "path":  "data/specialfx.glm",
+                      "size":  3250706,
+                      "sha256":  "34ab3cd25e96cc168576ec13d14b2421b28061a7690ad574767690149c508e48"
+                  },
+                  {
+                      "path":  "data/streaming_audio01.glm",
+                      "size":  119859113,
+                      "sha256":  "387d97c1123f395c81ef7a64ca4f4999f3c96398e28fe14d5608e04d3c41149b"
+                  },
+                  {
+                      "path":  "data/streaming_audio02.glm",
+                      "size":  120578476,
+                      "sha256":  "60ae728af97c4c1abf205f6cdfd0eb3fa93826cfbcc0c8bf160196488fa9edf0"
+                  },
+                  {
+                      "path":  "data/ui.glm",
+                      "size":  55385675,
+                      "sha256":  "0b818dc0a8f7f3d79600c36802b0cac353c2e374914e10fc256986d4e2d0f7d0"
+                  },
+                  {
+                      "path":  "data/ui_map.glm",
+                      "size":  53919192,
+                      "sha256":  "61f886cc2aee20c97b907129365705f51157a48c2ec545dd29db421837d978ee"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_afs_arena_radar.glm",
+                      "size":  67700,
+                      "sha256":  "2875797b89e64c90b9f4f24567869364fccd486030d23f373dc2d93f0bafd607"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_ligo_ashendesert_avernusoutpost_radar.glm",
+                      "size":  1454990,
+                      "sha256":  "16f0621ae28982e74fb81ec37b9c4cff87d9aedd08dfa4093b4d85fefe32c49a"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_ligo_ashendesert_baneconscriptfacility_radar.glm",
+                      "size":  913621,
+                      "sha256":  "914d5202a2991e800b55d852738a35b71e1ef4ab4e7d5f473311c7fe3eb0ff8f"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_ligo_ashendesert_indracaverns_radar.glm",
+                      "size":  1218150,
+                      "sha256":  "6f5a071124f3e6ae990f10458cfb300f491c209f8fbf45e6346b8abdeab857b4"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_ligo_ashendesert_radar.glm",
+                      "size":  2233259,
+                      "sha256":  "d115c9a87f8d55927d21f09744e669419998e4beae3eed070957cf3a85ff48c4"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_ligo_burningsteps_magmacaverns_radar.glm",
+                      "size":  507574,
+                      "sha256":  "6cbff2e59c116fa2ee366a810f346c394034c0b38c42a55fa8c988db302cec7e"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_ligo_burningsteps_radar.glm",
+                      "size":  2808490,
+                      "sha256":  "378cb3fafd9785d22c0fabb356f9497422a050b4df587863e7f22feaa6e17286"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_ligo_crucible_incurablesward_radar.glm",
+                      "size":  1082794,
+                      "sha256":  "4154a5f82000b8bf11a58bad263229e55129dc5f0e17ff80767fcfbc04c3dc6c"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_ligo_crucible_wbfacility_radar.glm",
+                      "size":  135372,
+                      "sha256":  "108b8f91c9d5c5c5e90ce9ad602d6eb25e46f1144ce0b1e0a65eb0cfeabb93dc"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_ligo_staaljunkyard_radar.glm",
+                      "size":  541411,
+                      "sha256":  "9970f5e9e65ccba2a487541153791ab83e1d5ca488420fb0edfaebd4040e7bab"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_ligo_thunderhead_faultlever_radar.glm",
+                      "size":  778270,
+                      "sha256":  "cb9714a6587ca5f01d9553df3907e37370d3b296da03ddaa7a0f4b987ff82efd"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_ligo_thunderhead_quassostation_radar.glm",
+                      "size":  1150467,
+                      "sha256":  "fe0169634f9e56aca1d251f9f304a89e15e7150c412323ca2d00b9c95d16d387"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_ligo_thunderhead_radar.glm",
+                      "size":  2977675,
+                      "sha256":  "154db0f40199d1811c4f813445b4c9f8f55205e49b2737a3c0f581962f8f9b34"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_ligo_thunderhead_rivasaattacolony_radar.glm",
+                      "size":  676759,
+                      "sha256":  "8008d84c05c7fe8518bc6c76e1a50b271ed4d6438318381037c0a6bac4c9b341"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_torden_abyss_dybukkar_radar.glm",
+                      "size":  845945,
+                      "sha256":  "4e26f9a8c2d1544b8761207fd74501ed172cbd90b23d2a467e1f50737174d405"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_torden_abyss_omegalabs_radar.glm",
+                      "size":  507577,
+                      "sha256":  "ff9dabe9e5da99db8879dd6c3c6eb52a5c9b23f09466bf556c26fed74e2cfed8"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_torden_abyss_radar.glm",
+                      "size":  2537794,
+                      "sha256":  "76115d76e1c58acade516eadd63872ba326d3394869adc39edd4084d4a6c6bc0"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_torden_abyss_tampei_radar.glm",
+                      "size":  304552,
+                      "sha256":  "75d58bad05359a4145005f6547de79e65766a0a55af00ac144e788de21dbab30"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_torden_incline_commtower_radar.glm",
+                      "size":  304552,
+                      "sha256":  "3fefa4637045a808b0176dbd74b624ae8162557e763f8c08e5e237b133fb0a0e"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_torden_incline_ojasaattahive_radar.glm",
+                      "size":  1488838,
+                      "sha256":  "936c4b9f8a2a86f00344896e6725e62f399c6876d0c2cee088bc1b3d6aff2c1a"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_torden_incline_radar.glm",
+                      "size":  2267098,
+                      "sha256":  "e8a28c0283c8c14d9aed158a3d77e62d42cb789daa336bfd9227c554bb7e739f"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_torden_incline_wardenbotfactory_radar.glm",
+                      "size":  406066,
+                      "sha256":  "713137acb01e6e982193257d230004d66dbe7e023b8fd921c37479b358f75bc2"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_torden_mires_banefluxitemines_radar.glm",
+                      "size":  406063,
+                      "sha256":  "ddda63b660cca36539c1fcde60a400c1023c76de34594aeba2567b688df1bd1d"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_torden_mires_energyweaponcenter_radar.glm",
+                      "size":  135372,
+                      "sha256":  "a7fd30ad9e217af7fb6706a524c64d11b5ae99e69c516c0b19c55fe8d5f8a424"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_torden_mires_radar.glm",
+                      "size":  2165587,
+                      "sha256":  "4499bd12e796a1177471d7b099a86700e49c11600000c5da731c5e73bbe70c35"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_torden_mires_tahrendrabase_radar.glm",
+                      "size":  270722,
+                      "sha256":  "35c5b34a0e502ab60b92b15980f5c33e31749e9fdeb51af8a9c8035239e02585"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_torden_plains_attacolony_radar.glm",
+                      "size":  1759546,
+                      "sha256":  "34851aa8a169e1e9632f3a429bb8a6e53687545e0612d834e5d2010a1242859d"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_torden_plains_brannwaterrefinery_radar.glm",
+                      "size":  135372,
+                      "sha256":  "4fbfe4c586c88581d6f0fe009f3b4d2b6a4b96e0cc18f9c53c4ff4d89cd1a44f"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_torden_plains_penalresearch_radar.glm",
+                      "size":  169211,
+                      "sha256":  "8675ee9ca4e5a79e4e974fb9e87b3db8d028faeee086fc55672692391f6077ea"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_arieki_torden_plains_radar.glm",
+                      "size":  3519066,
+                      "sha256":  "f2efa296b15e8a3d6f7f167ab0ad36e756b52c71621f787a30f366eb1d546fec"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_bootcamp_radar.glm",
+                      "size":  270716,
+                      "sha256":  "18df7c3933f817e8861ccb20b7e5f3ea33b0af952bc5236dd514fa52f934d475"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_earth_unitedstates_manhattan_01_radar.glm",
+                      "size":  710596,
+                      "sha256":  "c7616168f4d5d42bb77f3624292c57b69b672afe79ee5f22c63c3bee5138ce8b"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_earth_unitedstates_manhattan_01_shared_radar.glm",
+                      "size":  710596,
+                      "sha256":  "0f8a3e667c49015a54f13a62e106319259fbf22487fd53794d64f0d62c779fbb"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_divide_elohvale_radar.glm",
+                      "size":  541411,
+                      "sha256":  "c79fadc0d007768cad04383e15011ff5de1de2e2a7a4ef7b1d2fc1d8125859e1"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_divide_minoscaverns_radar.glm",
+                      "size":  135372,
+                      "sha256":  "941580b16346587dd5b919920fbaf28b579f33ff81b48f591a01f8a7b585d3e6"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_divide_purgasstation2_radar.glm",
+                      "size":  236881,
+                      "sha256":  "72ab9371de75dfaa388ea25f3aec9fbc28eb707b1a19357e8015e9096d0020b6"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_divide_radar.glm",
+                      "size":  3451393,
+                      "sha256":  "42ac3d8672727ff2c15880478e18fb1997add9daaa9f44cf448c90fcf23fccfd"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_divide_timoramines_radar.glm",
+                      "size":  947452,
+                      "sha256":  "ce33c854d7a1bb32848136069f21a832aa7b150771d190ea2fa20783ec2f1baa"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_divide_torcastraprison_radar.glm",
+                      "size":  676759,
+                      "sha256":  "fd6bf3acb3746552ae86d1b3f3a6693b472c3122451de8a0d6b5a0639f68102e"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_elohcommtower2_radar.glm",
+                      "size":  642922,
+                      "sha256":  "823fc65c0a1efdd2f3b22f0a5c763923d8353303c9567b3f619e4d938910cf1a"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_palisades_devilsden_radar.glm",
+                      "size":  676754,
+                      "sha256":  "f07c16fd615e0979ab17fa0808179fd59412a5d1041aa3fa95ca82cb4594f8a3"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_palisades_elohtemples_radar.glm",
+                      "size":  406063,
+                      "sha256":  "21677f1878dfa25521594607ca243f4bdf8b2b1ca88e808cf7b9b8b1b007c432"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_palisades_radar.glm",
+                      "size":  2605468,
+                      "sha256":  "60836eb118d8b843fe04001b01773100b5a60a8d95c7c811bec80bce345b8267"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_palisades_treebackcamp_radar.glm",
+                      "size":  541411,
+                      "sha256":  "32c3bf44044424e77d6649f49243be83860c5cbfa16f6ea830e4ba782a506869"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_palisades_warnetcaverns_radar.glm",
+                      "size":  406063,
+                      "sha256":  "4a68024901978fda502cbf7595c49496aa1bbbafc6e8fc5b00b83f2706e8c7c7"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_wilderness_cavesofdonn_epic_radar.glm",
+                      "size":  372228,
+                      "sha256":  "1d45eff8c71731e2afbc1d39cf6bdc0649510c7d0ee1bd2c410851762c2d8e5e"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_wilderness_cavesofdonn02_radar.glm",
+                      "size":  372228,
+                      "sha256":  "501710d6c4a1bd617e6e46646370d060722e8c5bd2db2b00d629595a47e2291d"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_wilderness_clrf_radar.glm",
+                      "size":  236880,
+                      "sha256":  "1267470d5598edb8cd066a50d1f56e093f9766d0db26e0b66903390fe4a4b997"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_wilderness_guardianprom_radar.glm",
+                      "size":  372224,
+                      "sha256":  "725bc9721da7a17dac83a23639b5500b44fe2af69d8813841b4dd85698874053"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_wilderness_pravusresearch_radar.glm",
+                      "size":  439900,
+                      "sha256":  "61504b737d1ce9adf0e2e506c1e54d0d198db4d8dacc5d7766193bb06febc3d6"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_concordia_wilderness_radar.glm",
+                      "size":  2706979,
+                      "sha256":  "ed3b01d003ba7ea62ee5462c5739ae40945afc298eede5989ff90c706fa96c53"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_howlingmaw_cuthahbase_radar.glm",
+                      "size":  1488841,
+                      "sha256":  "ae6ec83a61081d6076ba134722e7a6625b5bf1711762e157ace9d69e652543f2"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_howlingmaw_deathburrow_radar.glm",
+                      "size":  676759,
+                      "sha256":  "733e89ddc623f6ea269d8c126553eea101937379dcce2dc56e20e8a062fcc199"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_howlingmaw1_radar.glm",
+                      "size":  5143287,
+                      "sha256":  "910076bb50a7bdfaa3ebb171c15c2f33cc29d68cf57a7c2447e190bc14daf9b0"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_descent_inferno_outpost_radar.glm",
+                      "size":  473732,
+                      "sha256":  "f08186fc7723accbb5fb4f91eb7b5496b1a5722660b10590b8251a794dd223c3"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_descent_radar.glm",
+                      "size":  3755927,
+                      "sha256":  "44c91785e773c2353fd735e8a4da87ba22c096991ca6883ee9dada098d6446a9"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_descent_therefuge_radar.glm",
+                      "size":  135372,
+                      "sha256":  "da2e14e9a623273f8df67c1766291e61848b28e6ce48e1e57a7ab7a0a2f3eed6"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_marshes_banesupplydepot_radar.glm",
+                      "size":  575243,
+                      "sha256":  "97205092a757c2a792ffe0743cc80f5141f6790b9697a2eaeef531063beaf771"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_marshes_logosresearchfacility_radar.glm",
+                      "size":  135372,
+                      "sha256":  "2328f631e6079b13a7dfedea7b113f07b5b4142664a8184e8a8e1579f49d4038"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_marshes_radar.glm",
+                      "size":  3519068,
+                      "sha256":  "766a6cc3997ddcf24ffbb64d091bae18cd0b3218cd85da1d18ae918ae0e4323d"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_marshes_villageruins_radar.glm",
+                      "size":  406063,
+                      "sha256":  "75b3acfab4313f063770a7e32fd9ac994bb15fa033a785d80683480d3baed57f"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_marshes_wetlandrefinery_radar.glm",
+                      "size":  304552,
+                      "sha256":  "b3ddddf280010b986f58dbce72bbde8ea21422af6df59e5059cdc5fdeec3e0ae"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_plateau_maligoBasev3_radar.glm",
+                      "size":  744436,
+                      "sha256":  "5ddb375d1e9d29fc51edc1ea38de0d44c121c52ea60e2a70588c3bc621b636bb"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_plateau_radar.glm",
+                      "size":  2909999,
+                      "sha256":  "f48444043863cb6deafc531a840e3de3492dbf3f63c37eb9cf0d447e9efa2493"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_plateau_sanctusgrotto_radar.glm",
+                      "size":  744422,
+                      "sha256":  "4b1420f6386b9d2bca1fb0711fe5752f2ff0d2812def77e71b42f9c080602c06"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_plateau_temporalchamber_radar.glm",
+                      "size":  1285823,
+                      "sha256":  "27edfee9ad72a2fe3d44cf874603f7751f09e12b2ddeccfc363027ac91c32d51"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_plateau_ustoryard_radar.glm",
+                      "size":  236880,
+                      "sha256":  "54af5afe0e23c956e93e5e4a825a3cc38cfd36ca4e94e22dd20986706274bbea"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_pools_livetargetpensv2_radar.glm",
+                      "size":  507577,
+                      "sha256":  "dfd96b044c573680e975c8a6bf33df7157c0094827163e7a74afa3c33ed7e41d"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_pools_radar.glm",
+                      "size":  2233261,
+                      "sha256":  "034ae9b0b268708b793a6c019e9c6c9f9f2a977bf9427961a99add39c0049cf5"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_pools_retread_caves_radar.glm",
+                      "size":  135372,
+                      "sha256":  "b034123f0c3303454f348566e76a54e93fd7d1169dafceab4b7fb2f791717270"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_foreas_valverde_pools_test_weapons_center_radar.glm",
+                      "size":  406068,
+                      "sha256":  "26e6e0b2ab00540a5016872e083b4dd6ea0c01220fdeef598b062bc984a6d5d6"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_wargame_edmundrange2_radar.glm",
+                      "size":  642919,
+                      "sha256":  "d3b25006bdd9257e4ae28f173271b4e41b851e5cd1556810fb09ca19711fa38b"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_wargame_provinggroundsv002_radar.glm",
+                      "size":  372224,
+                      "sha256":  "30686aeb2ce868dc3ebc1a59c1cc561646e07f4c637e4b700442d2ef4d6454ae"
+                  },
+                  {
+                      "path":  "data/ui_radar/adv_zepic_pve_arena_radar.glm",
+                      "size":  338389,
+                      "sha256":  "e429c34e50b2cd71e3b800e396ae1e1735b330062019cfae5c00e2d9af3fb4c5"
+                  },
+                  {
+                      "path":  "data/ui_radar/test_lridout_outpostcombat_radar.glm",
+                      "size":  203044,
+                      "sha256":  "416fb85e04053ee828fdfa6cf2898240546f11103c1a31d7cea4c1c7cca490a1"
+                  },
+                  {
+                      "path":  "data/ui_radar/test_pvpcontrolpoint01_radar.glm",
+                      "size":  338388,
+                      "sha256":  "18aa63955d886a1189106d3ccb3f662fad14064229bb9546e9567a80c07ed0b3"
+                  },
+                  {
+                      "path":  "data/xml/cameraprofiles.xml",
+                      "size":  12722,
+                      "sha256":  "507538a88a1a699466f59b1c108e5e069fcc72db619996a82e7dc42e4fdd1907"
+                  },
+                  {
+                      "path":  "data/xml/Tabula_Rasa_UI_EXPORT.xml",
+                      "size":  5853295,
+                      "sha256":  "6683ae6a4fb480c0becf7d38d52901f88a647663e14b4433200336cf5dbfb3da"
+                  },
+                  {
+                      "path":  "dbghelp.dll",
+                      "size":  1038848,
+                      "sha256":  "72877fb0af03745e2a78414ddaa05f1871703ad4c0d16d43d4ae62971ff52f0b"
+                  },
+                  {
+                      "path":  "f1.fot",
+                      "size":  1409,
+                      "sha256":  "40413b3c45a180bb7742e301f91352e1c2a973b7b0ebac4123916c5817ca590b"
+                  },
+                  {
+                      "path":  "f2.fot",
+                      "size":  1409,
+                      "sha256":  "173a4e4ea648a3bb0fb76892453e6ee87b6e6ba96a0383c5a55a98d4f116a5e2"
+                  },
+                  {
+                      "path":  "FindLauncher.exe",
+                      "size":  235008,
+                      "sha256":  "6be2055e076be792503803a898b2e1f9c47c44d3c54e7dc6d68b54ab10283678"
+                  },
+                  {
+                      "path":  "FindLauncher2.exe",
+                      "size":  49152,
+                      "sha256":  "6546f567c3755cc4e3d2c9a2ddea2110a335151553ac5b19c518be7b69386c6c"
+                  },
+                  {
+                      "path":  "gdiplus.dll",
+                      "size":  1706800,
+                      "sha256":  "830915b87cbc95217f58b8b499f73b618607c0164e0aa1217722eae18c1fb321"
+                  },
+                  {
+                      "path":  "imagehlp.dll",
+                      "size":  126976,
+                      "sha256":  "e3d0aa78d8a09908d7e814dbd261601203bb7ac4083f350fdc9ea576bebc4250"
+                  },
+                  {
+                      "path":  "Launcher.rar",
+                      "size":  2224370,
+                      "sha256":  "6ffc8d94b380ea35fb6d5987cfeceae1ad35e2b1677201f6f3423cdf70bc01b9"
+                  },
+                  {
+                      "path":  "Launcher/_Launcher.exe",
+                      "size":  3146480,
+                      "sha256":  "d52abe67424eba20fb643e1f08a591b64d0a48d5ecbba8112c07fab1d764c4be"
+                  },
+                  {
+                      "path":  "Launcher/AllowFoldersToBeUpdated.exe",
+                      "size":  22008,
+                      "sha256":  "b20960738d2739b0fdc17423d5b3feed57d04ecc98e2fbc8edbc4ff3ca8075a8"
+                  },
+                  {
+                      "path":  "Launcher/Config/Default/Games.xml",
+                      "size":  50441,
+                      "sha256":  "b7f651ca99f827bb37653c316960b81910ede0cd4febaab24f481e1e435811e6"
+                  },
+                  {
+                      "path":  "Launcher/Config/Default/GamesAddendum.xml",
+                      "size":  3040,
+                      "sha256":  "6f697aaf55a64136f34023d0f51e5c64da1fe073e1bbec4c161af0cb1a2d7702"
+                  },
+                  {
+                      "path":  "Launcher/Config/Default/Icons/coh.ico",
+                      "size":  2238,
+                      "sha256":  "4984ba0bbd0fa1b7fcdd6f4c565ad3bd4e42569f4f51b8b8751c6e5d57b0af67"
+                  },
+                  {
+                      "path":  "Launcher/Config/Default/Icons/DR.ico",
+                      "size":  12574,
+                      "sha256":  "1830090edb4bcae231b3beb979454c47deb4955af08401e6b9886d489a3fef37"
+                  },
+                  {
+                      "path":  "Launcher/Config/Default/Icons/exteel.ico",
+                      "size":  4286,
+                      "sha256":  "e93cbde917816f41bc1809eb1404000d730f8dfd654b860472c24d69a9625bf9"
+                  },
+                  {
+                      "path":  "Launcher/Config/Default/Icons/Gw.ico",
+                      "size":  7406,
+                      "sha256":  "3f09252a6f1123eb7248a43a5c4946499aa67154e3ff21137b1f2cb7272e7ead"
+                  },
+                  {
+                      "path":  "Launcher/Config/Default/Icons/Launcher.ico",
+                      "size":  15086,
+                      "sha256":  "f83d2c4f9790d92e88dab9515f596888613d0c998f45cf06dd8820297a89e9ea"
+                  },
+                  {
+                      "path":  "Launcher/Config/Default/Icons/Lineage.ico",
+                      "size":  3310,
+                      "sha256":  "9fd3ff8cca2409650d0cda1c72f981ae6bab4feac0de23f7df83656651cb3c7e"
+                  },
+                  {
+                      "path":  "Launcher/Config/Default/Icons/lineage2.ico",
+                      "size":  7358,
+                      "sha256":  "9d37f48ab7503ff336d997f4936adb8be1647bd0c1f21375a910afd2623a9f69"
+                  },
+                  {
+                      "path":  "Launcher/Config/Default/Icons/tr.ico",
+                      "size":  15086,
+                      "sha256":  "3b0579978ad989009b5f9e804e2be173f53f3ba425c99352856f2c2e3bc365e4"
+                  },
+                  {
+                      "path":  "Launcher/Config/Default/NCLauncher.config",
+                      "size":  1437,
+                      "sha256":  "064240f07137179da0532840099198f90c53cbfd3a81bb41cd59b4d62b1b56f1"
+                  },
+                  {
+                      "path":  "Launcher/Config/Default/NCPatcherConfig/Products/NCLauncher/Main/NCPatcherProductConfig.xml",
+                      "size":  1481,
+                      "sha256":  "1604f6353e587c4f3a9c216f99dd45a17caa6425d34d90e9073e31845d415524"
+                  },
+                  {
+                      "path":  "Launcher/de/_Launcher.resources.dll",
+                      "size":  249856,
+                      "sha256":  "45507fe8591611338b6f3fecbf5797fdc03ebcee04c49c3f1b230d7d40f55967"
+                  },
+                  {
+                      "path":  "Launcher/de/NCLauncher.resources.dll",
+                      "size":  28672,
+                      "sha256":  "4006cb52625de5f56265e25ba2b1148fd0bedf1632a0ce066ba44719c7dd35c9"
+                  },
+                  {
+                      "path":  "Launcher/es/_Launcher.resources.dll",
+                      "size":  249856,
+                      "sha256":  "6da7bd35a17a1a4f41dac2cd85f52d5e17eb79354ad4add895c4b0a19e59d53a"
+                  },
+                  {
+                      "path":  "Launcher/es/NCLauncher.resources.dll",
+                      "size":  28672,
+                      "sha256":  "8ce615309bb160373fd7a26af813df13a1323387f9d7f9bd69034586279e521d"
+                  },
+                  {
+                      "path":  "Launcher/fr/_Launcher.resources.dll",
+                      "size":  249856,
+                      "sha256":  "3c2c0c6b28b2f988b3ba02bf1deecf30b478135eec26aa0d383781facfb14845"
+                  },
+                  {
+                      "path":  "Launcher/fr/NCLauncher.resources.dll",
+                      "size":  28672,
+                      "sha256":  "c30a9882ef66fc523d812b6d53c9678cd0e223bc34c957d5f88066a3615961d0"
+                  },
+                  {
+                      "path":  "Launcher/ja/_Launcher.resources.dll",
+                      "size":  307200,
+                      "sha256":  "39f68367e3da21f9c2d4de361137720c9a22e67335d5b9e71128197b1b3d3084"
+                  },
+                  {
+                      "path":  "Launcher/ja/NCLauncher.resources.dll",
+                      "size":  28672,
+                      "sha256":  "ab8f27bf98ba7b242430d1d38a2b439dc3410663fbcb5d2a1cd1073b3b952807"
+                  },
+                  {
+                      "path":  "Launcher/Launcher.config",
+                      "size":  576,
+                      "sha256":  "75dbc0acba8b4048339f7d5031a5ed23a9bab2c45c55d9ef6c81085089adbd2b"
+                  },
+                  {
+                      "path":  "Launcher/Licenses/LauncherEULA_EU_DE.htm",
+                      "size":  18560,
+                      "sha256":  "0c85bfb8bac3783d614cbb0691c396e72ec747c0011b21663d47544d3c1c3549"
+                  },
+                  {
+                      "path":  "Launcher/Licenses/LauncherEULA_EU_EN.htm",
+                      "size":  18034,
+                      "sha256":  "415326a0fa1cc83cfcdb2e0dc010a2a3fc8375859fdd07b8f13cbec741d0f2d9"
+                  },
+                  {
+                      "path":  "Launcher/Licenses/LauncherEULA_EU_ES.htm",
+                      "size":  18600,
+                      "sha256":  "5884e5ca6644dd986d9b06a3c962c568d3ffd7b19300255071c98c5a562a5dfd"
+                  },
+                  {
+                      "path":  "Launcher/Licenses/LauncherEULA_EU_FR.htm",
+                      "size":  18378,
+                      "sha256":  "50bc0322eb84c0762e8614dae6c4340f67fe4e50ffbab1c8c17fcda007daeb27"
+                  },
+                  {
+                      "path":  "Launcher/Licenses/LauncherEULA_JA_JA.htm",
+                      "size":  18633,
+                      "sha256":  "6197da62cb570bbaccdc7b2565aaac0f146090f962463de47af06b81fe9b03b3"
+                  },
+                  {
+                      "path":  "Launcher/Licenses/LauncherEULA_US_EN.htm",
+                      "size":  17932,
+                      "sha256":  "77e3de8566356b6c0862ba3b61b744d3d7f3bdf3dc07a18463b6fda6f22830e6"
+                  },
+                  {
+                      "path":  "Launcher/Licenses/LicensingAndAcknowledgements.rtf",
+                      "size":  42231,
+                      "sha256":  "ba34abf5ae632975167949e5a82929ce19632473558bf464cf11968903e7fe65"
+                  },
+                  {
+                      "path":  "Launcher/Licenses/XDeltaGPL.txt",
+                      "size":  18321,
+                      "sha256":  "61b65d8be67f0acb3a370ce0826c073b7c54a5c08b502ed6f7ffec94a300477f"
+                  },
+                  {
+                      "path":  "Launcher/NC.Bootstrap.exe",
+                      "size":  257024,
+                      "sha256":  "ef317569ea23064470fa18b3ca4393c9860242b9c93ad29702f5e3f12a5b7811"
+                  },
+                  {
+                      "path":  "Launcher/NC.Logging.dll",
+                      "size":  24576,
+                      "sha256":  "0807d5f9a741233426df7bf3ecabc6f30daf39176f8ae10ef0fced9f0971327e"
+                  },
+                  {
+                      "path":  "Launcher/NCLauncher.exe",
+                      "size":  38128,
+                      "sha256":  "0f552db01e698606276e4d25f9a70efc94953a649dae3cd994212cf68cd07cb6"
+                  },
+                  {
+                      "path":  "Launcher/NLog.dll",
+                      "size":  143360,
+                      "sha256":  "f6f60ef6e017045144e2c5fcb51586c273abe637aa9a8723ff65fd11079892aa"
+                  },
+                  {
+                      "path":  "Launcher/Skins/NCsoft_plaync_001/NCLauncherCustom/Child.png",
+                      "size":  247,
+                      "sha256":  "fafec66e29f2225e88b29712c05a959f7d863a902ec0c7692db6259d9408ed01"
+                  },
+                  {
+                      "path":  "Launcher/Skins/NCsoft_plaync_001/NCLauncherCustom/ChildHottracked.png",
+                      "size":  244,
+                      "sha256":  "9911f045e5a95355ec75f7e4a3b167ffbb513afee581c88e4fb5412814002a17"
+                  },
+                  {
+                      "path":  "Launcher/Skins/NCsoft_plaync_001/NCLauncherCustom/CircleGreen-P.png",
+                      "size":  305,
+                      "sha256":  "ef8b0d913186a6367fa968eb35461b53da3dbaefbf3ef4f0acf7ea095fea70c4"
+                  },
+                  {
+                      "path":  "Launcher/Skins/NCsoft_plaync_001/NCLauncherCustom/CircleGreen-Y.png",
+                      "size":  307,
+                      "sha256":  "834e4f2252f482a4f225d286da9a621bef98e6c86b1923312172e919bbb92abd"
+                  },
+                  {
+                      "path":  "Launcher/Skins/NCsoft_plaync_001/NCLauncherCustom/CirclePurple-P.png",
+                      "size":  306,
+                      "sha256":  "56ef099d733f4fdbee5830446dafbaaf79cb65084a9c8900b3bac06718772ff9"
+                  },
+                  {
+                      "path":  "Launcher/Skins/NCsoft_plaync_001/NCLauncherCustom/CirclePurple-Y.png",
+                      "size":  307,
+                      "sha256":  "5c0987207bf0134c81186aa7b479f387158d4781cab03d671c2af8d975b6b2ac"
+                  },
+                  {
+                      "path":  "Launcher/Skins/NCsoft_plaync_001/NCLauncherCustom/CircleRed-P.png",
+                      "size":  305,
+                      "sha256":  "d540e5dffa7bfe212c210ff0e23c98aa2ec29a5542d6c46a1136d4971ba726fe"
+                  },
+                  {
+                      "path":  "Launcher/Skins/NCsoft_plaync_001/NCLauncherCustom/CircleRed-Y.png",
+                      "size":  307,
+                      "sha256":  "4ea25cf9e15dd77814ede798f25996a28c62727bb46d3d51a7247f4f2cae2ffe"
+                  },
+                  {
+                      "path":  "Launcher/Skins/NCsoft_plaync_001/NCLauncherCustom/CircleYellow-P.png",
+                      "size":  308,
+                      "sha256":  "001744227ec790cdb85dbb48ed4f0e385bc9247889f04d7f6052fad7deb8be08"
+                  },
+                  {
+                      "path":  "Launcher/Skins/NCsoft_plaync_001/NCLauncherCustom/CircleYellow-Y.png",
+                      "size":  309,
+                      "sha256":  "9a35a24cbd1ef99ca72498e5de063518d233558d30475122fdd75bbc42e58b72"
+                  },
+                  {
+                      "path":  "Launcher/Skins/NCsoft_plaync_001/NCLauncherCustom/GreenExclamation.png",
+                      "size":  199,
+                      "sha256":  "bf42d60182c29d9fc742e435037d7d2b54143d983388d79b101f2f3ba454432e"
+                  },
+                  {
+                      "path":  "Launcher/Skins/NCsoft_plaync_001/NCLauncherCustom/HeaderSmallRight.png",
+                      "size":  3007,
+                      "sha256":  "5267f7298f0ad50eceba7064a78ac3f59363f5c4f11a447fbed2444bf372cff3"
+                  },
+                  {
+                      "path":  "Launcher/Skins/NCsoft_plaync_001/NCLauncherCustom/ItemViewBackground.png",
+                      "size":  4094,
+                      "sha256":  "340b19fbbb92e6cb07f081c821e7a26568aaa1864b520d9fbad3394c52caa548"
+                  },
+                  {
+                      "path":  "Launcher/Skins/NCsoft_plaync_001/NCLauncherCustom/TreeViewBackground.jpg",
+                      "size":  16331,
+                      "sha256":  "cb81b8697bf786eb66932f0c89333e70fc4c70412c7a7dcd8dedcc46cba3ef71"
+                  },
+                  {
+                      "path":  "Launcher/Skins/NCsoft_plaync_001/NCLauncherCustom/TreeViewBackground.png",
+                      "size":  3900,
+                      "sha256":  "f0d9987ae3f6db6dbc359958554a28404999a3d360162b03190a15df6c066514"
+                  },
+                  {
+                      "path":  "Launcher/Skins/NCsoft_plaync_001/NCsoft_plaync_001_config.xml",
+                      "size":  1856,
+                      "sha256":  "20eaac903e9516a51bcd7a617413fa47209cb14c548252f9892f9b5bb46013cf"
+                  },
+                  {
+                      "path":  "Launcher/Skins/web/error404/404.html",
+                      "size":  1940,
+                      "sha256":  "63d6e6aedb53586e0b1b62afe68461c96f371c7d0cc3df8b05200ac852661e5e"
+                  },
+                  {
+                      "path":  "Launcher/Skins/web/error404/images/gradient_tile.jpg",
+                      "size":  575,
+                      "sha256":  "fd33f27586f8abf42b7e855613b6aa145dbcfd07572b56f1571b916c0c4ab7cb"
+                  },
+                  {
+                      "path":  "Launcher/Skins/web/error404/images/logo_plaync.jpg",
+                      "size":  4696,
+                      "sha256":  "319a98ddffa981cfb1c6ab8ddc18daa6ecf01c2fc1bc6b8f11c40030974099cc"
+                  },
+                  {
+                      "path":  "Launcher/UnRar.Net.dll",
+                      "size":  217088,
+                      "sha256":  "9f8fffdb3ea09b411e564f983df86733bc9b54646982c2e1c3001d7ea737e59e"
+                  },
+                  {
+                      "path":  "Launcher/XDelta.exe",
+                      "size":  1126400,
+                      "sha256":  "41bd261e8914603f5d772a1bd448dc93511706b8b888fd7a01ecae1ffd8eae9f"
+                  },
+                  {
+                      "path":  "launchTabulaRasa.bat",
+                      "size":  51,
+                      "sha256":  "fa2047399ff2775afbaf4231f0d341dadf462de6097b4684c6cb4a88480cc15b"
+                  },
+                  {
+                      "path":  "mfc71.dll",
+                      "size":  1060864,
+                      "sha256":  "4da5efdc46d126b45daeee8bc69c0ba2aa243589046b7dfd12a7e21b9bee6a32"
+                  },
+                  {
+                      "path":  "Microsoft.VC80.CRT/Microsoft.VC80.CRT.manifest",
+                      "size":  1862,
+                      "sha256":  "5774e7113b8c517d14f4c9b39d275128da196d5c3c6949efbea97a536ee0751c"
+                  },
+                  {
+                      "path":  "Microsoft.VC80.CRT/msvcm80.dll",
+                      "size":  479232,
+                      "sha256":  "c4c8c2d251b90d77d1ac75cbd39c3f0b18fc170d5a95d1c13a0266f7260b479d"
+                  },
+                  {
+                      "path":  "Microsoft.VC80.CRT/msvcp80.dll",
+                      "size":  548864,
+                      "sha256":  "2026f3c4f830dff6883b88e2647272a52a132f25eb42c0d423e36b3f65a94d08"
+                  },
+                  {
+                      "path":  "Microsoft.VC80.CRT/msvcr80.dll",
+                      "size":  626688,
+                      "sha256":  "02bdde38e4c6bd795a092d496b8d6060cdbe71e22ef4d7a204e3050c1be44fa9"
+                  },
+                  {
+                      "path":  "miles/mssdolby.flt",
+                      "size":  7680,
+                      "sha256":  "d73b7b518c911adc10360fa660e2fa6f5bbac4358cd63b06ec71f04de9347a77"
+                  },
+                  {
+                      "path":  "miles/mssds3d.flt",
+                      "size":  12800,
+                      "sha256":  "c2d413ecfcba12eb26ffedf708a20676ee4d02d9e7724901209672f293933358"
+                  },
+                  {
+                      "path":  "miles/mssdsp.flt",
+                      "size":  56832,
+                      "sha256":  "bc0e76e234f9a84ec6c73e54a9696a2733d0fe236500826827f2b7233e98f1c2"
+                  },
+                  {
+                      "path":  "miles/msseax.flt",
+                      "size":  59392,
+                      "sha256":  "c5a3859006678db2f04fdf20022b6f0bcacb5bd7de1a4b3adcf59f779f74d03c"
+                  },
+                  {
+                      "path":  "miles/mssmp3.asi",
+                      "size":  94208,
+                      "sha256":  "517b3585054f0a161f938332c7541c8a7a65f949c1baff3531814063de030d96"
+                  },
+                  {
+                      "path":  "miles/mssogg.asi",
+                      "size":  99840,
+                      "sha256":  "715a5494472f5264f86fefdf4b91a69a1a9522e13283d4f1b6d10bf57d5b40f3"
+                  },
+                  {
+                      "path":  "miles/msssrs.flt",
+                      "size":  12800,
+                      "sha256":  "d4cfebcb597f5f81f8c5e047301584d0843a32f58b9684086d1cd12b3717d9a7"
+                  },
+                  {
+                      "path":  "miles/mssvoice.asi",
+                      "size":  153600,
+                      "sha256":  "8599bc978cd62f91da5556488862f9a9ee690066e02fbb4aab29bc18be3f9ce3"
+                  },
+                  {
+                      "path":  "mss32.dll",
+                      "size":  435200,
+                      "sha256":  "52fce1fb33811b1a856c5cffc59376b83533f4b0381883865a8d699ff34ad440"
+                  },
+                  {
+                      "path":  "msvcp71.dll",
+                      "size":  499712,
+                      "sha256":  "df96156f6a548fd6fe5672918de5ae4509d3c810a57bffd2a91de45a3ed5b23b"
+                  },
+                  {
+                      "path":  "msvcp80.dll",
+                      "size":  548864,
+                      "sha256":  "2026f3c4f830dff6883b88e2647272a52a132f25eb42c0d423e36b3f65a94d08"
+                  },
+                  {
+                      "path":  "msvcr71.dll",
+                      "size":  348160,
+                      "sha256":  "8094af5ee310714caebccaeee7769ffb08048503ba478b879edfef5f1a24fefe"
+                  },
+                  {
+                      "path":  "msvcr80.dll",
+                      "size":  626688,
+                      "sha256":  "02bdde38e4c6bd795a092d496b8d6060cdbe71e22ef4d7a204e3050c1be44fa9"
+                  },
+                  {
+                      "path":  "pthreadVC2.dll",
+                      "size":  86070,
+                      "sha256":  "20230a540850e454b4cd0dd11b34d66d6826de1f839a5ac72b96bd32f76cccc3"
+                  },
+                  {
+                      "path":  "python24.dll",
+                      "size":  1871872,
+                      "sha256":  "0d450c5e2c35ae0b3295b60061dcfc25fbc77701301f05e3dd3dde43ec7d7e73"
+                  },
+                  {
+                      "path":  "Sase6500_ncsoft.dll",
+                      "size":  143360,
+                      "sha256":  "753751ef1cc75372e93e311c089be853649c434d3517afb5ef6c7b2509b8c005"
+                  },
+                  {
+                      "path":  "tabula_rasa.exe",
+                      "size":  9719808,
+                      "sha256":  "73258cf99a12b653b6d7145e76cb8cf62bdc94d18793f89aead9ae813bd90bc8"
+                  },
+                  {
+                      "path":  "trpython.zip",
+                      "size":  7037841,
+                      "sha256":  "cd2ffe5a88c5cfd82bcc34cc38cc4ab9aedb479d70fa76c0f4476da7bb7225e6"
+                  },
+                  {
+                      "path":  "version.ini",
+                      "size":  34,
+                      "sha256":  "59604ffcfd6994e2aac42e416e3e65bae3dc37e6af4c0d93f1dce9c8d093c6b7"
+                  },
+                  {
+                      "path":  "Wormhole.exe",
+                      "size":  2043904,
+                      "sha256":  "fa91d69a65c7bec357b20fa79fd960a9310fc27fc49804a970275057488ca326"
+                  }
+              ]
+}
