@@ -31,7 +31,27 @@ pub struct VerifyResult {
 }
 
 pub fn is_game_dir(dir: &Path) -> bool {
-    dir.join(GAME_EXE).is_file()
+    resolve(dir, GAME_EXE).is_file()
+}
+
+/// `dir/rel`, matching each component case-insensitively where the exact name is
+/// missing: Windows ignores case, so a copied install may differ on Linux.
+pub fn resolve(dir: &Path, rel: &str) -> PathBuf {
+    let exact = dir.join(rel);
+    if cfg!(windows) || exact.exists() {
+        return exact;
+    }
+    let mut path = dir.to_path_buf();
+    for part in rel.split('/') {
+        let found = fs::read_dir(&path).ok().and_then(|entries| {
+            entries
+                .flatten()
+                .map(|e| e.file_name())
+                .find(|n| n.to_string_lossy().eq_ignore_ascii_case(part))
+        });
+        path.push(found.as_deref().unwrap_or(part.as_ref()));
+    }
+    path
 }
 
 /// Install locations recorded in Windows' "Programs and Features" list.
@@ -123,7 +143,7 @@ pub fn verify(dir: &Path, full: bool, mut progress: impl FnMut(usize, usize)) ->
 
     for (i, entry) in manifest.files.iter().enumerate() {
         progress(i, total);
-        let path = dir.join(&entry.path);
+        let path = resolve(dir, &entry.path);
         let Ok(meta) = fs::metadata(&path) else {
             result.missing.push(entry.path.clone());
             continue;
@@ -148,7 +168,7 @@ fn cfg_key_of(line: &str) -> Option<&str> {
 
 /// True if client.cfg has the intro movie turned off. A missing key means the game default (intro on).
 pub fn skip_intro(dir: &Path) -> bool {
-    fs::read_to_string(dir.join(CLIENT_CFG))
+    fs::read_to_string(resolve(dir, CLIENT_CFG))
         .ok()
         .and_then(|cfg| {
             cfg.lines()
@@ -160,7 +180,7 @@ pub fn skip_intro(dir: &Path) -> bool {
 
 /// Sets ShowIntroMovie in client.cfg, leaving every other line untouched.
 pub fn write_skip_intro(dir: &Path, skip: bool) -> Result<(), String> {
-    let path = dir.join(CLIENT_CFG);
+    let path = resolve(dir, CLIENT_CFG);
     let line = format!("{INTRO_KEY} = {}", if skip { "False" } else { "True" });
     let cfg = fs::read_to_string(&path).unwrap_or_default();
     let nl = if cfg.contains("\r\n") || cfg.is_empty() { "\r\n" } else { "\n" };
@@ -179,4 +199,21 @@ pub fn write_skip_intro(dir: &Path, skip: bool) -> Result<(), String> {
     }
 
     fs::write(&path, lines.join(nl) + nl).map_err(|e| format!("Could not update {CLIENT_CFG}: {e}"))
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn resolves_names_in_any_case() {
+        let dir = std::env::temp_dir().join(format!("irl-case-{}", std::process::id()));
+        fs::create_dir_all(dir.join("components")).unwrap();
+        fs::write(dir.join("components/Localization.INI"), "").unwrap();
+        fs::write(dir.join("Tabula_Rasa.exe"), "").unwrap();
+        assert!(resolve(&dir, "Components/localization.ini").is_file());
+        assert!(is_game_dir(&dir));
+        assert_eq!(resolve(&dir, "Missing/file"), dir.join("Missing/file"));
+        fs::remove_dir_all(dir).unwrap();
+    }
 }

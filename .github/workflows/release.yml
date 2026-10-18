@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  windows:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
@@ -45,29 +45,101 @@ jobs:
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
         run: npm run tauri build -- --config src-tauri/tauri.release.conf.json
 
-      - name: Collect installer, checksum and update manifest
+      - name: Collect installer
         shell: pwsh
         run: |
           New-Item -ItemType Directory release | Out-Null
-          $name = "InfiniteRasaLauncher-$env:VERSION-setup.exe"
           $setup = Get-ChildItem src-tauri/target/release/bundle/nsis/*-setup.exe | Select-Object -First 1
-          Copy-Item $setup.FullName "release/$name"
+          Copy-Item $setup.FullName "release/InfiniteRasaLauncher-$env:VERSION-setup.exe"
+          Copy-Item "$($setup.FullName).sig" "release/InfiniteRasaLauncher-$env:VERSION-setup.exe.sig"
 
-          $hash = (Get-FileHash "release/$name" -Algorithm SHA256).Hash.ToLower()
-          "$hash  $name" | Set-Content release/SHA256SUMS.txt -Encoding ascii
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows
+          path: release/
+
+  linux:
+    # The oldest supported Ubuntu, so the AppImage runs on older distros too.
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Tauri dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libayatana-appindicator3-dev librsvg2-dev libssl-dev libdbus-1-dev libxdo-dev
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Set version from tag
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          echo "VERSION=$version" >> "$GITHUB_ENV"
+          jq --arg v "$version" '.version = $v' src-tauri/tauri.conf.json > conf.tmp && mv conf.tmp src-tauri/tauri.conf.json
+
+      - run: npm ci
+
+      - run: cargo test --manifest-path src-tauri/Cargo.toml
+
+      - name: Build
+        env:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        run: npm run tauri build -- --bundles appimage,deb --config src-tauri/tauri.release.conf.json
+
+      - name: Collect packages
+        run: |
+          mkdir release
+          bundle=src-tauri/target/release/bundle
+          cp $bundle/appimage/*.AppImage "release/InfiniteRasaLauncher-$VERSION-x86_64.AppImage"
+          cp $bundle/appimage/*.AppImage.sig "release/InfiniteRasaLauncher-$VERSION-x86_64.AppImage.sig"
+          cp $bundle/deb/*.deb "release/InfiniteRasaLauncher-$VERSION-amd64.deb"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: linux
+          path: release/
+
+  release:
+    needs: [windows, linux]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: release
+          merge-multiple: true
+
+      - name: Checksums and update manifest
+        working-directory: release
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          url="https://github.com/${{ github.repository }}/releases/download/$GITHUB_REF_NAME"
+          exe="InfiniteRasaLauncher-$version-setup.exe"
+          appimage="InfiniteRasaLauncher-$version-x86_64.AppImage"
+          echo "VERSION=$version" >> "$GITHUB_ENV"
+
+          sha256sum *.exe *.AppImage *.deb > SHA256SUMS.txt
 
           # Read by the launcher's updater from releases/latest/download/latest.json
-          [ordered]@{
-            version   = $env:VERSION
-            notes     = "Infinite Rasa Launcher $env:VERSION"
-            pub_date  = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
-            platforms = @{
-              "windows-x86_64" = @{
-                signature = (Get-Content "$($setup.FullName).sig" -Raw).Trim()
-                url       = "https://github.com/${{ github.repository }}/releases/download/${{ github.ref_name }}/$name"
-              }
-            }
-          } | ConvertTo-Json -Depth 5 | Set-Content release/latest.json -Encoding utf8NoBOM
+          jq -n \
+            --arg version "$version" \
+            --arg date "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            --arg winSig "$(cat "$exe.sig")" --arg winUrl "$url/$exe" \
+            --arg linSig "$(cat "$appimage.sig")" --arg linUrl "$url/$appimage" \
+            '{version: $version, notes: "Infinite Rasa Launcher \($version)", pub_date: $date,
+              platforms: {
+                "windows-x86_64": {signature: $winSig, url: $winUrl},
+                "linux-x86_64": {signature: $linSig, url: $linUrl}
+              }}' > latest.json
 
       - uses: softprops/action-gh-release@v2
         with:
@@ -75,5 +147,7 @@ jobs:
           generate_release_notes: true
           files: |
             release/*.exe
+            release/*.AppImage
+            release/*.deb
             release/SHA256SUMS.txt
             release/latest.json

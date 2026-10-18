@@ -356,6 +356,8 @@ async function openSettings() {
     wineBinEl.value = settings.launch.wine;
     winePrefixEl.value = settings.launch.wine_prefix;
     renderLaunchMode();
+    const runners = await invoke<string[]>("list_wine_runners");
+    $("wine-runners").replaceChildren(...runners.map((r) => el("option", { value: r })));
     await loadLutrisGames(settings.launch.lutris_game);
   }
   renderServerRows();
@@ -457,7 +459,7 @@ function renderLaunchMode() {
   $("lutris-options").hidden = !lutris;
   $("launch-hint").textContent = lutris
     ? "Before each launch, the Lutris game is pointed at tabula_rasa.exe in the game folder. Saved passwords are not used in this mode."
-    : "Runs tabula_rasa.exe with this Wine binary and prefix.";
+    : "Runs tabula_rasa.exe with this Wine binary and prefix. Wine's output from the last launch is saved to game.log in the launcher's log folder.";
 }
 
 /** Lists Lutris games, keeping `selected` even if Lutris no longer has it. */

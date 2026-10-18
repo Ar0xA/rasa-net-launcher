@@ -102,8 +102,9 @@
               </select>
             </div>
             <div id="wine-options" class="row">
-              <input id="wine-bin" placeholder="wine" title="Wine binary: wine, or the full path of another Wine build" />
-              <input id="wine-prefix" placeholder="Wine prefix (default ~/.wine)" />
+              <input id="wine-bin" list="wine-runners" placeholder="wine" title="Wine binary: wine, or the full path of another Wine build" />
+              <datalist id="wine-runners"></datalist>
+              <input id="wine-prefix" placeholder="Prefix: from the game folder" title="WINEPREFIX; empty uses the prefix the game folder is in, else ~/.wine" />
               <button id="browse-prefix">Browse…</button>
             </div>
             <div id="lutris-options" class="row">

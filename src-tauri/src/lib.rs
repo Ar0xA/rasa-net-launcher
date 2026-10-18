@@ -126,12 +126,26 @@ fn launch_game(app: AppHandle) -> Result<(), String> {
         .spawn()
         .map_err(|e| format!("Failed to start the game: {e}"))?;
     #[cfg(not(windows))]
-    runner::launch(&s.launch, &dir, &args)?;
+    runner::launch(&s.launch, &dir, &args, game_log(&app).as_deref())?;
 
     if s.close_on_launch {
         app.exit(0);
     }
     Ok(())
+}
+
+/// Where the output of the last launch is kept, for troubleshooting Wine.
+#[cfg(not(windows))]
+fn game_log(app: &AppHandle) -> Option<PathBuf> {
+    use tauri::Manager;
+    app.path().app_log_dir().ok().map(|d| d.join("game.log"))
+}
+
+/// Wine builds found on this machine, for the Wine binary field.
+#[cfg(not(windows))]
+#[tauri::command]
+async fn list_wine_runners() -> Vec<PathBuf> {
+    tauri::async_runtime::spawn_blocking(runner::wine_runners).await.unwrap_or_default()
 }
 
 /// Installed Lutris games the client can be launched through.
@@ -162,7 +176,9 @@ pub fn run() {
             get_news,
             launch_game,
             #[cfg(not(windows))]
-            list_lutris_games
+            list_lutris_games,
+            #[cfg(not(windows))]
+            list_wine_runners
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

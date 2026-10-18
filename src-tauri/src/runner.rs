@@ -145,8 +145,9 @@ pub fn game_dir_candidates() -> Vec<PathBuf> {
 }
 
 /// Starts the client in `dir` with `args` (the arguments Windows passes it).
-pub fn launch(cfg: &LaunchConfig, dir: &Path, args: &[String]) -> Result<(), String> {
-    let exe = dir.join(crate::game::GAME_EXE);
+/// The output of Wine (or Lutris) goes to `log` when given.
+pub fn launch(cfg: &LaunchConfig, dir: &Path, args: &[String], log: Option<&Path>) -> Result<(), String> {
+    let exe = crate::game::resolve(dir, crate::game::GAME_EXE);
     match cfg.mode {
         Mode::Wine => {
             let wine = match cfg.wine.trim() {
@@ -155,10 +156,14 @@ pub fn launch(cfg: &LaunchConfig, dir: &Path, args: &[String]) -> Result<(), Str
             };
             let mut cmd = Command::new(wine);
             cmd.arg(&exe).args(args).current_dir(dir);
-            if !cfg.wine_prefix.trim().is_empty() {
-                cmd.env("WINEPREFIX", cfg.wine_prefix.trim());
+            let prefix = match cfg.wine_prefix.trim() {
+                "" => prefix_of(dir),
+                p => Some(PathBuf::from(p)),
+            };
+            if let Some(prefix) = prefix {
+                cmd.env("WINEPREFIX", prefix);
             }
-            spawn(cmd, wine)
+            spawn(cmd, wine, log)
         }
         Mode::Lutris => {
             let game = cfg.lutris_game.as_ref().ok_or("Choose a Lutris game in Settings.")?;
@@ -174,16 +179,55 @@ pub fn launch(cfg: &LaunchConfig, dir: &Path, args: &[String]) -> Result<(), Str
                 cmd.args(["run", LUTRIS_FLATPAK]);
             }
             cmd.arg(uri);
-            spawn(cmd, "Lutris")
+            spawn(cmd, "Lutris", log)
         }
     }
 }
 
-fn spawn(mut cmd: Command, what: &str) -> Result<(), String> {
+/// The Wine prefix a folder is in: the nearest ancestor holding drive_c.
+fn prefix_of(dir: &Path) -> Option<PathBuf> {
+    dir.ancestors().find(|a| a.join("drive_c").is_dir()).map(Path::to_path_buf)
+}
+
+/// Wine builds on this machine: the one on PATH, then Lutris' runners (native and
+/// Flatpak), newest first.
+pub fn wine_runners() -> Vec<PathBuf> {
+    let mut found: Vec<PathBuf> = std::env::var_os("PATH")
+        .iter()
+        .flat_map(std::env::split_paths)
+        .map(|d| d.join("wine"))
+        .filter(|w| w.is_file())
+        .take(1)
+        .collect();
+    for install in lutris_installs() {
+        let mut runners: Vec<PathBuf> = fs::read_dir(install.data.join("runners/wine"))
+            .map(|e| e.flatten().map(|e| e.path().join("bin/wine")).filter(|w| w.is_file()).collect())
+            .unwrap_or_default();
+        runners.sort();
+        found.extend(runners.into_iter().rev());
+    }
+    found
+}
+
+/// Sends the child's output to `log`, or discards it.
+fn output(log: Option<&Path>) -> (Stdio, Stdio) {
+    let file = log.and_then(|p| {
+        fs::create_dir_all(p.parent()?).ok()?;
+        let out = fs::File::create(p).ok()?;
+        Some((out.try_clone().ok()?, out))
+    });
+    match file {
+        Some((out, err)) => (out.into(), err.into()),
+        None => (Stdio::null(), Stdio::null()),
+    }
+}
+
+fn spawn(mut cmd: Command, what: &str, log: Option<&Path>) -> Result<(), String> {
+    let (stdout, stderr) = output(log);
     let mut child = cmd
         .stdin(Stdio::null())
-        .stdout(Stdio::null())
-        .stderr(Stdio::null())
+        .stdout(stdout)
+        .stderr(stderr)
         .spawn()
         .map_err(|e| format!("Failed to start {what}: {e}"))?;
     // Reap it when it exits so it does not linger as a zombie.
@@ -390,6 +434,16 @@ mod tests {
         let out = set_game_values("game: {}\nwine: {}\n", &values());
         assert!(out.starts_with("game:\n  exe: '/g/Tabula Rasa/tabula_rasa.exe'\n"));
         assert!(out.ends_with("'/g/Tabula Rasa'\nwine: {}\n"));
+    }
+
+    #[test]
+    fn finds_the_prefix_above_the_game() {
+        let root = std::env::temp_dir().join(format!("irl-prefix-{}", std::process::id()));
+        let game = root.join("drive_c/Program Files/NCsoft/Tabula Rasa");
+        fs::create_dir_all(&game).unwrap();
+        assert_eq!(prefix_of(&game), Some(root.clone()));
+        assert_eq!(prefix_of(&std::env::temp_dir()), None);
+        fs::remove_dir_all(root).unwrap();
     }
 
     #[test]
