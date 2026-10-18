@@ -60,9 +60,10 @@ fn registry_candidates() -> Vec<PathBuf> {
     found
 }
 
+/// No registry outside Windows: look where Wine and Lutris installs usually are.
 #[cfg(not(windows))]
 fn registry_candidates() -> Vec<PathBuf> {
-    vec![]
+    crate::runner::game_dir_candidates()
 }
 
 /// Default folders the NCsoft installer (or players) commonly used, on every drive.

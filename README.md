@@ -46,6 +46,22 @@ Updates are signed so launchers only install releases you published. The public 
 - **News feed** — `NEWS_FEED` in [`src-tauri/src/news.rs`](src-tauri/src/news.rs).
 - **Version** — set from the release tag in CI; for local builds, `version` in `src-tauri/tauri.conf.json`.
 
+## Linux
+
+The launcher also builds and runs on Linux. It starts the Windows client through Wine, or through an installed [Lutris](https://lutris.net) game (native or Flatpak); pick one under **Settings → Launch with**.
+
+- **Wine** runs `tabula_rasa.exe` with the given Wine binary and `WINEPREFIX`.
+- **Lutris** cannot pass arguments at launch, so before each launch the launcher sets `exe`, `args` and `working_dir` in the chosen game's `.yml` and then opens `lutris:rungameid/<id>`. The original file is kept once as `<file>.yml.irl-backup`. A saved password is never written there, so in this mode you enter it in-game.
+
+Saved passwords are stored in the desktop keyring (Secret Service). Self-update only installs Windows releases.
+
+Prerequisites: Rust, Node.js LTS and Tauri's [Linux dependencies](https://tauri.app/start/prerequisites/#linux); on Debian/Ubuntu also `libdbus-1-dev`.
+
+```sh
+npm install
+npm run tauri build -- --bundles deb,appimage
+```
+
 ## File manifest
 
 `src-tauri/manifest.json` holds the path, size and SHA-256 of every file in a clean 1.16.5.0 client and is compiled into the launcher. Per-user files (logs, screenshots, `client.cfg`, `login.cfg`, …) are excluded. To regenerate it from a clean install:

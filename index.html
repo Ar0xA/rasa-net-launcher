@@ -93,6 +93,26 @@
             <label><input type="checkbox" id="close-on-launch" /> Close launcher when the game starts</label>
           </fieldset>
 
+          <fieldset id="launch" hidden>
+            <legend>Launch with</legend>
+            <div class="row">
+              <select id="launch-mode">
+                <option value="wine">Wine</option>
+                <option value="lutris">Lutris</option>
+              </select>
+            </div>
+            <div id="wine-options" class="row">
+              <input id="wine-bin" placeholder="wine" title="Wine binary: wine, or the full path of another Wine build" />
+              <input id="wine-prefix" placeholder="Wine prefix (default ~/.wine)" />
+              <button id="browse-prefix">Browse…</button>
+            </div>
+            <div id="lutris-options" class="row">
+              <select id="lutris-game"></select>
+              <button id="lutris-refresh">Refresh</button>
+            </div>
+            <p id="launch-hint" class="hint"></p>
+          </fieldset>
+
           <fieldset>
             <legend>Servers</legend>
             <div class="server-head">
@@ -100,7 +120,7 @@
             </div>
             <div id="server-list" class="server-list"></div>
             <button id="add-server">Add server</button>
-            <p class="hint">Saved passwords are stored in Windows Credential Manager.</p>
+            <p id="password-hint" class="hint">Saved passwords are stored in Windows Credential Manager.</p>
           </fieldset>
 
           <div class="dialog-actions">

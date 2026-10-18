@@ -223,6 +223,17 @@ select {
   background: var(--inset);
   border: 1px solid var(--edge-light);
 }
+/* WebKitGTK draws selects with the GTK theme, so outside Windows they are drawn here. */
+.unix select {
+  appearance: none;
+  padding-right: 22px;
+  background: var(--inset)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0h10L5 6z' fill='%238796aa'/%3E%3C/svg%3E")
+    no-repeat right 8px center;
+}
+.unix option {
+  background: var(--inset);
+}
 
 .account {
   margin: 8px 0 0;
@@ -429,6 +440,12 @@ fieldset label {
 }
 .row input {
   flex: 1;
+}
+.row[hidden] {
+  display: none;
+}
+#launch .row {
+  margin-top: 6px;
 }
 
 input:not([type="checkbox"]) {

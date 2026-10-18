@@ -20,6 +20,22 @@ interface Settings {
   servers: Server[];
   selected_server: string;
   close_on_launch: boolean;
+  /** Only present outside Windows. */
+  launch?: LaunchConfig;
+}
+
+interface LutrisGame {
+  id: number;
+  name: string;
+  config: string;
+  flatpak: boolean;
+}
+
+interface LaunchConfig {
+  mode: "wine" | "lutris";
+  wine: string;
+  wine_prefix: string;
+  lutris_game: LutrisGame | null;
 }
 
 interface VerifyResult {
@@ -94,7 +110,8 @@ async function renderAccount() {
     accountEl.textContent = "Log in at the game's login screen.";
   } else {
     const saved = await invoke<boolean>("has_password", { serverId: server.id });
-    accountEl.textContent = saved
+    // Lutris mode leaves the password out (it would be stored in Lutris' config).
+    accountEl.textContent = saved && settings.launch?.mode !== "lutris"
       ? `Logging in as ${server.username} automatically.`
       : `Username ${server.username} — enter your password in-game.`;
   }
@@ -324,8 +341,63 @@ async function openSettings() {
     })),
   );
   renderServerRows();
+  if (settings.launch) {
+    launchEl.hidden = false;
+    $("password-hint").textContent = "Saved passwords are stored in your desktop keyring.";
+    launchModeEl.value = settings.launch.mode;
+    wineBinEl.value = settings.launch.wine;
+    winePrefixEl.value = settings.launch.wine_prefix;
+    renderLaunchMode();
+    await loadLutrisGames(settings.launch.lutris_game);
+  }
   settingsEl.hidden = false;
 }
+
+// ---------- launch options (outside Windows only) ----------
+
+const launchEl = $("launch");
+const launchModeEl = $<HTMLSelectElement>("launch-mode");
+const wineBinEl = $<HTMLInputElement>("wine-bin");
+const winePrefixEl = $<HTMLInputElement>("wine-prefix");
+const lutrisGameEl = $<HTMLSelectElement>("lutris-game");
+let lutrisGames: LutrisGame[] = [];
+
+const lutrisKey = (g: LutrisGame) => `${g.flatpak ? "flatpak" : "native"}:${g.id}`;
+const selectedLutrisGame = () => lutrisGames.find((g) => lutrisKey(g) === lutrisGameEl.value) ?? null;
+
+function renderLaunchMode() {
+  const lutris = launchModeEl.value === "lutris";
+  $("wine-options").hidden = lutris;
+  $("lutris-options").hidden = !lutris;
+  $("launch-hint").textContent = lutris
+    ? "Before each launch, the Lutris game is pointed at tabula_rasa.exe in the game folder. Saved passwords are not used in this mode."
+    : "Runs tabula_rasa.exe with this Wine binary and prefix.";
+}
+
+/** Lists Lutris games, keeping `selected` even if Lutris no longer has it. */
+async function loadLutrisGames(selected: LutrisGame | null) {
+  let error = "";
+  try {
+    lutrisGames = await invoke<LutrisGame[]>("list_lutris_games");
+  } catch (e) {
+    lutrisGames = [];
+    error = String(e);
+  }
+  if (selected && !lutrisGames.some((g) => lutrisKey(g) === lutrisKey(selected))) lutrisGames.unshift(selected);
+  lutrisGameEl.replaceChildren(
+    el("option", { value: "", textContent: error || (lutrisGames.length ? "Choose a Lutris game" : "No Lutris games found") }),
+    ...lutrisGames.map((g) => el("option", { value: lutrisKey(g), textContent: g.flatpak ? `${g.name} (Flatpak)` : g.name })),
+  );
+  const guess = selected ?? lutrisGames.find((g) => /tabula\s*rasa/i.test(g.name));
+  lutrisGameEl.value = guess ? lutrisKey(guess) : "";
+}
+
+launchModeEl.addEventListener("change", renderLaunchMode);
+$("lutris-refresh").addEventListener("click", () => loadLutrisGames(selectedLutrisGame()));
+$("browse-prefix").addEventListener("click", async () => {
+  const dir = await open({ directory: true, title: "Select the Wine prefix" });
+  if (typeof dir === "string") winePrefixEl.value = dir;
+});
 
 $("open-settings").addEventListener("click", openSettings);
 $("settings-cancel").addEventListener("click", () => (settingsEl.hidden = true));
@@ -358,6 +430,16 @@ $("settings-save").addEventListener("click", async () => {
     alert("Keep at least one server.");
     return;
   }
+  const launch: LaunchConfig | undefined = settings.launch && {
+    mode: launchModeEl.value as LaunchConfig["mode"],
+    wine: wineBinEl.value.trim() || "wine",
+    wine_prefix: winePrefixEl.value.trim(),
+    lutris_game: selectedLutrisGame(),
+  };
+  if (launch?.mode === "lutris" && !launch.lutris_game) {
+    alert("Choose a Lutris game, or launch with Wine.");
+    return;
+  }
 
   try {
     for (const id of removedIds) await invoke("set_password", { serverId: id, password: null });
@@ -378,6 +460,7 @@ $("settings-save").addEventListener("click", async () => {
       servers: draftRows.map(({ id, name, host, username }) => ({ id, name, host, username })),
       selected_server: draftRows.some((r) => r.id === settings.selected_server) ? settings.selected_server : draftRows[0].id,
       close_on_launch: closeOnLaunchEl.checked,
+      ...(launch && { launch }),
     };
     await invoke("save_settings", { settings });
     if (draftDir) await invoke("set_skip_intro", { dir: draftDir, skip: skipIntroEl.checked }).catch(() => {});
@@ -425,6 +508,7 @@ async function selfUpdate(): Promise<boolean> {
   if (await selfUpdate()) return;
 
   settings = await invoke<Settings>("get_settings");
+  document.documentElement.classList.toggle("unix", !!settings.launch);
   await renderServers();
   await checkGame();
 })();

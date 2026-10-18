@@ -35,6 +35,13 @@ keyring = { version = "3", features = ["windows-native"] }
 [target.'cfg(windows)'.dependencies]
 winreg = "0.55"
 
+[target.'cfg(not(windows))'.dependencies]
+rusqlite = { version = "0.40", features = ["bundled"] }
+
+# Saved passwords go to the desktop keyring (Secret Service) on Linux.
+[target.'cfg(target_os = "linux")'.dependencies]
+keyring = { version = "3", features = ["sync-secret-service", "crypto-rust"] }
+
 
 # Read the optimization guideline for more details: https://tauri.app/concept/size/#cargo-configuration
 [profile.release]

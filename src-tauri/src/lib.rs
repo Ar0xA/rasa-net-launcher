@@ -1,10 +1,13 @@
 mod game;
 mod news;
+#[cfg(not(windows))]
+mod runner;
 mod settings;
 
 use serde::Serialize;
 use settings::Settings;
 use std::path::PathBuf;
+#[cfg(windows)]
 use std::process::Command;
 use tauri::{AppHandle, Emitter};
 
@@ -109,16 +112,26 @@ fn launch_game(app: AppHandle) -> Result<(), String> {
         }
     }
 
+    #[cfg(windows)]
     Command::new(dir.join(game::GAME_EXE))
         .current_dir(&dir)
         .args(&args)
         .spawn()
         .map_err(|e| format!("Failed to start the game: {e}"))?;
+    #[cfg(not(windows))]
+    runner::launch(&s.launch, &dir, &args)?;
 
     if s.close_on_launch {
         app.exit(0);
     }
     Ok(())
+}
+
+/// Installed Lutris games the client can be launched through.
+#[cfg(not(windows))]
+#[tauri::command]
+async fn list_lutris_games() -> Result<Vec<runner::LutrisGame>, String> {
+    tauri::async_runtime::spawn_blocking(runner::lutris_games).await.map_err(|e| e.to_string())?
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
@@ -138,7 +151,9 @@ pub fn run() {
             get_skip_intro,
             set_skip_intro,
             get_news,
-            launch_game
+            launch_game,
+            #[cfg(not(windows))]
+            list_lutris_games
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

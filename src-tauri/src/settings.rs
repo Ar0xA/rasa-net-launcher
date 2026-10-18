@@ -25,6 +25,9 @@ pub struct Settings {
     pub servers: Vec<Server>,
     pub selected_server: String,
     pub close_on_launch: bool,
+    /// How the Windows client is started outside Windows.
+    #[cfg(not(windows))]
+    pub launch: crate::runner::LaunchConfig,
 }
 
 impl Default for Settings {
@@ -40,6 +43,8 @@ impl Default for Settings {
             }],
             selected_server: "infinite-rasa".into(),
             close_on_launch: false,
+            #[cfg(not(windows))]
+            launch: Default::default(),
         }
     }
 }
