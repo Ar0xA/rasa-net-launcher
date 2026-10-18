@@ -2,6 +2,7 @@
 //! installed Lutris game entry.
 
 use serde::{Deserialize, Serialize};
+use std::ffi::OsString;
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::{Command, Stdio};
@@ -223,6 +224,12 @@ fn output(log: Option<&Path>) -> (Stdio, Stdio) {
 }
 
 fn spawn(mut cmd: Command, what: &str, log: Option<&Path>) -> Result<(), String> {
+    for (key, value) in host_env(std::env::vars_os()) {
+        match value {
+            Some(value) => cmd.env(key, value),
+            None => cmd.env_remove(key),
+        };
+    }
     let (stdout, stderr) = output(log);
     let mut child = cmd
         .stdin(Stdio::null())
@@ -233,6 +240,44 @@ fn spawn(mut cmd: Command, what: &str, log: Option<&Path>) -> Result<(), String>
     // Reap it when it exits so it does not linger as a zombie.
     std::thread::spawn(move || child.wait());
     Ok(())
+}
+
+/// The environment changes that give a started program the host's environment back when
+/// the launcher runs as an AppImage. AppRun points LD_LIBRARY_PATH, PYTHONHOME, GTK_PATH
+/// and others into the AppImage's mount for its own bundled libraries; passed on, host
+/// programs load those instead of their own: flatpak fails at once ("symbol lookup error"
+/// in libcurl) and a native Lutris cannot start Python. Entries inside the mount are
+/// dropped from path lists, a variable left empty is removed, and so are the AppImage's
+/// own variables; anything else is kept as it was.
+fn host_env<I>(vars: I) -> Vec<(OsString, Option<OsString>)>
+where
+    I: IntoIterator<Item = (OsString, OsString)>,
+{
+    let vars: Vec<_> = vars.into_iter().collect();
+    let value_of = |name: &str| vars.iter().find(|(k, _)| k == name).map(|(_, v)| v);
+    let appdir = match (value_of("APPDIR"), value_of("APPIMAGE")) {
+        (Some(dir), Some(_)) => dir.to_string_lossy().trim_end_matches('/').to_owned(),
+        _ => return Vec::new(),
+    };
+    if appdir.is_empty() {
+        return Vec::new();
+    }
+    let inside = |part: &str| part == appdir || part.starts_with(&format!("{appdir}/"));
+
+    let mut changes = Vec::new();
+    for (key, value) in vars {
+        if key == "APPDIR" || key == "APPIMAGE" || key == "ARGV0" || key == "OWD" {
+            changes.push((key, None));
+            continue;
+        }
+        let Some(text) = value.to_str() else { continue };
+        if !text.split(':').any(inside) {
+            continue;
+        }
+        let kept: Vec<&str> = text.split(':').filter(|p| !p.is_empty() && !inside(p)).collect();
+        changes.push((key, if kept.is_empty() { None } else { Some(kept.join(":").into()) }));
+    }
+    changes
 }
 
 /// Sets exe, args and working_dir of a Lutris game config, keeping a one-time backup.
@@ -379,6 +424,58 @@ fn set_game_values(yml: &str, values: &[(&str, String)]) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    fn env(pairs: &[(&str, &str)]) -> Vec<(OsString, OsString)> {
+        pairs.iter().map(|(k, v)| (k.into(), v.into())).collect()
+    }
+
+    fn change<'a>(changes: &'a [(OsString, Option<OsString>)], key: &str) -> Option<&'a Option<OsString>> {
+        changes.iter().find(|(k, _)| k == key).map(|(_, v)| v)
+    }
+
+    #[test]
+    fn host_env_changes_nothing_outside_an_appimage() {
+        let vars = env(&[("LD_LIBRARY_PATH", "/opt/lib"), ("PATH", "/usr/bin")]);
+        assert!(host_env(vars).is_empty());
+        // APPDIR alone (no AppImage runtime) or a root APPDIR is not trusted either.
+        assert!(host_env(env(&[("APPDIR", "/tmp/x"), ("PATH", "/tmp/x/bin")])).is_empty());
+        assert!(host_env(env(&[("APPDIR", "/"), ("APPIMAGE", "/a"), ("PATH", "/usr/bin")])).is_empty());
+    }
+
+    #[test]
+    fn host_env_drops_the_appimage_mount_and_keeps_the_rest() {
+        let m = "/tmp/.mount_rasa-abc";
+        let vars = env(&[
+            ("APPDIR", m),
+            ("APPIMAGE", "/home/u/rasa-launcher"),
+            ("LD_LIBRARY_PATH", &format!("{m}/usr/lib/:{m}/usr/lib/x86_64-linux-gnu/")),
+            ("PYTHONHOME", &format!("{m}/usr/")),
+            ("PYTHONPATH", &format!("{m}/usr/share/pyshared/:")),
+            ("GTK_PATH", &format!("{m}//usr/lib/gtk-3.0")),
+            ("PATH", &format!("{m}/usr/bin/:/usr/local/bin:/usr/bin")),
+            ("XDG_DATA_DIRS", &format!("{m}/usr/share/:/usr/share:/var/lib/flatpak/exports/share")),
+            ("HOME", "/home/u"),
+            ("PYTHONDONTWRITEBYTECODE", "1"),
+            ("OTHER", "/tmp/.mount_rasa-abcdef/x"),
+        ]);
+        let changes = host_env(vars);
+
+        assert_eq!(change(&changes, "LD_LIBRARY_PATH"), Some(&None));
+        assert_eq!(change(&changes, "PYTHONHOME"), Some(&None));
+        assert_eq!(change(&changes, "PYTHONPATH"), Some(&None));
+        assert_eq!(change(&changes, "GTK_PATH"), Some(&None));
+        assert_eq!(change(&changes, "APPDIR"), Some(&None));
+        assert_eq!(change(&changes, "APPIMAGE"), Some(&None));
+        assert_eq!(change(&changes, "PATH"), Some(&Some("/usr/local/bin:/usr/bin".into())));
+        assert_eq!(
+            change(&changes, "XDG_DATA_DIRS"),
+            Some(&Some("/usr/share:/var/lib/flatpak/exports/share".into()))
+        );
+        assert_eq!(change(&changes, "HOME"), None);
+        assert_eq!(change(&changes, "PYTHONDONTWRITEBYTECODE"), None);
+        // A different mount that only shares a prefix is not the AppImage's.
+        assert_eq!(change(&changes, "OTHER"), None);
+    }
 
     fn values() -> Vec<(&'static str, String)> {
         vec![
