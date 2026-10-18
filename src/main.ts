@@ -351,9 +351,6 @@ async function openSettings() {
     $("password-hint").textContent = canSavePasswords
       ? "Saved passwords are stored in your desktop keyring."
       : "No desktop keyring (Secret Service) is running, so passwords cannot be saved. Enter yours in-game.";
-  }
-  renderServerRows();
-  if (settings.launch) {
     launchEl.hidden = false;
     launchModeEl.value = settings.launch.mode;
     wineBinEl.value = settings.launch.wine;
@@ -361,54 +358,9 @@ async function openSettings() {
     renderLaunchMode();
     await loadLutrisGames(settings.launch.lutris_game);
   }
+  renderServerRows();
   settingsEl.hidden = false;
 }
-
-// ---------- launch options (outside Windows only) ----------
-
-const launchEl = $("launch");
-const launchModeEl = $<HTMLSelectElement>("launch-mode");
-const wineBinEl = $<HTMLInputElement>("wine-bin");
-const winePrefixEl = $<HTMLInputElement>("wine-prefix");
-const lutrisGameEl = $<HTMLSelectElement>("lutris-game");
-let lutrisGames: LutrisGame[] = [];
-
-const lutrisKey = (g: LutrisGame) => `${g.flatpak ? "flatpak" : "native"}:${g.id}`;
-const selectedLutrisGame = () => lutrisGames.find((g) => lutrisKey(g) === lutrisGameEl.value) ?? null;
-
-function renderLaunchMode() {
-  const lutris = launchModeEl.value === "lutris";
-  $("wine-options").hidden = lutris;
-  $("lutris-options").hidden = !lutris;
-  $("launch-hint").textContent = lutris
-    ? "Before each launch, the Lutris game is pointed at tabula_rasa.exe in the game folder. Saved passwords are not used in this mode."
-    : "Runs tabula_rasa.exe with this Wine binary and prefix.";
-}
-
-/** Lists Lutris games, keeping `selected` even if Lutris no longer has it. */
-async function loadLutrisGames(selected: LutrisGame | null) {
-  let error = "";
-  try {
-    lutrisGames = await invoke<LutrisGame[]>("list_lutris_games");
-  } catch (e) {
-    lutrisGames = [];
-    error = String(e);
-  }
-  if (selected && !lutrisGames.some((g) => lutrisKey(g) === lutrisKey(selected))) lutrisGames.unshift(selected);
-  lutrisGameEl.replaceChildren(
-    el("option", { value: "", textContent: error || (lutrisGames.length ? "Choose a Lutris game" : "No Lutris games found") }),
-    ...lutrisGames.map((g) => el("option", { value: lutrisKey(g), textContent: g.flatpak ? `${g.name} (Flatpak)` : g.name })),
-  );
-  const guess = selected ?? lutrisGames.find((g) => /tabula\s*rasa/i.test(g.name));
-  lutrisGameEl.value = guess ? lutrisKey(guess) : "";
-}
-
-launchModeEl.addEventListener("change", renderLaunchMode);
-$("lutris-refresh").addEventListener("click", () => loadLutrisGames(selectedLutrisGame()));
-$("browse-prefix").addEventListener("click", async () => {
-  const dir = await open({ directory: true, title: "Select the Wine prefix" });
-  if (typeof dir === "string") winePrefixEl.value = dir;
-});
 
 $("open-settings").addEventListener("click", openSettings);
 $("settings-cancel").addEventListener("click", () => (settingsEl.hidden = true));
@@ -485,6 +437,52 @@ $("settings-save").addEventListener("click", async () => {
   } catch (e) {
     alert(String(e));
   }
+});
+
+// ---------- launch options (outside Windows only) ----------
+
+const launchEl = $("launch");
+const launchModeEl = $<HTMLSelectElement>("launch-mode");
+const wineBinEl = $<HTMLInputElement>("wine-bin");
+const winePrefixEl = $<HTMLInputElement>("wine-prefix");
+const lutrisGameEl = $<HTMLSelectElement>("lutris-game");
+let lutrisGames: LutrisGame[] = [];
+
+const lutrisKey = (g: LutrisGame) => `${g.flatpak ? "flatpak" : "native"}:${g.id}`;
+const selectedLutrisGame = () => lutrisGames.find((g) => lutrisKey(g) === lutrisGameEl.value) ?? null;
+
+function renderLaunchMode() {
+  const lutris = launchModeEl.value === "lutris";
+  $("wine-options").hidden = lutris;
+  $("lutris-options").hidden = !lutris;
+  $("launch-hint").textContent = lutris
+    ? "Before each launch, the Lutris game is pointed at tabula_rasa.exe in the game folder. Saved passwords are not used in this mode."
+    : "Runs tabula_rasa.exe with this Wine binary and prefix.";
+}
+
+/** Lists Lutris games, keeping `selected` even if Lutris no longer has it. */
+async function loadLutrisGames(selected: LutrisGame | null) {
+  let error = "";
+  try {
+    lutrisGames = await invoke<LutrisGame[]>("list_lutris_games");
+  } catch (e) {
+    lutrisGames = [];
+    error = String(e);
+  }
+  if (selected && !lutrisGames.some((g) => lutrisKey(g) === lutrisKey(selected))) lutrisGames.unshift(selected);
+  lutrisGameEl.replaceChildren(
+    el("option", { value: "", textContent: error || (lutrisGames.length ? "Choose a Lutris game" : "No Lutris games found") }),
+    ...lutrisGames.map((g) => el("option", { value: lutrisKey(g), textContent: g.flatpak ? `${g.name} (Flatpak)` : g.name })),
+  );
+  const guess = selected ?? lutrisGames.find((g) => /tabula\s*rasa/i.test(g.name));
+  lutrisGameEl.value = guess ? lutrisKey(guess) : "";
+}
+
+launchModeEl.addEventListener("change", renderLaunchMode);
+$("lutris-refresh").addEventListener("click", () => loadLutrisGames(selectedLutrisGame()));
+$("browse-prefix").addEventListener("click", async () => {
+  const dir = await open({ directory: true, title: "Select the Wine prefix" });
+  if (typeof dir === "string") winePrefixEl.value = dir;
 });
 
 // ---------- self-update ----------

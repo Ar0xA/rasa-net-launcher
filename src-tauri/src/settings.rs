@@ -3,7 +3,7 @@ use std::fs;
 use std::path::PathBuf;
 use tauri::{AppHandle, Manager};
 
-/// Windows Credential Manager service name for saved passwords.
+/// Credential Manager (Windows) / Secret Service (Linux) name for saved passwords.
 const CREDENTIAL_SERVICE: &str = "org.infiniterasa.launcher";
 
 #[derive(Serialize, Deserialize, Clone)]

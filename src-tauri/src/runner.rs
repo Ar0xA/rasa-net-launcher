@@ -5,6 +5,7 @@ use serde::{Deserialize, Serialize};
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::{Command, Stdio};
+use std::time::Duration;
 
 const LUTRIS_FLATPAK: &str = "net.lutris.Lutris";
 /// The Lutris .yml as it was before the launcher first rewrote it.
@@ -80,8 +81,8 @@ fn lutris_installs() -> [LutrisInstall; 2] {
             flatpak: true,
         },
         LutrisInstall {
+            data: native.clone(),
             configs: [native.join("games"), xdg_dir("XDG_CONFIG_HOME", ".config").join("lutris/games")],
-            data: native,
             flatpak: false,
         },
     ]
@@ -101,13 +102,13 @@ pub fn lutris_games() -> Result<Vec<LutrisGame>, String> {
         found = true;
         let read = || -> rusqlite::Result<Vec<(i64, String, String)>> {
             let conn = Connection::open_with_flags(&db, OpenFlags::SQLITE_OPEN_READ_ONLY)?;
+            // Lutris may be writing to it (e.g. lastplayed when a game starts).
+            conn.busy_timeout(Duration::from_millis(500))?;
             let mut stmt = conn.prepare(
                 "SELECT id, name, configpath FROM games \
-                 WHERE installed = 1 AND configpath <> '' ORDER BY name COLLATE NOCASE",
+                 WHERE installed = 1 AND name IS NOT NULL AND configpath <> '' ORDER BY name COLLATE NOCASE",
             )?;
-            // Rows with NULL columns are skipped.
-            let rows = stmt.query_map([], |r| Ok((r.get(0)?, r.get(1)?, r.get(2)?)))?;
-            Ok(rows.flatten().collect())
+            stmt.query_map([], |r| Ok((r.get(0)?, r.get(1)?, r.get(2)?)))?.collect()
         };
         let rows = read().map_err(|e| format!("Could not read {}: {e}", db.display()))?;
         for (id, name, configpath) in rows {
@@ -192,7 +193,6 @@ fn spawn(mut cmd: Command, what: &str) -> Result<(), String> {
 
 /// Sets exe, args and working_dir of a Lutris game config, keeping a one-time backup.
 fn point_lutris_at(config: &Path, exe: &Path, args: &[&str], dir: &Path) -> Result<(), String> {
-    let utf8 = |p: &Path| p.to_str().map(str::to_owned).ok_or_else(|| format!("Path is not valid UTF-8: {}", p.display()));
     let yml = fs::read_to_string(config).map_err(|e| format!("Could not read {}: {e}", config.display()))?;
 
     let mut backup = config.as_os_str().to_owned();
@@ -213,7 +213,21 @@ fn point_lutris_at(config: &Path, exe: &Path, args: &[&str], dir: &Path) -> Resu
         .map_err(|e| format!("Could not update {}: {e}", config.display()))
 }
 
+fn utf8(path: &Path) -> Result<String, String> {
+    path.to_str().map(str::to_owned).ok_or_else(|| format!("Path is not valid UTF-8: {}", path.display()))
+}
+
 // ---------- minimal YAML handling for the top-level "game:" block ----------
+
+fn is_comment(line: &str) -> bool {
+    line.trim_start().starts_with('#')
+}
+
+/// The top-level "game:" line, also with a trailing comment or as an empty `game: {}`.
+fn is_game_line(line: &str) -> bool {
+    let line = line.split_once(" #").map_or(line, |(l, _)| l).trim_end();
+    line == "game:" || line == "game: {}"
+}
 
 fn indent_of(line: &str) -> usize {
     line.len() - line.trim_start().len()
@@ -224,15 +238,15 @@ fn child_indent<S: AsRef<str>>(lines: &[S], game: usize) -> usize {
     lines[game + 1..]
         .iter()
         .map(AsRef::as_ref)
-        .find(|l| !l.trim().is_empty())
+        .find(|l| !l.trim().is_empty() && !is_comment(l))
         .map(indent_of)
         .filter(|&n| n > 0)
         .unwrap_or(2)
 }
 
-/// True while `line` is still inside a top-level block (indented or blank).
+/// True while `line` is still inside a top-level block (indented, blank or a comment).
 fn in_block(line: &str) -> bool {
-    line.trim().is_empty() || line.starts_with(char::is_whitespace)
+    line.trim().is_empty() || line.starts_with(char::is_whitespace) || is_comment(line)
 }
 
 fn yaml_quote(value: &str) -> String {
@@ -263,7 +277,7 @@ fn shell_quote(arg: &str) -> String {
 /// A single-line value from the "game:" block.
 fn game_value(yml: &str, key: &str) -> Option<String> {
     let lines: Vec<&str> = yml.lines().collect();
-    let game = lines.iter().position(|l| l.trim_end() == "game:")?;
+    let game = lines.iter().position(|l| is_game_line(l))?;
     let indent = child_indent(&lines, game);
     let prefix = format!("{key}:");
     lines[game + 1..]
@@ -277,10 +291,13 @@ fn game_value(yml: &str, key: &str) -> Option<String> {
 /// Only keys at the block's own indent count, so nested ones (e.g. in launch_configs) stay.
 fn set_game_values(yml: &str, values: &[(&str, String)]) -> String {
     let mut lines: Vec<String> = yml.lines().map(str::to_owned).collect();
-    let game = lines.iter().position(|l| l.trim_end() == "game:").unwrap_or_else(|| {
+    let game = lines.iter().position(|l| is_game_line(l)).unwrap_or_else(|| {
         lines.push("game:".into());
         lines.len() - 1
     });
+    if lines[game].contains("{}") {
+        lines[game] = "game:".into(); // keys follow on their own lines
+    }
     let indent = child_indent(&lines, game);
 
     let mut i = game + 1;
@@ -294,12 +311,14 @@ fn set_game_values(yml: &str, values: &[(&str, String)]) -> String {
             continue;
         }
         // Continuation lines are deeper; blank lines inside a block scalar belong to it too.
+        // A comment at the key's indent or less ends the value and is kept.
         let mut last = i;
         for (j, l) in lines.iter().enumerate().skip(i + 1) {
-            if !l.trim().is_empty() && indent_of(l) <= indent {
+            let blank = l.trim().is_empty();
+            if !blank && indent_of(l) <= indent {
                 break;
             }
-            if !l.trim().is_empty() {
+            if !blank {
                 last = j;
             }
         }
@@ -356,6 +375,21 @@ mod tests {
         assert_eq!(game_value("game:\n  exe: \"/x/it's.exe\"\n", "exe").as_deref(), Some("/x/it's.exe"));
         assert_eq!(game_value("game:\n  exe: '/x/it''s.exe'\n", "exe").as_deref(), Some("/x/it's.exe"));
         assert_eq!(game_value("wine:\n  exe: a\n", "exe"), None);
+    }
+
+    #[test]
+    fn handles_comments_and_empty_game_blocks() {
+        let yml = "game: # main\n  exe: old.exe\n# note\n  args: old\n  prefix: /p\nwine:\n  version: ge\n";
+        let out = set_game_values(yml, &values());
+        assert_eq!(
+            out,
+            "game: # main\n  exe: '/g/Tabula Rasa/tabula_rasa.exe'\n  args: '/NoPatch /AuthServer=h:2106'\n  working_dir: '/g/Tabula Rasa'\n# note\n  prefix: /p\nwine:\n  version: ge\n"
+        );
+        assert_eq!(game_value(yml, "args").as_deref(), Some("old"));
+
+        let out = set_game_values("game: {}\nwine: {}\n", &values());
+        assert!(out.starts_with("game:\n  exe: '/g/Tabula Rasa/tabula_rasa.exe'\n"));
+        assert!(out.ends_with("'/g/Tabula Rasa'\nwine: {}\n"));
     }
 
     #[test]
