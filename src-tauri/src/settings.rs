@@ -3,7 +3,7 @@ use std::fs;
 use std::path::PathBuf;
 use tauri::{AppHandle, Manager};
 
-/// Windows Credential Manager service name for saved passwords.
+/// Credential Manager (Windows) / Secret Service (Linux) name for saved passwords.
 const CREDENTIAL_SERVICE: &str = "org.infiniterasa.launcher";
 
 #[derive(Serialize, Deserialize, Clone)]
@@ -25,6 +25,9 @@ pub struct Settings {
     pub servers: Vec<Server>,
     pub selected_server: String,
     pub close_on_launch: bool,
+    /// How the Windows client is started outside Windows.
+    #[cfg(not(windows))]
+    pub launch: crate::runner::LaunchConfig,
 }
 
 impl Default for Settings {
@@ -40,6 +43,8 @@ impl Default for Settings {
             }],
             selected_server: "infinite-rasa".into(),
             close_on_launch: false,
+            #[cfg(not(windows))]
+            launch: Default::default(),
         }
     }
 }
@@ -71,6 +76,15 @@ fn credential(server_id: &str) -> Result<keyring::Entry, String> {
 /// The saved password for a server, if the player chose to remember one.
 pub fn password(server_id: &str) -> Option<String> {
     credential(server_id).ok()?.get_password().ok()
+}
+
+/// True if a keyring can hold passwords. Outside Windows that needs a running
+/// Secret Service (GNOME Keyring, KWallet, KeePassXC, …). When it is false the
+/// settings dialog does not accept a password at all, so none is ever stored in clear text.
+#[cfg(not(windows))]
+pub fn can_save_passwords() -> bool {
+    credential("keyring-check")
+        .is_ok_and(|e| matches!(e.get_password(), Ok(_) | Err(keyring::Error::NoEntry)))
 }
 
 /// Stores the password, or forgets it when `password` is None.
