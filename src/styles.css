@@ -234,6 +234,10 @@ select {
 .unix option {
   background: var(--inset);
 }
+.unix input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
 .account {
   margin: 8px 0 0;

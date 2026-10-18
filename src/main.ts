@@ -293,6 +293,11 @@ interface ServerRow extends Server {
 let draftDir: string | null = null;
 let draftRows: ServerRow[] = [];
 let removedIds: string[] = [];
+/**
+ * False outside Windows when no desktop keyring is running. The password field is then
+ * disabled, so a password can never be entered and end up stored anywhere in clear text.
+ */
+let canSavePasswords = true;
 
 function renderServerRows() {
   serverListEl.replaceChildren(
@@ -306,7 +311,8 @@ function renderServerRows() {
       const pw = el("input", {
         type: "password",
         value: row.password,
-        placeholder: row.hasPassword && !row.forget ? "•••••• (saved)" : "not saved",
+        disabled: !canSavePasswords,
+        placeholder: !canSavePasswords ? "no keyring" : row.hasPassword && !row.forget ? "•••••• (saved)" : "not saved",
       });
       pw.addEventListener("input", () => (row.password = pw.value));
       const remove = el("button", { textContent: "✕", title: "Remove server or forget password" });
@@ -340,10 +346,15 @@ async function openSettings() {
       hasPassword: await invoke<boolean>("has_password", { serverId: s.id }),
     })),
   );
+  if (settings.launch) {
+    canSavePasswords = await invoke<boolean>("can_save_passwords");
+    $("password-hint").textContent = canSavePasswords
+      ? "Saved passwords are stored in your desktop keyring."
+      : "No desktop keyring (Secret Service) is running, so passwords cannot be saved. Enter yours in-game.";
+  }
   renderServerRows();
   if (settings.launch) {
     launchEl.hidden = false;
-    $("password-hint").textContent = "Saved passwords are stored in your desktop keyring.";
     launchModeEl.value = settings.launch.mode;
     wineBinEl.value = settings.launch.wine;
     winePrefixEl.value = settings.launch.wine_prefix;
@@ -442,14 +453,17 @@ $("settings-save").addEventListener("click", async () => {
   }
 
   try {
-    for (const id of removedIds) await invoke("set_password", { serverId: id, password: null });
-    for (const row of draftRows) {
-      const old = settings.servers.find((s) => s.id === row.id);
-      const usernameChanged = old && old.username !== row.username;
-      if (row.password && row.username) {
-        await invoke("set_password", { serverId: row.id, password: row.password });
-      } else if (row.forget || usernameChanged || !row.username) {
-        await invoke("set_password", { serverId: row.id, password: null });
+    // Without a keyring there is nothing to store or forget.
+    if (canSavePasswords) {
+      for (const id of removedIds) await invoke("set_password", { serverId: id, password: null });
+      for (const row of draftRows) {
+        const old = settings.servers.find((s) => s.id === row.id);
+        const usernameChanged = old && old.username !== row.username;
+        if (row.password && row.username) {
+          await invoke("set_password", { serverId: row.id, password: row.password });
+        } else if (row.forget || usernameChanged || !row.username) {
+          await invoke("set_password", { serverId: row.id, password: null });
+        }
       }
     }
 

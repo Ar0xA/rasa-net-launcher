@@ -78,6 +78,15 @@ pub fn password(server_id: &str) -> Option<String> {
     credential(server_id).ok()?.get_password().ok()
 }
 
+/// True if a keyring can hold passwords. Outside Windows that needs a running
+/// Secret Service (GNOME Keyring, KWallet, KeePassXC, …). When it is false the
+/// settings dialog does not accept a password at all, so none is ever stored in clear text.
+#[cfg(not(windows))]
+pub fn can_save_passwords() -> bool {
+    credential("keyring-check")
+        .is_ok_and(|e| matches!(e.get_password(), Ok(_) | Err(keyring::Error::NoEntry)))
+}
+
 /// Stores the password, or forgets it when `password` is None.
 pub fn set_password(server_id: &str, password: Option<&str>) -> Result<(), String> {
     let entry = credential(server_id)?;

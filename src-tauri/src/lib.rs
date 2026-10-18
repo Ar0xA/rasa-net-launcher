@@ -52,6 +52,13 @@ fn set_password(server_id: String, password: Option<String>) -> Result<(), Strin
     settings::set_password(&server_id, password.as_deref())
 }
 
+/// Whether passwords can be saved; outside Windows a desktop keyring may be missing.
+#[cfg(not(windows))]
+#[tauri::command]
+async fn can_save_passwords() -> bool {
+    tauri::async_runtime::spawn_blocking(settings::can_save_passwords).await.unwrap_or(false)
+}
+
 /// Checks the install. A clean full verify is remembered so later starts only need the quick check.
 #[tauri::command]
 async fn verify_files(app: AppHandle, dir: PathBuf, full: bool) -> Result<game::VerifyResult, String> {
@@ -147,6 +154,8 @@ pub fn run() {
             is_game_dir,
             has_password,
             set_password,
+            #[cfg(not(windows))]
+            can_save_passwords,
             verify_files,
             get_skip_intro,
             set_skip_intro,
