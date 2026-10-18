@@ -53,7 +53,9 @@ The launcher also builds and runs on Linux. It starts the Windows client through
 - **Wine** runs `tabula_rasa.exe` with the given Wine binary and `WINEPREFIX`.
 - **Lutris** cannot pass arguments at launch, so before each launch the launcher sets `exe`, `args` and `working_dir` in the chosen game's `.yml` and then opens `lutris:rungameid/<id>`. The original file is kept once as `<file>.yml.irl-backup`. A saved password is never written there, so in this mode you enter it in-game.
 
-Saved passwords are stored in the desktop keyring (Secret Service). Self-update only installs Windows releases.
+Saved passwords are stored in the desktop keyring (Secret Service). Releases include an AppImage and a .deb; self-update works for the AppImage (a .deb is updated by installing the new one).
+
+Wine and Lutris output from the last launch goes to `game.log` in `~/.local/share/org.infiniterasa.launcher/logs/`.
 
 Prerequisites: Rust, Node.js LTS and Tauri's [Linux dependencies](https://tauri.app/start/prerequisites/#linux); on Debian/Ubuntu also `libdbus-1-dev`.
 
