@@ -279,7 +279,7 @@ mod tests {
         let pkg = dir.join(PACKAGE);
         fs::create_dir_all(&pkg).unwrap();
         fs::write(pkg.join("__init__.py"), IMPORT_LINES.join("\r\n") + "\r\n").unwrap();
-        fs::write(pkg.join("developerkeys.py"), DEVELOPER_KEYS_PY.replace('\n', "\r\n")).unwrap();
+        fs::write(pkg.join("developerkeys.py"), DEVELOPER_KEYS_PY.replace("\r\n", "\n").replace('\n', "\r\n")).unwrap();
         fs::write(pkg.join("slowmouselook.py"), MODULE_PY).unwrap();
         fs::write(pkg.join("slowmouselook.pyo"), "x").unwrap();
         assert!(installed(&dir));
@@ -298,6 +298,29 @@ mod tests {
         fs::write(pkg.join("slowmouselook.py"), MODULE_PY).unwrap();
         uninstall(&dir).unwrap();
         assert!(!dir.join("python_nca_internal").exists());
+        fs::remove_dir_all(dir).unwrap();
+    }
+
+    #[test]
+    fn keeps_the_infinite_rasa_client_mod_side_load() {
+        // That mod's side-load puts its own files straight into python_nca_internal (no package).
+        let dir = game_dir("sideload");
+        let nca = dir.join("python_nca_internal");
+        fs::create_dir_all(&nca).unwrap();
+        let theirs = ["clientbootstrap.py", "clientmod_loader.py", "clientmod_data.py"];
+        for name in theirs {
+            fs::write(nca.join(name), format!("# {name}\r\n")).unwrap();
+        }
+
+        install(&dir).unwrap();
+        assert!(installed(&dir));
+        uninstall(&dir).unwrap();
+        assert!(!installed(&dir));
+        assert!(!dir.join(PACKAGE).exists());
+        for name in theirs {
+            assert_eq!(fs::read_to_string(nca.join(name)).unwrap(), format!("# {name}\r\n"));
+        }
+        assert_eq!(fs::read_dir(&nca).unwrap().count(), theirs.len());
         fs::remove_dir_all(dir).unwrap();
     }
 

@@ -1,0 +1,2 @@
+# The slow mouse look fix is embedded byte for byte (include_str!): no line-end conversion on checkout.
+src-tauri/mods/** -text
