@@ -1,4 +1,5 @@
 mod game;
+mod mouselook;
 mod news;
 #[cfg(not(windows))]
 mod runner;
@@ -94,6 +95,21 @@ fn set_skip_intro(dir: PathBuf, skip: bool) -> Result<(), String> {
     game::write_skip_intro(&dir, skip)
 }
 
+/// Whether the slow mouse look fix (by thatawesomeguy) is in the game folder.
+#[tauri::command]
+fn get_mouse_fix(dir: PathBuf) -> bool {
+    mouselook::installed(&dir)
+}
+
+/// Installs or removes the slow mouse look fix in the game folder.
+#[tauri::command]
+fn set_mouse_fix(dir: PathBuf, install: bool) -> Result<(), String> {
+    if !game::is_game_dir(&dir) {
+        return Err("Game folder is not set.".into());
+    }
+    if install { mouselook::install(&dir) } else { mouselook::uninstall(&dir) }
+}
+
 #[tauri::command]
 async fn get_news() -> Result<Vec<news::NewsItem>, String> {
     news::fetch().await
@@ -173,6 +189,8 @@ pub fn run() {
             verify_files,
             get_skip_intro,
             set_skip_intro,
+            get_mouse_fix,
+            set_mouse_fix,
             get_news,
             launch_game,
             #[cfg(not(windows))]

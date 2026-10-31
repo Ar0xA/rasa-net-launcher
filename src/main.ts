@@ -136,8 +136,40 @@ function showProblems(r: VerifyResult) {
 
 /** Quick check for a folder that already passed a full verify; full verify otherwise. */
 function checkGame() {
+  void refreshMouseFix();
   return verify(!settings.game_dir || settings.game_dir !== settings.verified_dir);
 }
+
+// ---------- slow mouse look fix (by thatawesomeguy, Infinite Rasa Discord) ----------
+
+const mouseFixBtn = $<HTMLButtonElement>("mouse-fix");
+let mouseFixOn = false;
+
+/** The button installs the fix, or removes it when it is in the game folder. */
+async function refreshMouseFix() {
+  const dir = settings?.game_dir;
+  mouseFixOn = dir ? await invoke<boolean>("get_mouse_fix", { dir }).catch(() => false) : false;
+  mouseFixBtn.textContent = mouseFixOn ? "Remove mouse fix" : "Install mouse fix";
+  mouseFixBtn.disabled = !dir;
+}
+
+mouseFixBtn.addEventListener("click", async () => {
+  const dir = settings.game_dir;
+  if (!dir) return;
+  mouseFixBtn.disabled = true;
+  try {
+    await invoke("set_mouse_fix", { dir, install: !mouseFixOn });
+    setStatus(
+      mouseFixOn
+        ? "Mouse fix removed. It is gone at the next game start."
+        : "Mouse fix installed (by thatawesomeguy). It works from the next game start.",
+      "ok",
+    );
+  } catch (e) {
+    alert(String(e));
+  }
+  await refreshMouseFix();
+});
 
 async function verify(full: boolean) {
   const dir = settings.game_dir;

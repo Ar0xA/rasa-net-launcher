@@ -10,10 +10,19 @@ It:
 - lets you pick an auth server (Infinite Rasa by default, or add your own, e.g. `localhost:2106`),
 - can remember your username, and optionally your password, per server,
 - updates itself automatically when a new release is published.
+- can install or remove the slow mouse look fix (see below).
 
 The launcher does **not** download, patch or repair game files. If files are reported missing or modified, reinstall a clean Tabula Rasa 1.16.5.0 client.
 
 Saved passwords are stored in Windows Credential Manager, never in a file. When a password is saved, it is passed to the game on its command line at launch, which other programs on the same PC can read while the game runs.
+
+## Slow mouse look fix
+
+The fix comes from **thatawesomeguy** on the Infinite Rasa Discord. In mouse look the client drops cursor moves of 1 UI unit, so slow mouse movement is lost, worst at high resolutions. The fix keeps such moves until they add up to more than 1 unit.
+
+**Install mouse fix** on the main screen (below **Settings**) puts it in the game folder; the same button then reads **Remove mouse fix** and takes it out again. It works from the next game start.
+
+The fix is two small Python files plus an import block (`src-tauri/mods/slowmouselook/`, `src-tauri/src/mouselook.rs`), no binaries. They go to `python_nca_internal/client_nca_internal/` in the game folder, which the client loads at start. If another mod already uses that folder, the launcher adds its import lines to that `__init__.py` as a marked block and removes only that block again (the launcher's `developerkeys.py` then stays, because the client needs it while that package exists); a `developerkeys.py` that is not the launcher's is left alone. A copy installed by hand from the fix's own zip shows as installed and can be removed with the same button. Known limit (from the fix itself): when one axis turns, a 1-unit move on the other axis is still dropped.
 
 ## Building
 
